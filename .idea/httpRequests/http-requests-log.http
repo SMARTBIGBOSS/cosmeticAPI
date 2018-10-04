@@ -1,3 +1,14 @@
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T110346.200.json
+
+###
+
 GET http://localhost:3000/cosmetics/
 Accept: */*
 Cache-Control: no-cache
@@ -490,15 +501,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-04T052220.200.json
-
-###
-
-GET http://localhost:3000/cosmetics
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-04T052154.200.json
 
 ###
 
