@@ -1,0 +1,504 @@
+GET http://localhost:3000/cosmetics/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060358.200.json
+
+###
+
+POST http://localhost:3000/cosmetics/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060354.404.html
+
+###
+
+POST http://localhost:3000/cosmetics/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060349.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/sortByHighPrice
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060244.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060222.200.json
+
+###
+
+POST http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060218.404.html
+
+###
+
+POST http://localhost:3000/cosmetics/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060214.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/sortByHighPrice
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060130.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060112.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060107.404.html
+
+###
+
+PUT http://localhost:3000/cosmetics/1000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060100.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/1000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+
+<> 2018-10-04T060022.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Lancôme","price":15.00,"publisher":2002}
+
+<> 2018-10-04T055819.200.json
+
+###
+
+POST http://localhost:3000/cosmetics/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Lancôme","price":15.00,"publisher":2002}
+
+<> 2018-10-04T055749.200.json
+
+###
+
+POST http://localhost:3000/cosmetics/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Lancôme","price":15.00,"publisher":2002}
+
+<> 2018-10-04T055707.404.html
+
+###
+
+POST http://localhost:3000/cosmetics/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":"Lancôme","price":15.00,"publisher":2002};
+
+<> 2018-10-04T055656.400.html
+
+###
+
+POST http://localhost:3000/cosmetics/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name":"CC cushion","brand":Lancôme,"price":15.00,"publisher":2002};
+
+<> 2018-10-04T055631.400.html
+
+###
+
+POST http://localhost:3000/cosmetics/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 0 "name" : CC cushion, "brand" : Lancôme, "price" : 15.00, "publisher" : 2002};
+
+<> 2018-10-04T055445.400.html
+
+###
+
+POST http://localhost:3000/cosmetics/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 0 "name" : CC cushion, "brand" : Lancôme, "price" : 15.00, "publisher" : 2002};
+
+<> 2018-10-04T055418.400.html
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T054532.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053700.200.json
+
+###
+
+DELETE http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053655.404.html
+
+###
+
+DELETE http://localhost:3000/cosmetics/1000/delete
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053645.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053621.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/1000/delete
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053617.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/Eyeliner/Maybelline
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053520.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/Lipstic
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053435.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/Lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053430.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/sortByHighPrice
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053414.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/sortByLowPrice
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053402.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053341.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/1000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+
+<> 2018-10-04T053131.400.html
+
+###
+
+PUT http://localhost:3000/cosmetics/1000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+
+<> 2018-10-04T053119.400.html
+
+###
+
+PUT http://localhost:3000/cosmetics/1000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+
+<> 2018-10-04T053053.400.html
+
+###
+
+POST http://localhost:3000/cosmetics/1000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T053027.404.html
+
+###
+
+POST http://localhost:3000/cosmetics/1000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+
+<> 2018-10-04T053011.400.html
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052957.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+
+<> 2018-10-04T052929.400.html
+
+###
+
+PUT http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+
+<> 2018-10-04T052924.400.html
+
+###
+
+PUT http://localhost:3000/cosmetics/1000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+
+<> 2018-10-04T052834.400.html
+
+###
+
+PUT http://localhost:3000/cosmetics/1000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+
+<> 2018-10-04T052741.400.html
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052706.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052459.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052335.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052313.200.json
+
+###
+
+DELETE http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052306.404.html
+
+###
+
+DELETE http://localhost:3000/cosmetics/1000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052300.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052250.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052220.200.json
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-04T052154.200.json
+
+###
+
