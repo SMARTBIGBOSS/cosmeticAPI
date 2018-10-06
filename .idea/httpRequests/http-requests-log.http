@@ -1,506 +1,544 @@
-GET http://localhost:3000/cosmetics
+GET http://localhost:3000/customer/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T110346.200.json
+<> 2018-10-06T064156.200.html
 
 ###
 
-GET http://localhost:3000/cosmetics/
+PUT http://localhost:3000/customer/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060358.200.json
+<> 2018-10-06T064152.404.html
 
 ###
 
-POST http://localhost:3000/cosmetics/
+PUT http://localhost:3000/customer/3000/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060354.404.html
+<> 2018-10-06T064144.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics/add
+PUT http://localhost:3000/customer/3000/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060349.200.json
+<> 2018-10-06T064038.500.html
 
 ###
 
-GET http://localhost:3000/cosmetics/sortByHighPrice
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060244.200.json
+<> 2018-10-06T063931.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLigmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060222.200.json
+<> 2018-10-06T063922.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLigmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060218.404.html
+<> 2018-10-06T063124.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics/add
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060214.200.json
+<> 2018-10-06T061955.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/sortByHighPrice
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060130.200.json
+<> 2018-10-06T061927.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+{"email" : "AnqiLigmail.com", "password": "321321"}
 
-<> 2018-10-04T060112.200.json
+<> 2018-10-06T061855.200.json
 
 ###
 
-PUT http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
 
-<> 2018-10-04T060107.404.html
+<> 2018-10-06T061848.200.json
 
 ###
 
-PUT http://localhost:3000/cosmetics/1000/edit
+POST http://localhost:3000/customer/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
 
-<> 2018-10-04T060100.200.json
+<> 2018-10-06T061839.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/1000/edit
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"Eyeliner","brand":"Maybelline","price":15.00,"publisher":2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T060022.200.json
+<> 2018-10-06T061807.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Lancôme","price":15.00,"publisher":2002}
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T055819.200.json
+<> 2018-10-06T061657.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics/add
+GET http://localhost:3000/customer/300
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Lancôme","price":15.00,"publisher":2002}
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
 
-<> 2018-10-04T055749.200.json
+<> 2018-10-06T061628.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics/add
+GET http://localhost:3000/customer/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Lancôme","price":15.00,"publisher":2002}
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
 
-<> 2018-10-04T055707.404.html
+<> 2018-10-06T061624.200.html
 
 ###
 
-POST http://localhost:3000/cosmetics/add
+GET http://localhost:3000/customers/300
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":"Lancôme","price":15.00,"publisher":2002};
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
 
-<> 2018-10-04T055656.400.html
+<> 2018-10-06T061550.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics/add
+GET http://localhost:3000/customers/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name":"CC cushion","brand":Lancôme,"price":15.00,"publisher":2002};
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
 
-<> 2018-10-04T055631.400.html
+<> 2018-10-06T061457.200.html
 
 ###
 
-POST http://localhost:3000/cosmetics/add
+POST http://localhost:3000/customer/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 0 "name" : CC cushion, "brand" : Lancôme, "price" : 15.00, "publisher" : 2002};
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
 
-<> 2018-10-04T055445.400.html
+<> 2018-10-06T055640.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics/add
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 0 "name" : CC cushion, "brand" : Lancôme, "price" : 15.00, "publisher" : 2002};
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
 
-<> 2018-10-04T055418.400.html
+<> 2018-10-06T055629.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T054532.200.json
+{"email" : "AnqiLi@gmail.com", "password": "321321"}
+
+<> 2018-10-06T055143.200.html
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053700.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T055100.200.json
 
 ###
 
-DELETE http://localhost:3000/cosmetics
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053655.404.html
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T055033.200.json
 
 ###
 
-DELETE http://localhost:3000/cosmetics/1000/delete
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053645.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T055022.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053621.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T055009.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/1000/delete
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053617.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T054758.200.html
 
 ###
 
-GET http://localhost:3000/cosmetics/Eyeliner/Maybelline
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053520.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T054743.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Lipstic
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053435.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T054638.200.html
 
 ###
 
-GET http://localhost:3000/cosmetics/Lipstick
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053430.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T054615.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/sortByHighPrice
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053414.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T054604.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/sortByLowPrice
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053402.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T054541.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053341.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T054311.200.json
 
 ###
 
-PUT http://localhost:3000/cosmetics/1000/edit
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T053131.400.html
+<> 2018-10-06T054259.200.json
 
 ###
 
-PUT http://localhost:3000/cosmetics/1000
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T053119.400.html
+<> 2018-10-06T054222.200.json
 
 ###
 
-PUT http://localhost:3000/cosmetics/1000
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T053053.400.html
+<> 2018-10-06T054154.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics/1000
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T053027.404.html
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T054134.200.json
 
 ###
 
-POST http://localhost:3000/cosmetics/1000
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T053011.400.html
+<> 2018-10-06T054121.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052957.200.json
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
-
-<> 2018-10-04T052929.400.html
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
 ###
 
-PUT http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
-
-<> 2018-10-04T052924.400.html
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
 ###
 
-PUT http://localhost:3000/cosmetics/1000/edit
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T052834.400.html
+<> 2018-10-06T052421.200.json
 
 ###
 
-PUT http://localhost:3000/cosmetics/1000/edit
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id" : 1000, "name" : Eyeliner, "brand" : Maybelline, "price" : 11.00, "publisher" : 2000}
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
-<> 2018-10-04T052741.400.html
+<> 2018-10-06T052402.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052706.200.json
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T052329.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052459.200.json
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T052307.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052335.200.json
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T052254.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052313.200.json
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T052009.200.json
 
 ###
 
-DELETE http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052306.404.html
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T051837.200.json
 
 ###
 
-DELETE http://localhost:3000/cosmetics/1000
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052300.200.json
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T051824.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+POST http://localhost:3000/customer/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052250.200.json
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T050123.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics
+GET http://localhost:3000/customers
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-04T052220.200.json
+{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-06T050109.200.json
 
 ###
 

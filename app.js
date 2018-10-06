@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const cosmetics = require("./routes/cosmetics");
+const customers = require("./routes/customers");
 
 var app = express();
 
@@ -28,10 +29,14 @@ app.get('/cosmetics/sortByLowPrice', cosmetics.sortByLowPrice);
 app.get('/cosmetics/sortByHighPrice', cosmetics.sortByHighPrice);
 app.get('/cosmetics/:name', cosmetics.findByName);
 app.get('/cosmetics/:name/:brand', cosmetics.filterByBrand);
+app.get('/customer/:id', customers.findOne);
 
 app.put('/cosmetics/:id/edit', cosmetics.editByID);
+app.put('/customer/:id/edit', customers.editByID);
 
 app.post('/cosmetics/add', cosmetics.addCosmetic);
+app.post('/customer/signUp', customers.signUp);//{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+app.post('/customer/login', customers.login);//{"email" : "123456@qq.com", "password": "123123"}
 
 app.delete('/cosmetics/:id/delete', cosmetics.removeCosmetic);
 

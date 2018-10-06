@@ -17,9 +17,10 @@ function getIndexByID(array, id){
     return result ? result[0] : null;
 }
 
-function sortByPrice(array,string){
+function sortByPrice(array,str){
     let result = array;
-    if(string == "sortByLowPrice"){
+
+    if(str == "sortByLowPrice"){
         for(let i = 1; i < result.length; i++){
             for(let j = 0; j < i; j++){
                 if(result[j].price > result[i].price) {
@@ -29,7 +30,7 @@ function sortByPrice(array,string){
                 }
             }
         }
-    }else if(string == "sortByHighPrice"){
+    }else if(str == "sortByHighPrice"){
         for(let i = 1; i < result.length; i++){
             for(let j = 0; j < i; j++){
                 if(result[j].price < result[i].price) {
@@ -84,20 +85,23 @@ router.sortByHighPrice = (req, res) =>{
 router.editByID = (req, res) => {
     let cosmetic = getIndexByID(cosmetics, req.params.id);
     let index = cosmetics.indexOf(cosmetic);
+
     if(index != -1){
-        cosmetics[index] = {"id" : req.params.id, "name" : req.body.name, "brand" : req.body.brand, "price" : req.body.price, "publisher" : req.body.publisher};
+        cosmetics[index] = {"id" : req.params.id, "name" : req.body.name, "brand" : req.body.brand,
+                            "price" : req.body.price, "publisher" : req.body.publisher};
         res.json({status : 200, message : "Edit Cosmetic Successful"});
     }else
-        res.send("Cosmetic Not Found - Edit Cosmetic Not Successful!");
+        res.send("Cosmetic Not Found - Edit Cosmetic Not Success!");
 }
 
 router.removeCosmetic = (req, res) =>{
     let cosmetic = getIndexByID(cosmetics,req.params.id);
     let index = cosmetics.indexOf(cosmetic);
     let currentSize = cosmetics.length;
+
     cosmetics.splice(index, 1);
     if((currentSize-1) == cosmetics.length)
-        res.json({ message: "Cosmetic Deleted!"});
+        res.json({status : 200, message: "Cosmetic Deleted!"});
     else
         res.json({ message: "Cosmetic Not Deleted!"});
 }
@@ -105,9 +109,10 @@ router.removeCosmetic = (req, res) =>{
 router.addCosmetic = (req, res) => {
     let id = Math.floor((Math.random() * 10000) +1 );
     let currentSize = cosmetics.length;
+
     cosmetics.push({"id" : id, "name" : req.body.name, "brand" : req.body.brand, "price" : req.body.price, "publisher" : req.body.publisher});
     if((currentSize + 1) == cosmetics.length)
-        res.json({message: "Cosmetic Added Successful"});
+        res.json({status : 200, message: "Cosmetic Added Successful"});
     else
         res.json({message: "Cosmetic Not Added!"});
 }
