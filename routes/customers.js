@@ -42,8 +42,7 @@ router.signUp = (req, res) => {
         res.send({message: 'Incorrect Email Format!'});
     else{
         if(customerIsExist(customers,req.body.email) == false){
-            customers.push({"id": id, "name" : req.body.name,
-                "email" : req.body.email, "password": req.body.password,
+            customers.push({"id": id, "name" : req.body.name, "email" : req.body.email, "password": req.body.password,
                 "phoneNum" : req.body.phoneNum, "address": req.body.address});
             if((currentSize+1) == customers.length)
                 res.json({status : 200, message: "Customer Sign Up Successful"});

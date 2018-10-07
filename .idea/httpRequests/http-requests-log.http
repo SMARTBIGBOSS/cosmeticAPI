@@ -1,3 +1,477 @@
+GET http://localhost:3000/seller/2001
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030920.200.html
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qqcom", "password": "123123"}
+
+<> 2018-10-07T030848.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030824.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030756.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030717.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{,"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030708.400.html
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"","email" : "123456qq.com", "password": "123123"}
+
+<> 2018-10-07T030649.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030636.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030634.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030607.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030319.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030257.200.json
+
+###
+
+GET http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030248.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel"}
+
+<> 2018-10-07T030218.200.html
+
+###
+
+PUT http://localhost:3000/seller/2000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel"}
+
+<> 2018-10-07T030210.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T030143.200.html
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T025946.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T025922.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T025814.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T025642.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T025558.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-07T025505.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T025414.200.html
+
+###
+
+PUT http://localhost:3000/seller/2000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T025407.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-07T025341.200.html
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-07T025219.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T025159.200.json
+
+###
+
+PUT http://localhost:3000/seller/2000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T025151.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T025139.200.html
+
+###
+
+PUT http://localhost:3000/seller/2000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T025103.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-07T024952.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-07T024948.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-07T024947.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T024917.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T024911.200.json
+
+###
+
+PUT http://localhost:3000/seller/2000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T024859.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T024845.200.html
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T024653.200.html
+
+###
+
+PUT http://localhost:3000/seller/2000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-07T024639.200.json
+
+###
+
+PUT http://localhost:3000/seller/2000/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel"}
+
+<> 2018-10-07T024358.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-07T024307.200.html
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-07T024244.500.html
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-07T024217.500.html
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+
+<> 2018-10-07T024143.500.html
+
+###
+
 GET http://localhost:3000/customer/3000
 Accept: */*
 Cache-Control: no-cache
@@ -61,484 +535,6 @@ Content-Type: application/json
 {"id": 0, "name" : "Angel","email" : "AnqiLigmail.com", "password": "321321", "phoneNum" : "", "address":""}
 
 <> 2018-10-06T063922.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLigmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T063124.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T061955.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T061927.200.json
-
-###
-
-POST http://localhost:3000/customer/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLigmail.com", "password": "321321"}
-
-<> 2018-10-06T061855.200.json
-
-###
-
-POST http://localhost:3000/customer/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T061848.200.json
-
-###
-
-POST http://localhost:3000/customer/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T061839.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T061807.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T061657.200.json
-
-###
-
-GET http://localhost:3000/customer/300
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T061628.200.json
-
-###
-
-GET http://localhost:3000/customer/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T061624.200.html
-
-###
-
-GET http://localhost:3000/customers/300
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T061550.200.json
-
-###
-
-GET http://localhost:3000/customers/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T061457.200.html
-
-###
-
-POST http://localhost:3000/customer/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T055640.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T055629.200.json
-
-###
-
-POST http://localhost:3000/customer/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-06T055143.200.html
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T055100.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T055033.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T055022.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T055009.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054758.200.html
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054743.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054638.200.html
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054615.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054604.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054541.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054311.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054259.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054222.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054154.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054134.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T054121.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T052421.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T052402.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T052329.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T052307.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T052254.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T052009.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T051837.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T051824.200.json
-
-###
-
-POST http://localhost:3000/customer/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T050123.200.json
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id": 0, "name" : "Angel","email" : "", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-06T050109.200.json
 
 ###
 
