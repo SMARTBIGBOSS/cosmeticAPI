@@ -40,6 +40,8 @@ router.signUp = (req, res) => {
         res.send({message: 'Email Cannot be NUll!'});
     else if(!isEmail(req.body.email))
         res.send({message: 'Incorrect Email Format!'});
+    else if(req.body.password == "")
+        res.send({message: 'Password Cannot be NUll!'});
     else{
         if(customerIsExist(customers,req.body.email) == false){
             customers.push({"id": id, "name" : req.body.name, "email" : req.body.email, "password": req.body.password,

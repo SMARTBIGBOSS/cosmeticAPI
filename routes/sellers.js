@@ -32,6 +32,8 @@ router.register = (req, res) => {
         res.send({message: 'Email Cannot be NUll!'});
     else if(!isEmail(req.body.email))
         res.send({message: 'Incorrect Email Format!'});
+    else if(req.body.password == "")
+        res.send({message: 'Password Cannot be NUll!'});
     else if(sellerIsExist(sellers, req.body.email) != false)
         res.json({message: "Seller Already Sign Up!"});
     else{
