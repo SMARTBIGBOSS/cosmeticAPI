@@ -1,540 +1,550 @@
-GET http://localhost:3000/seller/2001
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030920.200.html
+<> 2018-10-09T103803.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+DELETE http://localhost:3000/transaction/6750/remove
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qqcom", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030848.200.json
+<> 2018-10-09T103754.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"","email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030824.200.json
+<> 2018-10-09T103726.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+POST http://localhost:3000/transaction/3000/add
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030756.200.json
+<> 2018-10-09T103714.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030717.200.json
+<> 2018-10-09T103657.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{,"email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030708.400.html
+<> 2018-10-09T103216.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"","email" : "123456qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030649.200.json
+<> 2018-10-09T103205.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"","email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030636.200.json
+<> 2018-10-09T103156.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+POST http://localhost:3000/transaction/3000/add
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"","email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030634.200.json
+<> 2018-10-09T103148.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+POST http://localhost:3000/transaction3000/add
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"","email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030607.200.json
+<> 2018-10-09T103141.404.html
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030319.200.json
+<> 2018-10-09T103034.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+POST http://localhost:3000/transaction/3000/add
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
 
-<> 2018-10-07T030257.200.json
+<> 2018-10-09T103025.200.json
 
 ###
 
-GET http://localhost:3000/seller/signUp
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T030248.200.json
+<> 2018-10-09T102946.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+PUT http://localhost:3000/transaction/4000/confirmReceipt
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T030218.200.html
+<> 2018-10-09T102939.200.json
 
 ###
 
-PUT http://localhost:3000/seller/2000/edit
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T030210.200.json
+<> 2018-10-09T102826.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+PUT http://localhost:3000/transaction/4000/confirmReceipt
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T030143.200.html
+<> 2018-10-09T102818.200.json
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025946.200.json
+<> 2018-10-09T102745.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+PUT http://localhost:3000/transaction/4000/order
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025922.200.json
+<> 2018-10-09T102736.200.json
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025814.200.json
+<> 2018-10-09T102716.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+PUT http://localhost:3000/transaction/4000/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025642.200.json
+<> 2018-10-09T102706.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025558.200.json
+<> 2018-10-09T102644.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025505.200.json
+<> 2018-10-09T102637.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025414.200.html
+<> 2018-10-09T102302.200.json
 
 ###
 
-PUT http://localhost:3000/seller/2000/edit
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025407.200.json
+<> 2018-10-09T102241.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+PUT http://localhost:3000/transaction/4000/confirmReceipt
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-07T025341.200.html
+{"quantity":3,"date":"09/10/2018"}
+
+<> 2018-10-09T102231.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+PUT http://localhost:3000/transaction/4000/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-07T025219.200.json
+{"quantity":3,"date":"09/10/2018"}
+
+<> 2018-10-09T102151.200.html
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025159.200.json
+<> 2018-10-09T102139.200.json
 
 ###
 
-PUT http://localhost:3000/seller/2000/edit
+PUT http://localhost:3000/transaction/4000/order
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025151.200.json
+<> 2018-10-09T102129.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025139.200.html
+<> 2018-10-09T102100.200.json
 
 ###
 
-PUT http://localhost:3000/seller/2000/edit
+PUT http://localhost:3000/transaction/4000/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T025103.200.json
+<> 2018-10-09T102048.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+PUT http://localhost:3000/transaction/4000/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-07T024952.200.json
+{"quantity":3,"date":"09/10/2018"}
+
+<> 2018-10-09T102006.200.html
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-07T024948.200.json
+{"quantity":3,"date":"09/10/2018"}
+
+<> 2018-10-09T101944.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-<> 2018-10-07T024947.200.json
+{"quantity":3,"date":"09/10/2018"}
+
+<> 2018-10-09T101937.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024917.200.json
+<> 2018-10-09T101852.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transaction/4000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024911.200.json
+<> 2018-10-09T101842.200.json
 
 ###
 
-PUT http://localhost:3000/seller/2000/edit
+PUT http://localhost:3000/transaction/4000/order
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024859.200.json
+<> 2018-10-09T101831.200.html
 
 ###
 
-GET http://localhost:3000/seller/2000
+PUT http://localhost:3000/transaction/4003/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024845.200.html
+<> 2018-10-09T101813.200.html
 
 ###
 
-GET http://localhost:3000/seller/2000
+PUT http://localhost:3000/transaction/4002/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024653.200.html
+<> 2018-10-09T101808.200.html
 
 ###
 
-PUT http://localhost:3000/seller/2000/edit
+PUT http://localhost:3000/transaction/4001/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024639.200.json
+<> 2018-10-09T101802.200.html
 
 ###
 
-PUT http://localhost:3000/seller/2000/edit
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name": "Angel"}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024358.200.json
+<> 2018-10-09T101723.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024307.200.html
+<> 2018-10-09T101632.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transaction/4000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024244.500.html
+<> 2018-10-09T101622.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+PUT http://localhost:3000/transaction/4000/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024217.500.html
+<> 2018-10-09T101615.200.json
 
 ###
 
-GET http://localhost:3000/seller/2000
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-07T024143.500.html
+<> 2018-10-09T101549.200.json
 
 ###
 
-GET http://localhost:3000/customer/3000
+GET http://localhost:3000/transaction/3000
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-06T064156.200.html
+<> 2018-10-09T101437.200.json
 
 ###
 
-PUT http://localhost:3000/customer/3000
+PUT http://localhost:3000/transaction/701/edit
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-06T064152.404.html
+<> 2018-10-09T101356.200.json
 
 ###
 
-PUT http://localhost:3000/customer/3000/edit
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": 0}
 
-<> 2018-10-06T064144.200.json
+<> 2018-10-09T101213.200.json
 
 ###
 
-PUT http://localhost:3000/customer/3000/edit
+POST http://localhost:3000/transaction/3000/add
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": 0}
 
-<> 2018-10-06T064038.500.html
+<> 2018-10-09T101205.200.json
 
 ###
 
-POST http://localhost:3000/customer/signUp
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-06T063931.200.json
+<> 2018-10-09T101046.200.json
 
 ###
 
-POST http://localhost:3000/customer/signUp
+DELETE http://localhost:3000/transaction/4000/remove
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id": 0, "name" : "Angel","email" : "AnqiLigmail.com", "password": "321321", "phoneNum" : "", "address":""}
+{"quantity":3,"date":"09/10/2018"}
 
-<> 2018-10-06T063922.200.json
+<> 2018-10-09T101036.200.json
 
 ###
 

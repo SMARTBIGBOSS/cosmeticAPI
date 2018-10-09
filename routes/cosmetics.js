@@ -12,7 +12,7 @@ function getByName(array,name){
     return result ? result : null;
 }
 
-function getIndexByID(array, id){
+function getByID(array, id){
     let result = array.filter(function(obj){return obj.id == id});
     return result ? result[0] : null;
 }
@@ -83,7 +83,7 @@ router.sortByHighPrice = (req, res) =>{
 }
 
 router.editByID = (req, res) => {
-    let cosmetic = getIndexByID(cosmetics, req.params.id);
+    let cosmetic = getByID(cosmetics, req.params.id);
     let index = cosmetics.indexOf(cosmetic);
 
     if(index != -1){
@@ -95,7 +95,7 @@ router.editByID = (req, res) => {
 }
 
 router.removeCosmetic = (req, res) =>{
-    let cosmetic = getIndexByID(cosmetics,req.params.id);
+    let cosmetic = getByID(cosmetics,req.params.id);
     let index = cosmetics.indexOf(cosmetic);
     let currentSize = cosmetics.length;
 
