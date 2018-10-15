@@ -36,19 +36,19 @@ app.get('/seller/:id', sellers.findOne);
 app.get('/transaction/:buyerId', transactions.findByBuyerId)
 app.get('/transactions', transactions.findAll);
 
-app.put('/cosmetics/:id/edit', cosmetics.editByID);
+app.put('/cosmetics/:publisher/:id/edit', cosmetics.editByID);
 app.put('/customer/:id/edit', customers.editByID);
-app.put('/seller/:id/edit', sellers.editByID);//{"id":0,"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-app.put('/transaction/:id/edit', transactions.edit);//{"quantity":3,"date":"09/10/2018"}
+app.put('/seller/:id/edit', sellers.editByID);//{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+app.put('/transaction/:buyerId/:id/edit', transactions.edit);//{"quantity":3}
 app.put('/transaction/:id/order', transactions.order);
 app.put('/transaction/:id/confirmReceipt', transactions.ConfirmReceipt);
 
-app.post('/cosmetics/add', cosmetics.addCosmetic);
-app.post('/customer/signUp', customers.signUp);//{"id": 0, "name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
+app.post('/cosmetics/:publisher/add', cosmetics.addCosmetic);
+app.post('/customer/signUp', customers.signUp);//{"name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
 app.post('/customer/login', customers.login);//{"email" : "123456@qq.com", "password": "123123"}
 app.post('/seller/signUp', sellers.register);//{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
 app.post('/seller/login', sellers.login);//{"email" : "123456@qq.com", "password": "123123"}
-app.post('/transaction/:buyerId/add',transactions.add);//{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
+app.post('/transaction/:buyerId/add/:cosmeId',transactions.add);//
 
 app.delete('/cosmetics/:id/delete', cosmetics.removeCosmetic);
 app.delete('/transaction/:id/remove', transactions.remove);

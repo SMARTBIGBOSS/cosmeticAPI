@@ -1,0 +1,21 @@
+{
+  "message": "Cosmetic Successfully Edited!",
+  "data": {
+    "n": 0,
+    "nModified": 0,
+    "opTime": {
+      "ts": "6612619193239994371",
+      "t": 2
+    },
+    "electionId": "7fffffff0000000000000002",
+    "ok": 1,
+    "operationTime": "6612619193239994371",
+    "$clusterTime": {
+      "clusterTime": "6612619193239994371",
+      "signature": {
+        "hash": "u/OO9z0B1VkVjpxMYbDfuuub47E=",
+        "keyId": "6580405645734838273"
+      }
+    }
+  }
+}

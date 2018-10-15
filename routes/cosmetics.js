@@ -1,120 +1,119 @@
-let cosmetics = require('../models/cosmetics');
+let Cosmetic = require('../models/cosmetics');
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose');
 
-function getByBrand(array, brand){
-    let result = array.filter(function(obj){return obj.brand == brand;});
-    return result ? result : null;
-}
+let mongodbUri = 'mongodb://cosmeticdb:cosmeticdb100@ds157538.mlab.com:57538/cosmeticdb';
 
-function getByName(array,name){
-    let result = array.filter(function(obj){return obj.name == name;});
-    return result ? result : null;
-}
+mongoose.connect(mongodbUri);
 
-function getByID(array, id){
-    let result = array.filter(function(obj){return obj.id == id});
-    return result ? result[0] : null;
-}
+let db = mongoose.connection;
 
-function sortByPrice(array,str){
-    let result = array;
+db.on('error', function (err) {
+    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
+});
 
-    if(str == "sortByLowPrice"){
-        for(let i = 1; i < result.length; i++){
-            for(let j = 0; j < i; j++){
-                if(result[j].price > result[i].price) {
-                    let temp = result[i];
-                    result[i] = result[j];
-                    result[j] = temp;
-                }
-            }
-        }
-    }else if(str == "sortByHighPrice"){
-        for(let i = 1; i < result.length; i++){
-            for(let j = 0; j < i; j++){
-                if(result[j].price < result[i].price) {
-                    let temp = result[i];
-                    result[i] = result[j];
-                    result[j] = temp;
-                }
-            }
-        }
-    }
-    return result;
-}
+db.once('open', function () {
+    console.log('Successfully Connected to [ ' + db.name + ' ]');
+});
 
 router.filterByBrand = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let cosmeticByName = getByName(cosmetics,req.params.name);
-    let cosmetic = getByBrand(cosmeticByName,req.params.brand);
 
-    if(cosmetic.length > 0)
-        res.send(JSON.stringify(cosmetic,null,5));
-    else
-        res.send('Cosmetic Not Found!');
+    Cosmetic.find({ "name": req.params.name,"brand": req.params.brand }, function (err,cosmetics) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(cosmetics,null,5));
+    });
 }
 
 router.findByName = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let cosmetic = getByName(cosmetics,req.params.name);
 
-    if(cosmetic.length > 0)
-        res.send(JSON.stringify(cosmetic,null,5));
-    else
-        res.send('Cosmetic Not Found!');
+    Cosmetic.find({ "name": req.params.name }, function (err,cosmetics) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(cosmetics,null,5));
+    });
 }
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(cosmetics,null,5));
+    Cosmetic.find(function (err, cosmetics) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(cosmetics,null,5));
+    });
 }
 
 router.sortByLowPrice = (req, res) =>{
     res.setHeader('Content-Type', 'application/json');
-    let cosmetic = sortByPrice(cosmetics,"sortByLowPrice")
-    res.send(JSON.stringify(cosmetic,null,5));
+
+    Cosmetic.find(function (err, cosmetics) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(cosmetics,null,5));
+    }).sort({price: 1});
 }
 
 router.sortByHighPrice = (req, res) =>{
     res.setHeader('Content-Type', 'application/json');
-    let cosmetic = sortByPrice(cosmetics,"sortByHighPrice")
-    res.send(JSON.stringify(cosmetic,null,5));
+
+    Cosmetic.find(function (err, cosmetics) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(cosmetics,null,5));
+    }).sort({price: -1});
 }
 
 router.editByID = (req, res) => {
-    let cosmetic = getByID(cosmetics, req.params.id);
-    let index = cosmetics.indexOf(cosmetic);
+    res.setHeader('Content-Type', 'application/json');
 
-    if(index != -1){
-        cosmetics[index] = {"id" : req.params.id, "name" : req.body.name, "brand" : req.body.brand,
-                            "price" : req.body.price, "publisher" : req.body.publisher};
-        res.json({status : 200, message : "Edit Cosmetic Successful"});
-    }else
-        res.send("Cosmetic Not Found - Edit Cosmetic Not Success!");
+    Cosmetic.update({ "_id": req.params.id },
+        {   name: req.body.name,
+            brand: req.body.brand,
+            price: req.body.price,
+            publisher: req.params.publisher,
+            release_date: Date.now()
+        }, function (err, cosmetic) {
+        if(err)
+            res.json({ message: 'Cosmetic NOT Found!', errmsg : err});
+        else
+            res.json({ message: 'Cosmetic Successfully Edited!', data: cosmetic });
+    });
 }
 
 router.removeCosmetic = (req, res) =>{
-    let cosmetic = getByID(cosmetics,req.params.id);
-    let index = cosmetics.indexOf(cosmetic);
-    let currentSize = cosmetics.length;
-
-    cosmetics.splice(index, 1);
-    if((currentSize-1) == cosmetics.length)
-        res.json({status : 200, message: "Cosmetic Deleted!"});
-    else
-        res.json({ message: "Cosmetic Not Deleted!"});
+    Cosmetic.findByIdAndRemove(req.params.id, function (err) {
+        if(err)
+            res.json({ message: 'Cosmetic NOT DELETED!', errmsg : err } );
+        else
+            res.json({ message: 'Cosmetic Successfully Deleted!'});
+    });
 }
 
 router.addCosmetic = (req, res) => {
-    let id = Math.floor((Math.random() * 10000) +1 );
-    let currentSize = cosmetics.length;
+    res.setHeader('Content-Type', 'application/json');
 
-    cosmetics.push({"id" : id, "name" : req.body.name, "brand" : req.body.brand, "price" : req.body.price, "publisher" : req.body.publisher});
-    if((currentSize + 1) == cosmetics.length)
-        res.json({status : 200, message: "Cosmetic Added Successful"});
-    else
-        res.json({message: "Cosmetic Not Added!"});
+    let cosmetic = new Cosmetic();
+
+    cosmetic.name = req.body.name;
+    cosmetic.brand = req.body.brand;
+    cosmetic.price = req.body.price;
+    cosmetic.publisher = req.params.publisher;
+    cosmetic.release_date = Date.now();
+
+    cosmetic.save(function (err) {
+        if(err)
+            res.json({ message: 'Cosmetic NOT Added!', errmsg : err });
+        else
+            res.json({ message: 'Cosmetic Successfully Added!', data: cosmetic });
+    });
 }
 
 module.exports = router;

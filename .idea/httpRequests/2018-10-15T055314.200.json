@@ -1,0 +1,15 @@
+{
+  "ok": 0,
+  "errmsg": "Failed to parse: collation: \"transactions\". 'collation' field must be of BSON type object.",
+  "code": 9,
+  "codeName": "FailedToParse",
+  "operationTime": "6612626760972369923",
+  "$clusterTime": {
+    "clusterTime": "6612626760972369923",
+    "signature": {
+      "hash": "Mccv9JS9P/kEAMHWFEToOISjQ4s=",
+      "keyId": "6580405645734838273"
+    }
+  },
+  "name": "MongoError"
+}

@@ -1,3 +1,4 @@
+/*
 const cosmetics = [
     { id: 1000, name : 'Eyeliner', brand : 'Maybelline', price: 9.00, publisher : 2000},
     { id: 1001, name : 'Lipstick', brand : 'Maybelline', price: 6.00, publisher : 2000},
@@ -6,3 +7,19 @@ const cosmetics = [
 ]
 
 module.exports = cosmetics;
+*/
+
+let mongoose = require('mongoose');
+
+let CosmeticsSchema = new mongoose.Schema({
+    name: String,
+    brand: String,
+    price: Number,
+    publisher: String,
+    //publisher: { type: Schema.Types.ObjectId, ref: 'publisher' },
+    release_date: Date,
+    //img_url:
+},
+    {collection: 'cosmetics'});
+
+module.exports = mongoose.model('Cosmetic', CosmeticsSchema);

@@ -1,44 +1,22 @@
-GET http://localhost:3000/transaction/3000
+GET http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T103803.200.json
+<> 2018-10-15T102044.200.json
 
 ###
 
-DELETE http://localhost:3000/transaction/6750/remove
+GET http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T103754.200.json
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
-
-<> 2018-10-09T103726.200.json
-
-###
-
-POST http://localhost:3000/transaction/3000/add
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
-
-<> 2018-10-09T103714.200.json
+<> 2018-10-15T060935.200.json
 
 ###
 
@@ -47,9 +25,20 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T103657.200.json
+<> 2018-10-15T060901.200.json
+
+###
+
+PUT http://localhost:3000/transaction/5bc4c8798b46241a849839bd/confirmReceipt
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T060848.200.json
 
 ###
 
@@ -58,53 +47,20 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T103216.200.json
+<> 2018-10-15T060816.200.json
 
 ###
 
-GET http://localhost:3000/transaction/3000
+PUT http://localhost:3000/transaction/5bc4c8998b46241a849839be/order
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T103205.200.json
-
-###
-
-GET http://localhost:3000/transactions
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
-
-<> 2018-10-09T103156.200.json
-
-###
-
-POST http://localhost:3000/transaction/3000/add
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
-
-<> 2018-10-09T103148.200.json
-
-###
-
-POST http://localhost:3000/transaction3000/add
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
-
-<> 2018-10-09T103141.404.html
+<> 2018-10-15T060801.200.json
 
 ###
 
@@ -113,42 +69,31 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T103034.200.json
+<> 2018-10-15T060736.200.json
 
 ###
 
-POST http://localhost:3000/transaction/3000/add
+PUT http://localhost:3000/transaction/
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": -1}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T103025.200.json
+<> 2018-10-15T060729.404.html
 
 ###
 
-GET http://localhost:3000/transactions
+PUT http://localhost:3000/transaction/5bc4c8ad8b46241a849839bf/order
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T102946.200.json
-
-###
-
-PUT http://localhost:3000/transaction/4000/confirmReceipt
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102939.200.json
+<> 2018-10-15T060721.200.json
 
 ###
 
@@ -157,196 +102,100 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T102826.200.json
+<> 2018-10-15T060604.200.json
 
 ###
 
-PUT http://localhost:3000/transaction/4000/confirmReceipt
+POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/add/5bc4ba9e8ed35e1cb47ee609
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T102818.200.json
+<> 2018-10-15T060445.200.json
 
 ###
 
-GET http://localhost:3000/transactions
+POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/add/5bc4ba638ed35e1cb47ee608
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T102745.200.json
+<> 2018-10-15T060425.200.json
 
 ###
 
-PUT http://localhost:3000/transaction/4000/order
+POST http://localhost:3000/transaction/5bc4bbd38ed35e1cb47ee60b/add/5bc4b95e8ed35e1cb47ee607
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"cosmeId":0,"buyerId":0,"quantity": 2,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T102736.200.json
+<> 2018-10-15T060353.200.json
 
 ###
 
-GET http://localhost:3000/transactions
+POST http://localhost:3000/transaction/5bc4bb878ed35e1cb47ee60a/add/5bc4b756cb2be01ad0830eb4
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T102716.200.json
+<> 2018-10-15T060224.200.json
 
 ###
 
-PUT http://localhost:3000/transaction/4000/edit
+POST http://localhost:3000/transaction/5bc4bb878ed35e1cb47ee60a/add/5bc4b756cb2be01ad0830eb4
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T102706.200.json
+<> 2018-10-15T055942.200.json
 
 ###
 
-GET http://localhost:3000/transaction/3000
+DELETE http://localhost:3000/transaction/5bc4c283e102ff1950460e2d/remove
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102644.200.json
+<> 2018-10-15T055644.200.json
 
 ###
 
-GET http://localhost:3000/transactions
+GET http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102637.200.json
+<> 2018-10-15T055539.200.json
 
 ###
 
-GET http://localhost:3000/transactions
+GET http://localhost:3000/transaction/5bc4b46fb0f2471e04f7cde8
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102302.200.json
+<> 2018-10-15T055533.200.json
 
 ###
 
-GET http://localhost:3000/transaction/3000
+GET http://localhost:3000/transactions/5bc4b46fb0f2471e04f7cde8
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102241.200.json
-
-###
-
-PUT http://localhost:3000/transaction/4000/confirmReceipt
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102231.200.json
-
-###
-
-PUT http://localhost:3000/transaction/4000/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102151.200.html
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102139.200.json
-
-###
-
-PUT http://localhost:3000/transaction/4000/order
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102129.200.json
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102100.200.json
-
-###
-
-PUT http://localhost:3000/transaction/4000/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102048.200.json
-
-###
-
-PUT http://localhost:3000/transaction/4000/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T102006.200.html
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101944.200.json
+<> 2018-10-15T055454.404.html
 
 ###
 
@@ -355,152 +204,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101937.200.json
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101852.200.json
-
-###
-
-GET http://localhost:3000/transaction/4000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101842.200.json
-
-###
-
-PUT http://localhost:3000/transaction/4000/order
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101831.200.html
-
-###
-
-PUT http://localhost:3000/transaction/4003/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101813.200.html
-
-###
-
-PUT http://localhost:3000/transaction/4002/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101808.200.html
-
-###
-
-PUT http://localhost:3000/transaction/4001/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101802.200.html
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101723.200.json
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101632.200.json
-
-###
-
-GET http://localhost:3000/transaction/4000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101622.200.json
-
-###
-
-PUT http://localhost:3000/transaction/4000/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101615.200.json
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101549.200.json
-
-###
-
-GET http://localhost:3000/transaction/3000
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101437.200.json
-
-###
-
-PUT http://localhost:3000/transaction/701/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity":3,"date":"09/10/2018"}
-
-<> 2018-10-09T101356.200.json
+<> 2018-10-15T055415.200.json
 
 ###
 
@@ -509,20 +213,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": 0}
-
-<> 2018-10-09T101213.200.json
-
-###
-
-POST http://localhost:3000/transaction/3000/add
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"cosmeId": 1000, "buyerId": 0, "quantity": 2, "date": "07/10/2018", "status": 0}
-
-<> 2018-10-09T101205.200.json
+<> 2018-10-15T055328.200.json
 
 ###
 
@@ -531,20 +222,317 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T101046.200.json
+<> 2018-10-15T055314.200.json
 
 ###
 
-DELETE http://localhost:3000/transaction/4000/remove
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"quantity":3,"date":"09/10/2018"}
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
 
-<> 2018-10-09T101036.200.json
+<> 2018-10-15T055238.200.json
+
+###
+
+GET http://localhost:3000/transactions
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T055234.200.json
+
+###
+
+GET http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T055055.200.json
+
+###
+
+PUT http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/5bc4c368e102ff1950460e30/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T054802.200.json
+
+###
+
+PUT http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/5bc4ba9e8ed35e1cb47ee609/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T054639.200.json
+
+###
+
+POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/5bc4ba9e8ed35e1cb47ee609/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T054606.404.html
+
+###
+
+POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/add/5bc4ba9e8ed35e1cb47ee609
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T054216.200.json
+
+###
+
+POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/add/5bc4ba638ed35e1cb47ee608
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T054141.200.json
+
+###
+
+POST http://localhost:3000/transaction/5bc4bbd38ed35e1cb47ee60b/add/5bc4b95e8ed35e1cb47ee607
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 2,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T054032.200.json
+
+###
+
+POST http://localhost:3000/transaction/5bc4bb878ed35e1cb47ee60a/add/5bc4b756cb2be01ad0830eb4
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+
+<> 2018-10-15T053827.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/Eyeliner/Maybelline
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
+
+<> 2018-10-15T052609.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/Eyeliner
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
+
+<> 2018-10-15T052559.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/Eyeliner
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
+
+<> 2018-10-15T052552.404.html
+
+###
+
+PUT http://localhost:3000/cosmetics/Eyeliner
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
+
+<> 2018-10-15T052551.404.html
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba638ed35e1cb47ee608/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
+
+<> 2018-10-15T052457.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba9e8ed35e1cb47ee608/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 4.00,"publisher":0 }
+
+<> 2018-10-15T052353.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba9e8ed35e1cb47ee608/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
+
+<> 2018-10-15T052327.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba9e8ed35e1cb47ee608/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
+
+<> 2018-10-15T052228.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde7/5bc4ba9e8ed35e1cb47ee609/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Loose powder", "brand" : "Ponds", "price": 4.00,"publisher":0 }
+
+<> 2018-10-15T052130.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde7/5bc4ba9e8ed35e1cb47ee609/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Loose powderr", "brand" : "Ponds", "price": 4.00,"publisher":0 }
+
+<> 2018-10-15T052048.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba638ed35e1cb47ee608/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Etude House", "price": 4.00,"publisher":0 }
+
+<> 2018-10-15T051952.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde6/5bc4b95e8ed35e1cb47ee607/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Lipstick", "brand" : "Maybelline", "price": 6.00,"publisher":0 }
+
+<> 2018-10-15T051837.200.json
+
+###
+
+PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde6/5bc4b756cb2be01ad0830eb4/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name" : "Eyeliner", "brand" : "Maybelline", "price": 9.00,"publisher":0 }
+
+<> 2018-10-15T051735.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/Eyeliner
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-15T051336.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/sortByHighPrice
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-15T051315.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/sortByHiggPrice
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-15T051312.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/sortByHIgnPrice
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-15T051304.200.json
+
+###
+
+GET http://localhost:3000/cosmetics/sortByLowPrice
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-15T051254.200.json
 
 ###
 

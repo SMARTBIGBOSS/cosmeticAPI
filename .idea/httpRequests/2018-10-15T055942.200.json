@@ -1,0 +1,13 @@
+{
+  "message": "Transaction Successfully Added!",
+  "data": {
+    "_id": "5bc4c77e12d6a81138f3d15a",
+    "cosmeId": "5bc4b756cb2be01ad0830eb4",
+    "buyerId": "5bc4bb878ed35e1cb47ee60a",
+    "quantity": 1,
+    "contact_Num": 123456,
+    "last_date": "2018-10-15T16:59:42.256Z",
+    "status": "unpaid",
+    "__v": 0
+  }
+}

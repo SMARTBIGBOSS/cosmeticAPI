@@ -1,94 +1,117 @@
-let transactions = require('../models/transactions');
+let Transaction = require('../models/transactions');
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose');
 
-function getByBuyerID(array, buyerId) {
-    let result = array.filter(function(obj){return obj.buyerId == buyerId})
-    return result ? result : null;
-}
+let mongodbUri = 'mongodb://cosmeticdb:cosmeticdb100@ds157538.mlab.com:57538/cosmeticdb';
 
-function getByID(array, id){
-    let result = array.filter(function(obj){return obj.id == id})
-    return result ? result[0] : null;
-}
+mongoose.connect(mongodbUri);
+
+let db = mongoose.connection;
+
+db.on('error', function (err) {
+    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
+});
+
+db.once('open', function () {
+    console.log('Successfully Connected to [ ' + db.name + ' ]');
+});
 
 router.add = (req, res) => {
-    let id = Math.floor((Math.random() * 10000) +1 );
-    let currentSize = transactions.length;
+    res.setHeader('Content-Type', 'application/json');
 
-    transactions.push({"id" : id, "cosmeId" : req.body.cosmeId, "buyerId" : parseInt(req.params.buyerId),
-        "quantity" : req.body.quantity, "date" : req.body.date, "status": 0});
-    if((currentSize + 1) == transactions.length)
-        res.json({status : 200, message: "Cosmetic Add to Trolley Successfully"});
-    else
-        res.json({message: "Cosmetic Not Added!"});
+    let transaction = new Transaction();
+
+    transaction.cosmeId = req.params.cosmeId;
+    transaction.buyerId = req.params.buyerId;
+    transaction.quantity = req.body.quantity;
+    transaction.shipping_address = req.body.shipping_address;
+    transaction.contact_Num = req.body.contact_Num;
+    transaction.last_date = Date.now();
+    transaction.status = "unpaid";
+
+    transaction.save(function (err) {
+        if(err)
+            res.json({ message: 'Transaction NOT Added!', errmsg : err });
+        else
+            res.json({ message: 'Transaction Successfully Added!', data: transaction });
+    });
 }
 
 router.remove = (req, res) => {
-    let transaction = getByID(transactions,req.params.id);
-    let index = transactions.indexOf(transaction);
-    let currentSize = transactions.length;
-
-    transactions.splice(index, 1);
-    if((currentSize-1) == transactions.length)
-        res.json({status : 200, message: "Transaction Removed successful"});
-    else
-        res.json({ message: "Transaction Not Removed!"});
+    Transaction.findByIdAndRemove(req.params.id, function (err) {
+        if(err)
+            res.json({ message: 'Cosmetic NOT DELETED!', errmsg : err } );
+        else
+            res.json({ message: 'Cosmetic Successfully Deleted!'});
+    });
 }
 
 router.edit = (req, res) => {
-    let transaction = getByID(transactions,req.params.id);
-    let index = transactions.indexOf(transaction);
+    res.setHeader('Content-Type', 'application/json');
 
-    if(transaction != null){
-        if(transactions[index].status == -1){
-            transactions[index].quantity = req.body.quantity;
-            transactions[index].date = req.body.date;
-            res.json({status : 200, message : "Edit Transaction Successful"});
-        }else
-            res.send("Transaction Unable Edit!");
-    }else
-        res.send("Transaction Not Found - Edit Transaction Not Success!");
+    Transaction.update({ "_id": req.params.id },
+        {   buyerId: req.params.buyerId,
+            quantity: req.body.quantity,
+            contact_Num: req.body.contact_Num,
+            shipping_address: req.body.shipping_address,
+            last_date: Date.now(),
+        }, function (err, transaction) {
+            if(err)
+                res.json({ message: 'Transaction NOT Found!', errmsg : err});
+            else
+                res.json({ message: 'Transaction Successfully Edited!', data: transaction });
+        });
 }
 
 router.order = (req, res) => {
-    let transaction = getByID(transactions, req.params.id);
-    let index = transactions.indexOf(transaction);
+    res.setHeader('Content-Type', 'application/json');
 
-    if(index != -1){
-        if(transactions[index].status == -1){
-            transactions[index].status = 0;
-            res.json({status : 200, message : "Order Cosmetics Successful"});
-        }else
-            res.send("Transaction Ordered!");
-    }else
-        res.send("Transaction Not Found - Order Cosmetics Not Success!");
+    Transaction.update({ "_id": req.params.id },
+        {   last_date: Date.now(),
+            status: "delivering"
+        }, function (err, transaction) {
+            if(err)
+                res.json({ message: 'Transaction NOT Found!', errmsg : err});
+            else
+                res.json({ message: 'Transaction Successfully Updated!', data: transaction });
+        });
 }
 
 router.ConfirmReceipt = (req, res) => {
-    let transaction = getByID(transactions, req.params.id);
-    let index = transactions.indexOf(transaction);
+    res.setHeader('Content-Type', 'application/json');
 
-    if(index != -1){
-        transactions[index].status = 1;
-        res.json({status : 200, message : "Transaction Finished"});
-    }else
-        res.send("Transaction Not Found - Confirm Receipt Not Success!");
+    Transaction.update({ "_id": req.params.id },
+        {   last_date: Date.now(),
+            status: "finished"
+        }, function (err, transaction) {
+            if(err)
+                res.json({ message: 'Transaction NOT Found!', errmsg : err});
+            else
+                res.json({ message: 'Transaction Successfully Updated!', data: transaction });
+        });
 }
 
 router.findByBuyerId = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let transaction = getByBuyerID(transactions,req.params.buyerId);
 
-    if(transaction.length > 0)
-        res.send(JSON.stringify(transaction,null,5));
-    else
-        res.send('Transaction Not Found!');
+    Transaction.find({"buyerId": req.params.buyerId }, function (err,transaction) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(transaction,null,5));
+    });
 }
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(transactions,null,5));
+
+    Transaction.find(function (err, transactions) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(transactions,null,5));
+    });
 }
 
 module.exports = router;

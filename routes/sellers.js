@@ -1,76 +1,83 @@
-let sellers = require('../models/sellers');
+let Seller = require('../models/sellers');
+let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose');
 
-function sellerIsExist(array,num){
-    let result = array.filter(function(obj){return obj.IDCardNum == num});
-    return result ? result : false;
-}
+let mongodbUri = 'mongodb://cosmeticdb:cosmeticdb100@ds157538.mlab.com:57538/cosmeticdb';
 
-function isEmail(str) {
-    let reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
-    return reg.test(str);
-}
+mongoose.connect(mongodbUri);
 
-function loginByValue(array, email, password){
-    let result = array.filter(function(obj){return (obj.email == email) && (obj.password == password)});
-    return result ? result : false;
-}
+let db = mongoose.connection;
 
-function getByID(array, id){
-    let result = array.filter(function(obj){return obj.id == id});
-    return result ? result[0] : null;
-}
+db.on('error', function (err) {
+    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
+});
+
+db.once('open', function () {
+    console.log('Successfully Connected to [ ' + db.name + ' ]');
+});
 
 router.register = (req, res) => {
-    let id = Math.floor(Math.random() * 10000 + 1);
-    let currentSize = sellers.length;
+    res.setHeader('Content-Type', 'application/json');
 
-    if(req.body.name == "")
-        res.send({message: 'Seller name Cannot be NUll!'});
-    else if(req.body.email == null)
-        res.send({message: 'Email Cannot be NUll!'});
-    else if(!isEmail(req.body.email))
-        res.send({message: 'Incorrect Email Format!'});
-    else if(req.body.password == "")
-        res.send({message: 'Password Cannot be NUll!'});
-    else if(sellerIsExist(sellers, req.body.email) != false)
-        res.json({message: "Seller Already Sign Up!"});
-    else{
-        sellers.push({"id": id, "name": req.body.name, "email": req.body.email, "password": req.body.password, "description": req.body.description});
-        if((currentSize + 1) == sellers.length)
-            res.json({status : 200, message: "Seller Sign Up Successful"});
+    let seller = new Seller();
+    seller.name = req.body.name;
+    seller.email = req.body.email;
+    seller.description = req.body.description;
+    seller.register_date = Date.now();
+    seller.password = bcrypt.hashSync(req.body.password);
+
+    seller.save(function (err){
+        if(err)
+            res.json({ message: 'Seller NOT Sign Up!', errmsg : err });
         else
-            res.json({message: "Seller Not Sign Up!"});
-    }
+            res.json({ message: 'seller Successfully Sign Up', data: seller });
+    });
 }
 
 router.login = (req, res) => {
-    let seller = loginByValue(sellers, req.body.email, req.body.password);
+    res.setHeader('Content-Type', 'application/json');
 
-    if(seller == false)
-        res.json({message: "Email address or password incorrect!"});
-    else
-        res.json({status : 200, message: "Seller Login Successful"});
+    Seller.findOne({email: req.body.email},function (err, seller) {
+        if(!seller)
+            res.json({ message: 'Seller NOT Login!', errmsg : err });
+        else{
+            if(bcrypt.compareSync(req.body.password,seller.password))
+                res.json({ message: 'Seller Successfully Login', data: seller });
+            else
+                res.json({ message: 'Email Address or Password Incorrect!', errmsg : err });
+        }
+    });
 }
 
 router.findOne = (req, res) => {
-    let seller = getByID(sellers, req.params.id);
-    if(seller != null){
-        res.send(JSON.stringify(seller,null,5));
-    }else
-        res.send({message: 'Seller Not Found!'});
+    res.setHeader('Content-Type', 'application/json');
+
+    Seller.findById(req.params.id,function(err, seller) {
+        if (err)
+            res.json({ message: 'Seller NOT Found!', errmsg : err } );
+        else
+            res.send(JSON.stringify(seller,null,5));
+    });
 }
 
 router.editByID = (req, res) => {
-    let seller = getByID(sellers, req.params.id);
-    let index = sellers.indexOf(seller);
+    res.setHeader('Content-Type', 'application/json');
 
-    if(index != -1){
-        sellers[index] = {"id": req.params.id, "name": req.body.name, "email": req.body.email, "password": req.body.password, "description": req.body.description};
-        res.json({status : 200, message : "Edit Seller Successful"});
-    }else
-        res.json({message: "Seller Not Found - Edit Seller Not Successful!"});
+    Seller.update({"_id": req.params.id},
+        {   name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+            description: req.body.description,
+            //img_url:
+        },
+        function(err,seller) {
+            if(err)
+                res.json({ message: 'Seller NOT Edited!', errmsg : err });
+            else
+                res.json({ message: 'Seller Successfully Edited!', data: seller });
+        });
 }
 
 module.exports = router;
