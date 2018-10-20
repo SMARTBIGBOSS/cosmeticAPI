@@ -16,7 +16,6 @@ let CosmeticsSchema = new mongoose.Schema({
     brand: String,
     price: Number,
     publisher: String,
-    //publisher: { type: Schema.Types.ObjectId, ref: 'publisher' },
     release_date: Date,
     //img_url:
 },

@@ -1,538 +1,577 @@
-GET http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c
+POST http://localhost:3000/upload
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+--null
 
-<> 2018-10-15T102044.200.json
+
+< C:\Users\lenovo\Pictures\err-info-2.PNG
+--null--
+
+<> 2018-10-20T050743.400.html
 
 ###
 
-GET http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c
+POST http://localhost:3000/upload?userLogo=C:\Users\lenovo\Pictures\Screenshots\15.PNG
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+--null
 
-<> 2018-10-15T060935.200.json
+
+< C:\Users\lenovo\Pictures\err-info-2.PNG
+--null--
+
+<> 2018-10-20T045911.400.html
 
 ###
 
-GET http://localhost:3000/transactions
+POST http://localhost:3000/upload?userLogo=C:/Users/lenovo/Pictures/err-info-2.PNG
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+--null
 
-<> 2018-10-15T060901.200.json
+
+< C:\Users\lenovo\Pictures\err-info-2.PNG
+--null--
+
+<> 2018-10-20T045752.400.html
 
 ###
 
-PUT http://localhost:3000/transaction/5bc4c8798b46241a849839bd/confirmReceipt
+POST http://localhost:3000/upload?userLogo=C:/Users/lenovo/Pictures/err-info-2.PNG
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+--null
 
-<> 2018-10-15T060848.200.json
+
+< C:\Users\lenovo\Pictures\err-info-2.PNG
+--null--
 
 ###
 
-GET http://localhost:3000/transactions
+POST http://localhost:3000/upload?userLogo=multipart/form-data
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+--null
 
-<> 2018-10-15T060816.200.json
+
+< C:\Users\lenovo\Pictures\err-info-2.PNG
+--null--
 
 ###
 
-PUT http://localhost:3000/transaction/5bc4c8998b46241a849839be/order
+POST http://localhost:3000/upload?userLogo=multipart/form-data
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+--null
 
-<> 2018-10-15T060801.200.json
+
+< C:\Users\lenovo\Pictures\err-info-2.PNG
+--null--
+
+<> 2018-10-20T043633.400.html
 
 ###
 
-GET http://localhost:3000/transactions
+POST http://localhost:3000/upload?userLogo=multipart/form-data
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+--null
 
-<> 2018-10-15T060736.200.json
+
+< C:\Users\lenovo\Pictures\err-info-2.PNG
+--null--
+
+<> 2018-10-20T043608.400.html
 
 ###
 
-PUT http://localhost:3000/transaction/
+POST http://localhost:3000/upload?userLogo=multipart/form-data
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
+--null
 
-<> 2018-10-15T060729.404.html
 
-###
-
-PUT http://localhost:3000/transaction/5bc4c8ad8b46241a849839bf/order
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T060721.200.json
+< C:\Users\lenovo\Pictures\err-info-2.PNG
+--null--
 
 ###
 
-GET http://localhost:3000/transactions
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T060604.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/add/5bc4ba9e8ed35e1cb47ee609
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T060445.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/add/5bc4ba638ed35e1cb47ee608
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T060425.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bbd38ed35e1cb47ee60b/add/5bc4b95e8ed35e1cb47ee607
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"cosmeId":0,"buyerId":0,"quantity": 2,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T060353.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bb878ed35e1cb47ee60a/add/5bc4b756cb2be01ad0830eb4
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T060224.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bb878ed35e1cb47ee60a/add/5bc4b756cb2be01ad0830eb4
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"cosmeId":0,"buyerId":0,"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T055942.200.json
-
-###
-
-DELETE http://localhost:3000/transaction/5bc4c283e102ff1950460e2d/remove
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-15T055644.200.json
-
-###
-
-GET http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-15T055539.200.json
-
-###
-
-GET http://localhost:3000/transaction/5bc4b46fb0f2471e04f7cde8
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-15T055533.200.json
-
-###
-
-GET http://localhost:3000/transactions/5bc4b46fb0f2471e04f7cde8
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-15T055454.404.html
-
-###
-
-GET http://localhost:3000/transactions
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-15T055415.200.json
-
-###
-
-GET http://localhost:3000/transactions
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-15T055328.200.json
-
-###
-
-GET http://localhost:3000/transactions
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T055314.200.json
-
-###
-
-GET http://localhost:3000/transactions
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T055238.200.json
-
-###
-
-GET http://localhost:3000/transactions
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T055234.200.json
-
-###
-
-GET http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T055055.200.json
-
-###
-
-PUT http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/5bc4c368e102ff1950460e30/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T054802.200.json
-
-###
-
-PUT http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/5bc4ba9e8ed35e1cb47ee609/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T054639.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/5bc4ba9e8ed35e1cb47ee609/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T054606.404.html
-
-###
-
-POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/add/5bc4ba9e8ed35e1cb47ee609
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T054216.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bbe98ed35e1cb47ee60c/add/5bc4ba638ed35e1cb47ee608
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T054141.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bbd38ed35e1cb47ee60b/add/5bc4b95e8ed35e1cb47ee607
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 2,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T054032.200.json
-
-###
-
-POST http://localhost:3000/transaction/5bc4bb878ed35e1cb47ee60a/add/5bc4b756cb2be01ad0830eb4
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"quantity": 1,"shipping_address":"WIT","contact_Num":123456}
-
-<> 2018-10-15T053827.200.json
-
-###
-
-GET http://localhost:3000/cosmetics/Eyeliner/Maybelline
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
-
-<> 2018-10-15T052609.200.json
-
-###
-
-GET http://localhost:3000/cosmetics/Eyeliner
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
-
-<> 2018-10-15T052559.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/Eyeliner
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
-
-<> 2018-10-15T052552.404.html
-
-###
-
-PUT http://localhost:3000/cosmetics/Eyeliner
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
-
-<> 2018-10-15T052551.404.html
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba638ed35e1cb47ee608/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
-
-<> 2018-10-15T052457.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba9e8ed35e1cb47ee608/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 4.00,"publisher":0 }
-
-<> 2018-10-15T052353.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba9e8ed35e1cb47ee608/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
-
-<> 2018-10-15T052327.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba9e8ed35e1cb47ee608/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 8.00,"publisher":0 }
-
-<> 2018-10-15T052228.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde7/5bc4ba9e8ed35e1cb47ee609/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Loose powder", "brand" : "Ponds", "price": 4.00,"publisher":0 }
-
-<> 2018-10-15T052130.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde7/5bc4ba9e8ed35e1cb47ee609/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Loose powderr", "brand" : "Ponds", "price": 4.00,"publisher":0 }
-
-<> 2018-10-15T052048.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde8/5bc4ba638ed35e1cb47ee608/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Etude House", "price": 4.00,"publisher":0 }
-
-<> 2018-10-15T051952.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde6/5bc4b95e8ed35e1cb47ee607/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Lipstick", "brand" : "Maybelline", "price": 6.00,"publisher":0 }
-
-<> 2018-10-15T051837.200.json
-
-###
-
-PUT http://localhost:3000/cosmetics/5bc4b3a4b0f2471e04f7cde6/5bc4b756cb2be01ad0830eb4/edit
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name" : "Eyeliner", "brand" : "Maybelline", "price": 9.00,"publisher":0 }
-
-<> 2018-10-15T051735.200.json
-
-###
-
-GET http://localhost:3000/cosmetics/Eyeliner
+POST http://localhost:3000/seller/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 {"email" : "123456@qq.com", "password": "123123"}
 
-<> 2018-10-15T051336.200.json
+<> 2018-10-19T060959.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/sortByHighPrice
+POST http://localhost:3000/seller/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 {"email" : "123456@qq.com", "password": "123123"}
 
-<> 2018-10-15T051315.200.json
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
+
+<> 2018-10-19T055737.403.txt
 
 ###
 
-GET http://localhost:3000/cosmetics/sortByHiggPrice
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
+
+<> 2018-10-19T055656.403.txt
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
+
+<> 2018-10-19T051605.403.txt
+
+###
+
+PUT http://localhost:3000/seller5bc3ccab055de81f884b18cf/edit?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
+
+<> 2018-10-19T051548.404.html
+
+###
+
+PUT http://localhost:3000/seller5bc3ccab055de81f884b18cf/edit?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 {"email" : "123456@qq.com", "password": "123123"}
 
-<> 2018-10-15T051312.200.json
+<> 2018-10-19T051437.404.html
 
 ###
 
-GET http://localhost:3000/cosmetics/sortByHIgnPrice
+POST http://localhost:3000/seller/login?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 {"email" : "123456@qq.com", "password": "123123"}
 
-<> 2018-10-15T051304.200.json
+<> 2018-10-19T051414.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/sortByLowPrice
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?authorization=bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T051228.403.txt
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?authorization=bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T051115.403.txt
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NTAxN30.BgrzHz3Z1a8YQyTSleGCHUNOK5GV2lQxus2-FA6MMNg
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T050752.403.txt
+
+###
+
+POST http://localhost:3000/seller/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 {"email" : "123456@qq.com", "password": "123123"}
 
-<> 2018-10-15T051254.200.json
+<> 2018-10-19T050337.200.json
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NDYyNX0.rlYfGyyB2WzFH2i4s_fDCnrSR30_DtE44KmgiYFDSNs
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123","description":"test"}
+
+<> 2018-10-19T050107.403.txt
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2NDYyNX0.rlYfGyyB2WzFH2i4s_fDCnrSR30_DtE44KmgiYFDSNs
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123","description":"test"}
+
+<> 2018-10-19T045941.403.txt
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-19T045705.200.json
+
+###
+
+GET http://localhost:3000/sellers
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-19T045559.200.json
+
+###
+
+GET http://localhost:3000/sellers
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/sellers
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+###
+
+GET http://localhost:3000/sellers?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+###
+
+GET http://localhost:3000/sellers?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+###
+
+GET http://localhost:3000/sellers?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+###
+
+GET http://localhost:3000/sellers?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+###
+
+POST http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T044211.404.html
+
+###
+
+POST http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?name=li&authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T044129.404.html
+
+###
+
+POST http://localhost:3000/seller/login?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-19T043914.200.json
+
+###
+
+PUT http://localhost:3000/seller/5bc4b3a4b0f2471e04f7cde6/edit?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T043805.403.txt
+
+###
+
+PUT http://localhost:3000/seller/5bc4b3a4b0f2471e04f7cde6/edit?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T043031.403.txt
+
+###
+
+POST http://localhost:3000/seller/login?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T042708.200.json
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T042617.403.txt
+
+###
+
+POST http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+
+<> 2018-10-19T042610.404.html
+
+###
+
+POST http://localhost:3000/seller/login?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-19T042403.200.json
+
+###
+
+POST http://localhost:3000/seller/login?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-19T041326.200.json
+
+###
+
+POST http://localhost:3000/seller/login?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-19T041023.200.json
+
+###
+
+GET http://localhost:3000/cosmetics?name=li
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T102110.200.json
+
+###
+
+GET http://localhost:3000/cosmetics?name=lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T102043.200.json
+
+###
+
+GET http://localhost:3000/cosmetics?name=lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T101739.400.html
+
+###
+
+GET http://localhost:3000/cosmetics?name=lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T101722.400.html
+
+###
+
+GET http://localhost:3000/cosmetics?name=lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T101703.400.html
+
+###
+
+GET http://localhost:3000/cosmetics?name=lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T101615.400.html
+
+###
+
+GET http://localhost:3000/cosmetics?name=lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T101530.400.html
+
+###
+
+GET http://localhost:3000/cosmetics?name=lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T101401.400.html
+
+###
+
+GET http://localhost:3000/cosmetics?name=li&search=li&search=lipstick&name=lipstick
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+< F:\WebAppDev\cosmeticweb\lab006_B.PNG
+
+<> 2018-10-19T101119.400.html
 
 ###
 

@@ -3,6 +3,7 @@ let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+let jwt = require('jsonwebtoken');
 
 let mongodbUri = 'mongodb://cosmeticdb:cosmeticdb100@ds157538.mlab.com:57538/cosmeticdb';
 
@@ -17,6 +18,8 @@ db.on('error', function (err) {
 db.once('open', function () {
     console.log('Successfully Connected to [ ' + db.name + ' ]');
 });
+
+
 
 router.register = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -43,8 +46,10 @@ router.login = (req, res) => {
         if(!seller)
             res.json({ message: 'Seller NOT Login!', errmsg : err });
         else{
-            if(bcrypt.compareSync(req.body.password,seller.password))
-                res.json({ message: 'Seller Successfully Login', data: seller });
+            if(bcrypt.compareSync(req.body.password,seller.password)){
+                const token = jwt.sign({_id: seller._id}, 'seller');
+                res.json({ token, message: 'Seller Successfully Login', data: seller });
+            }
             else
                 res.json({ message: 'Email Address or Password Incorrect!', errmsg : err });
         }
@@ -62,22 +67,39 @@ router.findOne = (req, res) => {
     });
 }
 
+router.findAll = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+
+    Seller.find(function(err, seller) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(seller,null,5));
+    });
+}
+
 router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Seller.update({"_id": req.params.id},
-        {   name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
-            description: req.body.description,
-            //img_url:
-        },
-        function(err,seller) {
-            if(err)
-                res.json({ message: 'Seller NOT Edited!', errmsg : err });
-            else
-                res.json({ message: 'Seller Successfully Edited!', data: seller });
-        });
+    jwt.verify(req.token, 'seller', (err, authData) => {
+        if(err)
+            res.sendStatus(403);
+        else{
+            Seller.update({"_id": req.params.id},
+                {   name: req.body.name,
+                    email: req.body.email,
+                    password: req.body.password,
+                    description: req.body.description,
+                    //img_url:
+                },
+                function(err,seller) {
+                    if(err)
+                        res.json({ message: 'Seller NOT Edited!', errmsg : err });
+                    else
+                        res.json({ authData, message: 'Seller Successfully Edited!', data: seller });
+                });
+        }
+    });
 }
 
 module.exports = router;

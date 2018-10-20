@@ -10,6 +10,7 @@ const cosmetics = require("./routes/cosmetics");
 const customers = require("./routes/customers");
 const sellers = require("./routes/sellers");
 const transactions = require("./routes/transactions");
+const user_images = require("./routes/user_images");
 
 var app = express();
 
@@ -22,9 +23,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./userLogo'));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.get('/uploadImage',function(req,res){ res.render('uploadImage')});
 
 app.get('/cosmetics', cosmetics.findAll);
 app.get('/cosmetics/sortByLowPrice', cosmetics.sortByLowPrice);
@@ -32,13 +37,14 @@ app.get('/cosmetics/sortByHighPrice', cosmetics.sortByHighPrice);
 app.get('/cosmetics/:name', cosmetics.findByName);
 app.get('/cosmetics/:name/:brand', cosmetics.filterByBrand);
 app.get('/customer/:id', customers.findOne);
+app.get('/sellers', sellers.findAll);
 app.get('/seller/:id', sellers.findOne);
 app.get('/transaction/:buyerId', transactions.findByBuyerId)
 app.get('/transactions', transactions.findAll);
 
 app.put('/cosmetics/:publisher/:id/edit', cosmetics.editByID);
 app.put('/customer/:id/edit', customers.editByID);
-app.put('/seller/:id/edit', sellers.editByID);//{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
+app.put('/seller/:id/edit', sellers.editByID);//{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
 app.put('/transaction/:buyerId/:id/edit', transactions.edit);//{"quantity":3}
 app.put('/transaction/:id/order', transactions.order);
 app.put('/transaction/:id/confirmReceipt', transactions.ConfirmReceipt);
@@ -49,14 +55,20 @@ app.post('/customer/login', customers.login);//{"email" : "123456@qq.com", "pass
 app.post('/seller/signUp', sellers.register);//{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
 app.post('/seller/login', sellers.login);//{"email" : "123456@qq.com", "password": "123123"}
 app.post('/transaction/:buyerId/add/:cosmeId',transactions.add);//
+app.post('/upload', user_images.uploadImage);
 
 app.delete('/cosmetics/:id/delete', cosmetics.removeCosmetic);
 app.delete('/transaction/:id/remove', transactions.remove);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+if (process.env.NODE_ENV !== 'test') {
+    app.use(logger('dev'));
+}
 
 // error handler
 app.use(function(err, req, res, next) {

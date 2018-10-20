@@ -13,18 +13,18 @@ let mongoose = require('mongoose');
 let SellersSchema = new mongoose.Schema({
         name: {
             type: String,
-            require: true,
+            required: true,
             unique: true
         },
         email: {
             type: String,
             match:/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/,
-            require: true,
+            required: true,
             unique: true
         },
         password: {
             type: String,
-            require: true
+            required: true
         },
         description: String,
         register_date: Date,

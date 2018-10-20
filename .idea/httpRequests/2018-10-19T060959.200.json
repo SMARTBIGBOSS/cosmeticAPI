@@ -1,0 +1,12 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmMzY2NhYjA1NWRlODFmODg0YjE4Y2YiLCJpYXQiOjE1Mzk5Njg5OTl9.GU7GonBRyTs9xdGnxChnvDZD8pwQv-8tK9EbsvWsCuQ",
+  "message": "Seller Successfully Login",
+  "data": {
+    "_id": "5bc3ccab055de81f884b18cf",
+    "name": "AnqiLi",
+    "email": "123456@qq.com",
+    "register_date": "2018-10-14T23:09:31.831Z",
+    "password": "$2a$10$5qTzgkUkwoJKHO24xZtuguHButrlbxgAG4/sVnHKUwKuYVAF60Die",
+    "__v": 0
+  }
+}

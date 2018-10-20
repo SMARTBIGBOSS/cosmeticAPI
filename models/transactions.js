@@ -13,24 +13,24 @@ let mongoose = require('mongoose');
 let TransactionsSchema = new mongoose.Schema({
     cosmeId: {
         type: String,
-        require: true
+        required: true
     },
     buyerId: {
         type: String,
-        require: true
+        required: true
     },
     quantity: {
         type: Number,
         min: 1,
-        require: true
+        required: true
     },
     shipping_address: {
         type: String,
-        require: true
+        required: true
     },
     contact_Num: {
         type: Number,
-        require: true
+        required: true
     },
     last_date: Date,
     status:{ type: String,

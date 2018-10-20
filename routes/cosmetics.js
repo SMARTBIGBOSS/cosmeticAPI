@@ -26,7 +26,7 @@ router.filterByBrand = (req, res) => {
         else
             res.send(JSON.stringify(cosmetics,null,5));
     });
-}
+};
 
 router.findByName = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -37,17 +37,33 @@ router.findByName = (req, res) => {
         else
             res.send(JSON.stringify(cosmetics,null,5));
     });
-}
+};
+
+function escapeRegex(str){
+    return str.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,"\\$&");
+};
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    Cosmetic.find(function (err, cosmetics) {
-        if(err)
-            res.send(err);
-        else
-            res.send(JSON.stringify(cosmetics,null,5));
-    });
-}
+    console.log(req.query.name);
+    if(req.query.name){
+        const regex = new RegExp(escapeRegex(req.query.name), 'gi')
+        Cosmetic.find({name: regex}, function (err, cosmetics) {
+            if(err)
+                res.send(err);
+            else
+                res.send(JSON.stringify(cosmetics,null,5));
+        });
+    }else{
+        Cosmetic.find(function (err, cosmetics) {
+            if(err)
+                res.send(err);
+            else
+                res.send(JSON.stringify(cosmetics,null,5));
+        });
+    }
+
+};
 
 router.sortByLowPrice = (req, res) =>{
     res.setHeader('Content-Type', 'application/json');
@@ -58,7 +74,7 @@ router.sortByLowPrice = (req, res) =>{
         else
             res.send(JSON.stringify(cosmetics,null,5));
     }).sort({price: 1});
-}
+};
 
 router.sortByHighPrice = (req, res) =>{
     res.setHeader('Content-Type', 'application/json');
@@ -69,7 +85,7 @@ router.sortByHighPrice = (req, res) =>{
         else
             res.send(JSON.stringify(cosmetics,null,5));
     }).sort({price: -1});
-}
+};
 
 router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -86,7 +102,7 @@ router.editByID = (req, res) => {
         else
             res.json({ message: 'Cosmetic Successfully Edited!', data: cosmetic });
     });
-}
+};
 
 router.removeCosmetic = (req, res) =>{
     Cosmetic.findByIdAndRemove(req.params.id, function (err) {
@@ -95,7 +111,7 @@ router.removeCosmetic = (req, res) =>{
         else
             res.json({ message: 'Cosmetic Successfully Deleted!'});
     });
-}
+};
 
 router.addCosmetic = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -114,6 +130,6 @@ router.addCosmetic = (req, res) => {
         else
             res.json({ message: 'Cosmetic Successfully Added!', data: cosmetic });
     });
-}
+};
 
 module.exports = router;
