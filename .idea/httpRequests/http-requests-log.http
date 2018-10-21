@@ -1,3 +1,23 @@
+GET http://localhost:3000/cosmetics?name=loose
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
+
+<> 2018-10-21T110003.200.json
+
+###
+
+GET http://localhost:3000/cosmetics?name=l
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
+
+<> 2018-10-21T105947.200.json
+
+###
+
 POST http://localhost:3000/seller/5bcca008e8b34925acd4767b/edit
 Accept: */*
 Cache-Control: no-cache
@@ -533,26 +553,6 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 Content-Type: multipart/form-data
-
-###
-
-GET http://localhost:3000/sellers?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-###
-
-GET http://localhost:3000/sellers?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
 
 ###
 

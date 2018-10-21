@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "5bc4b756cb2be01ad0830eb4",
+    "brand": "Maybelline",
+    "price": 9,
+    "publisher": "5bc4b3a4b0f2471e04f7cde6",
+    "release_date": "2018-10-15T16:17:35.131Z",
+    "__v": 0,
+    "name": "Eyeliner"
+  },
+  {
+    "_id": "5bc4b95e8ed35e1cb47ee607",
+    "brand": "Maybelline",
+    "price": 6,
+    "publisher": "5bc4b3a4b0f2471e04f7cde6",
+    "release_date": "2018-10-15T16:18:37.569Z",
+    "__v": 0,
+    "name": "Lipstick"
+  },
+  {
+    "_id": "5bc4ba638ed35e1cb47ee608",
+    "brand": "Etude House",
+    "price": 8,
+    "publisher": "5bc4b3a4b0f2471e04f7cde8",
+    "release_date": "2018-10-15T16:24:57.348Z",
+    "__v": 0,
+    "name": "Eyeliner"
+  },
+  {
+    "_id": "5bc4ba9e8ed35e1cb47ee609",
+    "brand": "Ponds",
+    "price": 4,
+    "publisher": "5bc4b3a4b0f2471e04f7cde7",
+    "release_date": "2018-10-15T16:21:30.428Z",
+    "__v": 0,
+    "name": "Loose powder"
+  }
+]

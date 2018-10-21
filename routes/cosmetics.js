@@ -62,7 +62,6 @@ router.findAll = (req, res) => {
                 res.send(JSON.stringify(cosmetics,null,5));
         });
     }
-
 };
 
 router.sortByLowPrice = (req, res) =>{
