@@ -9,6 +9,8 @@ module.exports = sellers;
 */
 
 let mongoose = require('mongoose');
+let Joi = require('joi');
+const jwt = require("jsonwebtoken");
 
 let SellersSchema = new mongoose.Schema({
         name: {
@@ -32,4 +34,19 @@ let SellersSchema = new mongoose.Schema({
     },
     {collection: 'sellers'});
 
+// function validateSeller(seller){
+//     let schema = {
+//         name: Joi.string().required().unique(),
+//         email: Joi.string().match().required().unique(),
+//         password: Joi.string().required()
+//     };
+//     return Joi.validate(seller, schema);
+// }
+
+SellersSchema.methods.generateAuthToken = function(){
+    let token = jwt.sign({_id: this._id}, 'JwtKey');
+    return token;
+}
+
+//module.exports.validateSeller = validateSeller;
 module.exports = mongoose.model('Seller', SellersSchema);

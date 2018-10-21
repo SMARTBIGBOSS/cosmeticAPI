@@ -34,7 +34,7 @@ let TransactionsSchema = new mongoose.Schema({
     },
     last_date: Date,
     status:{ type: String,
-        enum: ['unpaid', 'delivering', 'finished']}
+        enum: ['unpaid', 'paid', 'delivering', 'finished']}
 },
     {collection: 'transactions'});
 

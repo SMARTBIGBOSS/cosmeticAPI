@@ -1,3 +1,224 @@
+POST http://localhost:3000/seller/5bcca008e8b34925acd4767b/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
+
+{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
+
+<> 2018-10-21T045730.404.html
+
+###
+
+POST http://localhost:3000/seller/5bcca008e8b34925acd4767b/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
+
+{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
+
+<> 2018-10-21T045109.404.html
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token:
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T045021.200.json
+
+###
+
+POST http://localhost:3000/seller/slogin
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token:
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T045014.404.html
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token:
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T044929.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@gmail.com", "password": "123456"}
+
+<> 2018-10-21T044745.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T044639.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T044612.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T043435.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456qq.com", "password": "123123"}
+
+<> 2018-10-21T043340.200.json
+
+###
+
+POST http://localhost:3000/seller/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T043321.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T113215.200.json
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T110228.401.html
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T110217.500.html
+
+###
+
+PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T110136.500.html
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T104141.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T103156.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+<> 2018-10-21T102805.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email" : "123456@qq.com", "password": "123123"}
+
+###
+
 POST http://localhost:3000/upload
 Accept: */*
 Cache-Control: no-cache
@@ -332,246 +553,6 @@ Content-Type: application/json
 Content-Type: multipart/form-data
 
 {"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-###
-
-POST http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-<> 2018-10-19T044211.404.html
-
-###
-
-POST http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?name=li&authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWxsZXIiOnsiX2lkIjoiNWJjM2NjYWIwNTVkZTgxZjg4NGIxOGNmIiwibmFtZSI6IkFucWlMaSIsImVtYWlsIjoiMTIzNDU2QHFxLmNvbSIsInJlZ2lzdGVyX2RhdGUiOiIyMDE4LTEwLTE0VDIzOjA5OjMxLjgzMVoiLCJwYXNzd29yZCI6IiQyYSQxMCQ1cVR6Z2tVa3dvSktITzI0eFp0dWd1SEJ1dHJsYnhnQUc0L3NWbkhLVXdLdVlWQUY2MERpZSIsIl9fdiI6MH0sImlhdCI6MTUzOTk2MzU1NH0.9u1flLVP4vAD7rPUA7i3xxreDfxX9KmbkdYy5kYOL5w
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-<> 2018-10-19T044129.404.html
-
-###
-
-POST http://localhost:3000/seller/login?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-19T043914.200.json
-
-###
-
-PUT http://localhost:3000/seller/5bc4b3a4b0f2471e04f7cde6/edit?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-<> 2018-10-19T043805.403.txt
-
-###
-
-PUT http://localhost:3000/seller/5bc4b3a4b0f2471e04f7cde6/edit?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-<> 2018-10-19T043031.403.txt
-
-###
-
-POST http://localhost:3000/seller/login?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-<> 2018-10-19T042708.200.json
-
-###
-
-PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-<> 2018-10-19T042617.403.txt
-
-###
-
-POST http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"name": "Angel","email":"123456@gmail.com","password":"123456","description":""}
-
-<> 2018-10-19T042610.404.html
-
-###
-
-POST http://localhost:3000/seller/login?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-19T042403.200.json
-
-###
-
-POST http://localhost:3000/seller/login?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-19T041326.200.json
-
-###
-
-POST http://localhost:3000/seller/login?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-19T041023.200.json
-
-###
-
-GET http://localhost:3000/cosmetics?name=li
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T102110.200.json
-
-###
-
-GET http://localhost:3000/cosmetics?name=lipstick
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T102043.200.json
-
-###
-
-GET http://localhost:3000/cosmetics?name=lipstick
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T101739.400.html
-
-###
-
-GET http://localhost:3000/cosmetics?name=lipstick
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T101722.400.html
-
-###
-
-GET http://localhost:3000/cosmetics?name=lipstick
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T101703.400.html
-
-###
-
-GET http://localhost:3000/cosmetics?name=lipstick
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T101615.400.html
-
-###
-
-GET http://localhost:3000/cosmetics?name=lipstick
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T101530.400.html
-
-###
-
-GET http://localhost:3000/cosmetics?name=lipstick
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T101401.400.html
-
-###
-
-GET http://localhost:3000/cosmetics?name=li&search=li&search=lipstick&name=lipstick
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Content-Type: multipart/form-data
-
-< F:\WebAppDev\cosmeticweb\lab006_B.PNG
-
-<> 2018-10-19T101119.400.html
 
 ###
 

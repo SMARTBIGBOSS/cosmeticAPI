@@ -20,7 +20,7 @@ db.once('open', function () {
 router.filterByBrand = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Cosmetic.find({ "name": req.params.name,"brand": req.params.brand }, function (err,cosmetics) {
+    Cosmetic.find({ "brand": req.params.brand }, function (err,cosmetics) {
         if(err)
             res.send(err);
         else
@@ -105,7 +105,7 @@ router.editByID = (req, res) => {
 };
 
 router.removeCosmetic = (req, res) =>{
-    Cosmetic.findByIdAndRemove(req.params.id, function (err) {
+    Cosmetic.findOneAndRemove({publisher: req.params.publisher, _id: req.params.id}, function (err) {
         if(err)
             res.json({ message: 'Cosmetic NOT DELETED!', errmsg : err } );
         else

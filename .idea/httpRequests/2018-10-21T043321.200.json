@@ -1,0 +1,11 @@
+{
+  "message": "seller Successfully Sign Up",
+  "data": {
+    "_id": "5bcc9c407119dc04f8c54bbb",
+    "name": "AnqiLi",
+    "email": "123456@qq.com",
+    "register_date": "2018-10-21T15:33:20.763Z",
+    "password": "$2a$10$QDmzi19FkD4NcdJ7C4hHMOoK2VOXo9NcLRmbZuo12xxSH.OZ.sYDa",
+    "__v": 0
+  }
+}

@@ -3,7 +3,7 @@ let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-let jwt = require('jsonwebtoken');
+//let jwt = require('jsonwebtoken');
 
 let mongodbUri = 'mongodb://cosmeticdb:cosmeticdb100@ds157538.mlab.com:57538/cosmeticdb';
 
@@ -47,8 +47,10 @@ router.login = (req, res) => {
             res.json({ message: 'Seller NOT Login!', errmsg : err });
         else{
             if(bcrypt.compareSync(req.body.password,seller.password)){
-                const token = jwt.sign({_id: seller._id}, 'seller');
-                res.json({ token, message: 'Seller Successfully Login', data: seller });
+                // let token = jwt.sign({_id: seller._id}, 'sellerJwtKey');
+                let token = seller.generateAuthToken();
+                res.header('x-auth-token',token);
+                res.json({message: 'Seller Successfully Login', data: seller });
             }
             else
                 res.json({ message: 'Email Address or Password Incorrect!', errmsg : err });
@@ -81,10 +83,10 @@ router.findAll = (req, res) => {
 router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    jwt.verify(req.token, 'seller', (err, authData) => {
-        if(err)
-            res.sendStatus(403);
-        else{
+    // jwt.verify(req.token, 'seller', (err, authData) => {
+    //     if(err)
+    //         res.sendStatus(403);
+    //     else{
             Seller.update({"_id": req.params.id},
                 {   name: req.body.name,
                     email: req.body.email,
@@ -96,10 +98,10 @@ router.editByID = (req, res) => {
                     if(err)
                         res.json({ message: 'Seller NOT Edited!', errmsg : err });
                     else
-                        res.json({ authData, message: 'Seller Successfully Edited!', data: seller });
+                        res.json({ message: 'Seller Successfully Edited!', data: seller });
                 });
-        }
-    });
+    //     }
+    // });
 }
 
 module.exports = router;

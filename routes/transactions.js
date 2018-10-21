@@ -36,35 +36,58 @@ router.add = (req, res) => {
         else
             res.json({ message: 'Transaction Successfully Added!', data: transaction });
     });
-}
+};
 
 router.remove = (req, res) => {
-    Transaction.findByIdAndRemove(req.params.id, function (err) {
+
+    Transaction.findOneAndRemove({buyerId: req.params.buyerId, _id: req.params.id, status: "unpaid"}, function (err) {
         if(err)
             res.json({ message: 'Cosmetic NOT DELETED!', errmsg : err } );
         else
             res.json({ message: 'Cosmetic Successfully Deleted!'});
     });
-}
+};
 
 router.edit = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
+    Transaction.findOne(req.params.id, function (err, transaction) {
+        if(err)
+            res.json({ message: 'Transaction NOT Found!', errmsg : err});
+        else if (transaction.status != "unpaid")
+            res.json({ message: 'Transaction Cannot Edit!', errmsg : err});
+        else{
+            Transaction.update({ "_id": req.params.id },
+                {   buyerId: req.params.buyerId,
+                    quantity: req.body.quantity,
+                    contact_Num: req.body.contact_Num,
+                    shipping_address: req.body.shipping_address,
+                    last_date: Date.now(),
+                }, function (err) {
+                    if(err)
+                        res.json({ message: 'Transaction NOT Edited!', errmsg : err});
+                    else
+                    res.json({ message: 'Transaction Successfully Edited!', data: transaction });
+                });
+        }
+    });
+};
+
+router.order = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+
     Transaction.update({ "_id": req.params.id },
-        {   buyerId: req.params.buyerId,
-            quantity: req.body.quantity,
-            contact_Num: req.body.contact_Num,
-            shipping_address: req.body.shipping_address,
-            last_date: Date.now(),
+        {   last_date: Date.now(),
+            status: "paid"
         }, function (err, transaction) {
             if(err)
                 res.json({ message: 'Transaction NOT Found!', errmsg : err});
             else
-                res.json({ message: 'Transaction Successfully Edited!', data: transaction });
+                res.json({ message: 'Transaction Successfully Updated!', data: transaction });
         });
-}
+};
 
-router.order = (req, res) => {
+router.delivery = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     Transaction.update({ "_id": req.params.id },
@@ -76,7 +99,7 @@ router.order = (req, res) => {
             else
                 res.json({ message: 'Transaction Successfully Updated!', data: transaction });
         });
-}
+};
 
 router.ConfirmReceipt = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -90,7 +113,7 @@ router.ConfirmReceipt = (req, res) => {
             else
                 res.json({ message: 'Transaction Successfully Updated!', data: transaction });
         });
-}
+};
 
 router.findByBuyerId = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -101,7 +124,7 @@ router.findByBuyerId = (req, res) => {
         else
             res.send(JSON.stringify(transaction,null,5));
     });
-}
+};
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -112,6 +135,6 @@ router.findAll = (req, res) => {
         else
             res.send(JSON.stringify(transactions,null,5));
     });
-}
+};
 
 module.exports = router;

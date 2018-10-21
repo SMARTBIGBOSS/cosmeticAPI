@@ -40,7 +40,7 @@ router.uploadImage = (req, res) => {
             logo(null, './userLogo');
         },
         filename: function (req,file,logo) {
-            logo(null, file.originalname+'_'+ Date.now() + path.extname(file.originalname));
+            logo(null, req.params.id + '_' + Date.now() + path.extname(file.originalname));
         }
     });
     const upload = multer({

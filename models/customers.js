@@ -9,6 +9,7 @@ module.exports = customers;
 */
 
 let mongoose = require('mongoose');
+const jwt = require("jsonwebtoken");
 
 let CustomersSchema = new mongoose.Schema({
         name: {
@@ -32,5 +33,10 @@ let CustomersSchema = new mongoose.Schema({
         //img_url:
     },
     {collection: 'customers'});
+
+CustomersSchema.methods.generateAuthToken = function(){
+    let token = jwt.sign({_id: this._id}, 'JwtKey');
+    return token;
+}
 
 module.exports = mongoose.model('Customer', CustomersSchema);
