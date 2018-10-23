@@ -36,12 +36,12 @@ app.get('/cosmetics', cosmetics.findAll);
 app.get('/cosmetics/sortByLowPrice', cosmetics.sortByLowPrice);
 app.get('/cosmetics/sortByHighPrice', cosmetics.sortByHighPrice);
 app.get('/cosmetics/:name', cosmetics.findByName);
-app.get('/cosmetics/:brand', cosmetics.filterByBrand);
+app.get('/cosmetics/:name/:brand', cosmetics.filterByBrand);
 app.get('/customer/:id', auth, customers.findOne);
 app.get('/sellers', sellers.findAll);
 app.get('/seller/:id', auth, sellers.findOne);
 app.get('/transaction/:buyerId', auth, transactions.findByBuyerId);
-app.get('/transactions', transactions.findAll);
+app.get('/transactions', transactions.findAll)
 
 app.put('/cosmetics/:publisher/:id/edit', auth, cosmetics.editByID);
 app.put('/customer/:id/edit', auth, customers.editByID);
@@ -57,7 +57,7 @@ app.post('/customer/login', customers.login);//{"email" : "123456@qq.com", "pass
 app.post('/seller/signUp', sellers.register);//{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
 app.post('/seller/login', sellers.login);//{"email" : "123456@qq.com", "password": "123123"}
 app.post('/transaction/:buyerId/add/:cosmeId',auth, transactions.add);//
-app.post('/customer/:id/upload', user_images.uploadImage);
+app.post('/customer/:id/uploadLogo', auth, user_images.uploadImage);
 
 app.delete('/cosmetics/:publisher/:id/delete', auth, cosmetics.removeCosmetic);
 app.delete('/transaction/:buyerId/:id/remove', auth, transactions.remove);

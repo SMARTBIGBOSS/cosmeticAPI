@@ -1,0 +1,22 @@
+{
+  "errors": {
+    "email": {
+      "message": "Path `email` is invalid (AnqiLigmail.com).",
+      "name": "ValidatorError",
+      "properties": {
+        "message": "Path `email` is invalid (AnqiLigmail.com).",
+        "type": "regexp",
+        "regexp": {},
+        "path": "email",
+        "value": "AnqiLigmail.com"
+      },
+      "kind": "regexp",
+      "path": "email",
+      "value": "AnqiLigmail.com",
+      "$isValidatorError": true
+    }
+  },
+  "_message": "Customer validation failed",
+  "message": "Customer validation failed: email: Path `email` is invalid (AnqiLigmail.com).",
+  "name": "ValidationError"
+}

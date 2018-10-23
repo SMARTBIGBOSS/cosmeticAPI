@@ -83,25 +83,31 @@ router.findAll = (req, res) => {
 router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    // jwt.verify(req.token, 'seller', (err, authData) => {
-    //     if(err)
-    //         res.sendStatus(403);
-    //     else{
-            Seller.update({"_id": req.params.id},
-                {   name: req.body.name,
-                    email: req.body.email,
-                    password: req.body.password,
-                    description: req.body.description,
-                    //img_url:
-                },
-                function(err,seller) {
-                    if(err)
-                        res.json({ message: 'Seller NOT Edited!', errmsg : err });
-                    else
-                        res.json({ message: 'Seller Successfully Edited!', data: seller });
-                });
-    //     }
-    // });
-}
+    let seller = new Seller({
+        name: req.body.name,
+        email:  req.body.email,
+        password: bcrypt.hashSync(req.body.password),
+        description: req.body.description
+    });
+    let validate = customer.validateSync();
+
+    if(validate != null){
+        res.json(validate);
+    }else{
+        Seller.update({"_id": req.params.id},
+            {   name: seller.name,
+                email: seller.email,
+                password: seller.password,
+                description: seller.description
+                //img_url:
+            },
+            function(err,seller) {
+                if(err)
+                    res.json({ message: 'Seller NOT Edited!', errmsg : err });
+                else
+                    res.json({ message: 'Seller Successfully Edited!', data: seller });
+            });
+    }
+};
 
 module.exports = router;

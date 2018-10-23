@@ -61,21 +61,34 @@ router.signUp = (req, res) => {
 router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Customer.update({"_id": req.params.id},
-        {   name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
-            phoneNum: req.body.phoneNum,
-            address: req.body.address
-            //img_url:
-        },
-        function(err,customer) {
-        if(err)
-            res.json({ message: 'Cosmetic NOT Edited!', errmsg : err });
-        else
-            res.json({ message: 'Cosmetic Successfully Edited!', data: customer });
+    let customer = new Customer({
+        name: req.body.name,
+        email:  req.body.email,
+        phoneNum: req.body.phoneNum,
+        address: req.body.address,
+        password: bcrypt.hashSync(req.body.password)
     });
-}
+    let validate = customer.validateSync();
+
+    if(validate != null){
+        res.json(validate);
+    }else{
+        Customer.update({"_id": req.params.id},
+            {   name: customer.name,
+                email: customer.email,
+                password: customer.password,
+                phoneNum: customer.phoneNum,
+                address: customer.address
+                //img_url:
+            },
+            function(err,customer) {
+                if(err)
+                    res.json({ message: 'Cosmetic NOT Edited!', errmsg : err });
+                else
+                    res.json({ message: 'Cosmetic Successfully Edited!', data: customer });
+            });
+    }
+};
 
 router.findOne = (req, res) => {
     res.setHeader('Content-Type', 'application/json');

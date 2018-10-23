@@ -20,7 +20,7 @@ db.once('open', function () {
 router.filterByBrand = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Cosmetic.find({ "brand": req.params.brand }, function (err,cosmetics) {
+    Cosmetic.find({"name": req.params.name,"brand": req.params.brand }, function (err,cosmetics) {
         if(err)
             res.send(err);
         else

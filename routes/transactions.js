@@ -1,4 +1,5 @@
 let Transaction = require('../models/transactions');
+let Cosmetic = require('../models/cosmetics');
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -129,7 +130,7 @@ router.findByBuyerId = (req, res) => {
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.find(function (err, transactions) {
+    Transaction.find().populate({path: 'cosmeId', model: Cosmetic, select: {name: 1, price: 1}}).exec(function (err, transactions) {
         if(err)
             res.send(err);
         else
