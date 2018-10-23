@@ -63,9 +63,11 @@ Delete a cosmetic:	/cosmetics/:publisher/:id/delete	Delete
 Delivery a cosmetic:	/transaction/:id/delivery	Put
 
 Persistence approach: 
+
 Persistence in application means data still exist even though the process is finished. In this website, cosmetics are created by sellers and transactions are created by customers. Sellers and customers sign up by themselves. All information of these four objects are stored in MongoDB, a document-oriented database. When a new seller/customer/cosmetic/transaction is created, the information of it will be write into MongoDB. After, we can get the data from MongoDB by reading JSON-like documents.
 
 Developer experience approach:  
+
 I use a video to show what can the website do and using README can file to descript this website. Release Notes and Changelogs using git during the development and upload source code to my GitHub account. Using README file to descript this website.
 
 GitHub Link: https://github.com/SMARTBIGBOSS/cosmeticweb.git
