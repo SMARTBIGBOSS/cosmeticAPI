@@ -6,32 +6,58 @@ Description：There are four schemas, cosmetics, customers, sellers and transact
 Sellers and customers have sign up, sign in and upload user logo functions. They can view and edit their personal information. Customers can add cosmetics to transaction list and the status of this transaction is unpaid. Before ordering it, customers still can edit or delete their transaction. After ordering it, the status will change to paid. Sellers can change the status of transaction which is already paid to delivering status. Similarly, customers can change delivering status to finished status. This is an activity flow mimicked real online shopping. In normal case, the customer add cosmetics to buy and paid for it. Then the seller sees the paid transaction list and arrange to send cosmetics. Finally, the customer receives cosmetic they ordered and confirm receipt as the end. 
 
 Resource	URIs	HTTP Request
-List of Cosmetics	/cosmetics	Get
-Sort Cosmetics by Low Price	/cosmetics/sortByLowPrice	Get
-Sort Cosmetics by High Price	/cosmetics/sortByHighPrice	Get
-List a type of Cosmetics	/cosmetics/:name	Get
-List a type of Cosmetics by Brand	/cosmetics/:name/:brand	Get
-List of Sellers	/sellers	Get
-List of Transactions	/transactions	Get
-Sign up a Customer	/customer/signUp	Post
-Sign in a Customer	/customer/login	Post
-Upload a Customer Logo	/customer/:id/uploadLogo	Post
-Display a Customer	/customer/:id	Get
-Edit a Customer	/customer/:id/edit	Put
-Add a Transaction	/transaction/:buyerId/add/:cosmeId	Post
-List of a Customer’s Transactions	/transaction/:buyerId	Get
-Delete a Transaction	/transaction/:buyerId/:id/remove	Delete
-Edit a Transaction	/transaction/:buyerId/:id/edit	Put
-Summit a Transaction	/transaction/:id/order	Put
-Confirm Receipt of a transaction	/transaction/:id/confirmReceipt	Put
-Sign up a Seller	/seller/signUp	Post
-Sign in a Seller	/seller/login	Post
-Display a Seller	/seller/:id	Get
-Edit a Seller	/seller/:id/edit	Put
-Add a cosmetic	/cosmetics/:publisher/add	Post
-Edit a cosmetic	/cosmetics/:publisher/:id/edit	Put
-Delete a cosmetic	/cosmetics/:publisher/:id/delete	Delete
-Delivery a cosmetic	/transaction/:id/delivery	Put
+
+List of Cosmetics：	/cosmetics	Get
+
+Sort Cosmetics by Low Price：	/cosmetics/sortByLowPrice	Get
+
+Sort Cosmetics by High Price：	/cosmetics/sortByHighPrice	Get
+
+List a type of Cosmetics：	/cosmetics/:name	Get
+
+List a type of Cosmetics by Brand：	/cosmetics/:name/:brand	Get
+
+List of Sellers	/sellers：	Get
+
+List of Transactions：	/transactions	Get
+
+Sign up a Customer：	/customer/signUp	Post
+
+Sign in a Customer：	/customer/login	Post
+
+Upload a Customer Logo：	/customer/:id/uploadLogo	Post
+
+Display a Customer：	/customer/:id	Get
+
+Edit a Customer：	/customer/:id/edit	Put
+
+Add a Transaction：	/transaction/:buyerId/add/:cosmeId	Post
+
+List of a Customer’s Transactions：	/transaction/:buyerId	Get
+
+Delete a Transaction：	/transaction/:buyerId/:id/remove	Delete
+
+Edit a Transaction：	/transaction/:buyerId/:id/edit	Put
+
+Summit a Transaction：	/transaction/:id/order	Put
+
+Confirm Receipt of a transaction：	/transaction/:id/confirmReceipt	Put
+
+Sign up a Seller：	/seller/signUp	Post
+
+Sign in a Seller：	/seller/login	Post
+
+Display a Seller：	/seller/:id	Get
+
+Edit a Seller：	/seller/:id/edit	Put
+
+Add a cosmetic：	/cosmetics/:publisher/add	Post
+
+Edit a cosmetic：	/cosmetics/:publisher/:id/edit	Put
+
+Delete a cosmetic:	/cosmetics/:publisher/:id/delete	Delete
+
+Delivery a cosmetic:	/transaction/:id/delivery	Put
 
 Persistence approach: persistence in application means data still exist even though the process is finished. In this website, cosmetics are created by sellers and transactions are created by customers. Sellers and customers sign up by themselves. All information of these four objects are stored in MongoDB, a document-oriented database. When a new seller/customer/cosmetic/transaction is created, the information of it will be write into MongoDB. After, we can get the data from MongoDB by reading JSON-like documents.
 
