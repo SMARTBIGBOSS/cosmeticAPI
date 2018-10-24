@@ -8,58 +8,32 @@ Sellers and customers have sign up, sign in and upload user logo functions. They
 
 ## Resource,	URIs,	HTTP Request
 
-List of Cosmetics：	/cosmetics	Get
-
-Sort Cosmetics by Low Price：	/cosmetics/sortByLowPrice	Get
-
-Sort Cosmetics by High Price：	/cosmetics/sortByHighPrice	Get
-
-List a type of Cosmetics：	/cosmetics/:name	Get
-
-List a type of Cosmetics by Brand：	/cosmetics/:name/:brand	Get
-
-List of Sellers:	/sellers	Get
-
-List of Transactions：	/transactions	Get
-
-List Sales of Cosmetics:	/transactions/countSales	Get
-
-Sign up a Customer：	/customer/signUp	Post
-
-Sign in a Customer：	/customer/login	Post
-
-Upload a Customer Logo：	/customer/:id/uploadLogo	Post
-
-Display a Customer：	/customer/:id	Get
-
-Edit a Customer：	/customer/:id/edit	Put
-
-Add a Transaction：	/transaction/:buyerId/add/:cosmeId	Post
-
-List of a Customer’s Transactions：	/transaction/:buyerId	Get
-
-Delete a Transaction：	/transaction/:buyerId/:id/remove	Delete
-
-Edit a Transaction：	/transaction/:buyerId/:id/edit	Put
-
-Summit a Transaction：	/transaction/:id/order	Put
-
-Confirm Receipt of a transaction：	/transaction/:id/confirmReceipt	Put
-
-Sign up a Seller：	/seller/signUp	Post
-
-Sign in a Seller：	/seller/login	Post
-
-Display a Seller：	/seller/:id	Get
-
-Edit a Seller：	/seller/:id/edit	Put
-
-Add a cosmetic：	/cosmetics/:publisher/add	Post
-
-Edit a cosmetic：	/cosmetics/:publisher/:id/edit	Put
-
-Delete a cosmetic:	/cosmetics/:publisher/:id/delete	Delete
-
+List of Cosmetics：	/cosmetics	Get  
+Sort Cosmetics by Low Price：	/cosmetics/sortByLowPrice	Get  
+Sort Cosmetics by High Price：	/cosmetics/sortByHighPrice	Get  
+List a type of Cosmetics：	/cosmetics/:name	Get  
+List a type of Cosmetics by Brand：	/cosmetics/:name/:brand	Get  
+List of Sellers:	/sellers	Get  
+List of Transactions：	/transactions	Get  
+List Sales of Cosmetics:	/transactions/countSales	Get  
+Sign up a Customer：	/customer/signUp	Post  
+Sign in a Customer：	/customer/login	Post  
+Upload a Customer Logo：	/customer/:id/uploadLogo	Post  
+Display a Customer：	/customer/:id	Get  
+Edit a Customer：	/customer/:id/edit	Put  
+Add a Transaction：	/transaction/:buyerId/add/:cosmeId	Post  
+List of a Customer’s Transactions：	/transaction/:buyerId	Get  
+Delete a Transaction：	/transaction/:buyerId/:id/remove	Delete  
+Edit a Transaction：	/transaction/:buyerId/:id/edit	Put  
+Summit a Transaction：	/transaction/:id/order	Put  
+Confirm Receipt of a transaction：	/transaction/:id/confirmReceipt	Put  
+Sign up a Seller：	/seller/signUp	Post  
+Sign in a Seller：	/seller/login	Post  
+Display a Seller：	/seller/:id	Get  
+Edit a Seller：	/seller/:id/edit	Put  
+Add a cosmetic：	/cosmetics/:publisher/add	Post  
+Edit a cosmetic：	/cosmetics/:publisher/:id/edit	Put  
+Delete a cosmetic:	/cosmetics/:publisher/:id/delete	Delete  
 Delivery a cosmetic:	/transaction/:id/delivery	Put
 
 ## Persistence approach: 
@@ -72,20 +46,20 @@ I use a video to show what can the website do and using README can file to descr
 https://github.com/SMARTBIGBOSS/cosmeticweb.git
 
 ## Reference:
-https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Express_Nodejs/mongoose
-https://mongoosejs.com/docs/schematypes.html
-https://segmentfault.com/a/1190000008245062
-http://www.jsdaxue.com/archives/40.html
-https://blog.csdn.net/little_blue_ljy/article/details/78252911
-https://www.cnblogs.com/fangyuan303687320/p/5606790.html
-https://blog.csdn.net/qwe502763576/article/details/79659548
-https://www.youtube.com/watch?v=srPXMt1Q0nY
-https://www.youtube.com/watch?v=9Qzmri1WaaE
-https://www.youtube.com/watch?v=Q-BpqyOT3a8
-https://www.youtube.com/watch?v=9_lKMTXVk64
-https://www.youtube.com/watch?v=7nafaH9SddU
-https://www.youtube.com/watch?v=Zaz1IcFLd2g
-https://www.datastax.com/dev/blog/what-persistence-and-why-does-it-matter
-https://hackernoon.com/the-best-practices-for-a-great-developer-experience-dx-9036834382b0
-https://mongoose.shujuwajue.com/guide/validation.html
-https://stackoverflow.com/questions/32789053/populate-aggregate-in-mongoose/32794531
+https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Express_Nodejs/mongoose  
+https://mongoosejs.com/docs/schematypes.html  
+https://segmentfault.com/a/1190000008245062  
+http://www.jsdaxue.com/archives/40.html  
+https://blog.csdn.net/little_blue_ljy/article/details/78252911  
+https://www.cnblogs.com/fangyuan303687320/p/5606790.html  
+https://blog.csdn.net/qwe502763576/article/details/79659548  
+https://www.youtube.com/watch?v=srPXMt1Q0nY  
+https://www.youtube.com/watch?v=9Qzmri1WaaE  
+https://www.youtube.com/watch?v=Q-BpqyOT3a8  
+https://www.youtube.com/watch?v=9_lKMTXVk64  
+https://www.youtube.com/watch?v=7nafaH9SddU  
+https://www.youtube.com/watch?v=Zaz1IcFLd2g  
+https://www.datastax.com/dev/blog/what-persistence-and-why-does-it-matter  
+https://hackernoon.com/the-best-practices-for-a-great-developer-experience-dx-9036834382b0  
+https://mongoose.shujuwajue.com/guide/validation.html  
+https://stackoverflow.com/questions/32789053/populate-aggregate-in-mongoose/32794531 
