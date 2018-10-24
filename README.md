@@ -68,7 +68,8 @@ Persistence in application means data still exist even though the process is fin
 ## Developer experience approach:  
 I use a video to show what can the website do and using README can file to descript this website. Release Notes and Changelogs using git during the development and upload source code to my GitHub account. Using README file to descript this website.
 
-## GitHub Link: https://github.com/SMARTBIGBOSS/cosmeticweb.git
+## GitHub Link: 
+https://github.com/SMARTBIGBOSS/cosmeticweb.git
 
 ## Reference:
 https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Express_Nodejs/mongoose
