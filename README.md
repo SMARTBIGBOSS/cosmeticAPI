@@ -1,14 +1,12 @@
 # cosmeticweb
 a website of selling cosmetics 
 
-Description：
-
+## Description：
 There are four schemas, cosmetics, customers, sellers and transactions. It can access all of the cosmetics from the database and sort them by low price or high price. It can also display a special type of cosmetics by full name or substring of name and filet them by brand. Cosmetics can be added, edited and deleted by sellers, but only can be ordered by customers.
 
 Sellers and customers have sign up, sign in and upload user logo functions. They can view and edit their personal information. Customers can add cosmetics to transaction list and the status of this transaction is unpaid. Before ordering it, customers still can edit or delete their transaction. After ordering it, the status will change to paid. Sellers can change the status of transaction which is already paid to delivering status. Similarly, customers can change delivering status to finished status. This is an activity flow mimicked real online shopping. In normal case, the customer add cosmetics to buy and paid for it. Then the seller sees the paid transaction list and arrange to send cosmetics. Finally, the customer receives cosmetic they ordered and confirm receipt as the end. 
 
-
-Resource	URIs	HTTP Request
+## Resource,	URIs,	HTTP Request
 
 List of Cosmetics：	/cosmetics	Get
 
@@ -20,9 +18,11 @@ List a type of Cosmetics：	/cosmetics/:name	Get
 
 List a type of Cosmetics by Brand：	/cosmetics/:name/:brand	Get
 
-List of Sellers	/sellers：	Get
+List of Sellers:	/sellers	Get
 
 List of Transactions：	/transactions	Get
+
+List Sales of Cosmetics:	/transactions/countSales	Get
 
 Sign up a Customer：	/customer/signUp	Post
 
@@ -62,18 +62,15 @@ Delete a cosmetic:	/cosmetics/:publisher/:id/delete	Delete
 
 Delivery a cosmetic:	/transaction/:id/delivery	Put
 
-Persistence approach: 
-
+## Persistence approach: 
 Persistence in application means data still exist even though the process is finished. In this website, cosmetics are created by sellers and transactions are created by customers. Sellers and customers sign up by themselves. All information of these four objects are stored in MongoDB, a document-oriented database. When a new seller/customer/cosmetic/transaction is created, the information of it will be write into MongoDB. After, we can get the data from MongoDB by reading JSON-like documents.
 
-Developer experience approach:  
-
+## Developer experience approach:  
 I use a video to show what can the website do and using README can file to descript this website. Release Notes and Changelogs using git during the development and upload source code to my GitHub account. Using README file to descript this website.
 
-GitHub Link: https://github.com/SMARTBIGBOSS/cosmeticweb.git
+## GitHub Link: https://github.com/SMARTBIGBOSS/cosmeticweb.git
 
-Reference:
-
+## Reference:
 https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Express_Nodejs/mongoose
 https://mongoosejs.com/docs/schematypes.html
 https://segmentfault.com/a/1190000008245062
@@ -87,3 +84,7 @@ https://www.youtube.com/watch?v=Q-BpqyOT3a8
 https://www.youtube.com/watch?v=9_lKMTXVk64
 https://www.youtube.com/watch?v=7nafaH9SddU
 https://www.youtube.com/watch?v=Zaz1IcFLd2g
+https://www.datastax.com/dev/blog/what-persistence-and-why-does-it-matter
+https://hackernoon.com/the-best-practices-for-a-great-developer-experience-dx-9036834382b0
+https://mongoose.shujuwajue.com/guide/validation.html
+https://stackoverflow.com/questions/32789053/populate-aggregate-in-mongoose/32794531
