@@ -1,0 +1,15 @@
+{
+  "operationTime": "6615989565746315265",
+  "ok": 0,
+  "errmsg": "The field 'cosmeId' must be an accumulator object",
+  "code": 40234,
+  "codeName": "Location40234",
+  "$clusterTime": {
+    "clusterTime": "6615989565746315265",
+    "signature": {
+      "hash": "k+BEig797PbxWMy39puBDX3zl90=",
+      "keyId": "6580405645734838274"
+    }
+  },
+  "name": "MongoError"
+}

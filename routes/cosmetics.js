@@ -45,7 +45,7 @@ function escapeRegex(str){
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    console.log(req.query.name);
+    //console.log(req.query.name);
     if(req.query.name){
         const regex = new RegExp(escapeRegex(req.query.name), 'gi')
         Cosmetic.find({name: regex}, function (err, cosmetics) {

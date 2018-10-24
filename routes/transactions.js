@@ -1,5 +1,6 @@
 let Transaction = require('../models/transactions');
 let Cosmetic = require('../models/cosmetics');
+let Customer = require('../models/customers');
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -52,7 +53,7 @@ router.remove = (req, res) => {
 router.edit = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.findOne(req.params.id, function (err, transaction) {
+    Transaction.findOne({_id:req.params.id}, function (err, transaction) {
         if(err)
             res.json({ message: 'Transaction NOT Found!', errmsg : err});
         else if (transaction.status != "unpaid")
@@ -130,12 +131,43 @@ router.findByBuyerId = (req, res) => {
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.find().populate({path: 'cosmeId', model: Cosmetic, select: {name: 1, price: 1}}).exec(function (err, transactions) {
+    let opts = [
+        {path: 'cosmeId', model: Cosmetic, select: {name: 1, price: 1}},
+        {path: 'buyerId', model: Customer, select: {name: 1}}
+    ];
+
+    Transaction.find().populate(opts).exec(function (err, transactions) {
         if(err)
             res.send(err);
         else
             res.send(JSON.stringify(transactions,null,5));
     });
 };
+
+router.countSales = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+
+    let rel = [
+        {path: '_id', select: {name: 1, publisher: 1}}
+    ];
+    let opts = [
+        { $group: { _id:"$cosmeId", total_sales: {$sum: "$quantity"}}}
+    ];
+
+    Transaction.aggregate(opts).exec(function (err, transactions) {
+        if(err)
+            res.send(err);
+        else {
+            Cosmetic.populate(transactions, rel, function (err, result) {
+                res.send(JSON.stringify(result, null, 5));
+
+            });
+        }
+    });
+};
+
+
+
+
 
 module.exports = router;

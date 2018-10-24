@@ -41,7 +41,8 @@ app.get('/customer/:id', auth, customers.findOne);
 app.get('/sellers', sellers.findAll);
 app.get('/seller/:id', auth, sellers.findOne);
 app.get('/transaction/:buyerId', auth, transactions.findByBuyerId);
-app.get('/transactions', transactions.findAll)
+app.get('/transactions', transactions.findAll);
+app.get('/transactions/countSales', transactions.countSales);
 
 app.put('/cosmetics/:publisher/:id/edit', auth, cosmetics.editByID);
 app.put('/customer/:id/edit', auth, customers.editByID);

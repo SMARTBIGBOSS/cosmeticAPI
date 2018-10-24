@@ -22,9 +22,6 @@ router.login = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     Customer.findOne({email: req.body.email},function (err, customer) {
-        console.log(customer);
-        console.log(customer.password);
-        console.log(req.body.password);
         if(!customer)
             res.json({ message: 'Customer NOT Login!', errmsg : err });
         else{

@@ -89,7 +89,7 @@ router.editByID = (req, res) => {
         password: bcrypt.hashSync(req.body.password),
         description: req.body.description
     });
-    let validate = customer.validateSync();
+    let validate = seller.validateSync();
 
     if(validate != null){
         res.json(validate);

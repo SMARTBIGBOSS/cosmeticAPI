@@ -1,545 +1,440 @@
-PUT http://localhost:3000/customer/5bcf27844c2cd018f04ca377/edit?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNmMjc4NDRjMmNkMDE4ZjA0Y2EzNzciLCJpYXQiOjE1NDAzMDI3NzJ9.rl02b0fg4dGMWE9X1Vws1M9XvuHvljoM70fQg3LkQVs
 
-{"name" : "Angel","email" : "AnqiLigmail.com", "password": "321321", "phoneNum" : "000", "address":"WIT"}
-
-<> 2018-10-23T030426.200.json
+<> 2018-10-24T075649.200.json
 
 ###
 
-PUT http://localhost:3000/customer/5bcf27844c2cd018f04ca377/edit?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNmMjc4NDRjMmNkMDE4ZjA0Y2EzNzciLCJpYXQiOjE1NDAzMDI3NzJ9.rl02b0fg4dGMWE9X1Vws1M9XvuHvljoM70fQg3LkQVs
 
-{"name" : "Angel","email" : "AnqiLigmail.com", "password": "321321", "phoneNum" : "000", "address":"WIT"}
-
-<> 2018-10-23T025517.200.json
+<> 2018-10-24T075554.200.json
 
 ###
 
-PUT http://localhost:3000/customer/5bcf27844c2cd018f04ca377/edit?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNmMjc4NDRjMmNkMDE4ZjA0Y2EzNzciLCJpYXQiOjE1NDAzMDI3NzJ9.rl02b0fg4dGMWE9X1Vws1M9XvuHvljoM70fQg3LkQVs
 
-{"name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "000", "address":"WIT"}
-
-<> 2018-10-23T025456.200.json
+<> 2018-10-24T075233.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token:
 
-{"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-23T025252.200.json
+<> 2018-10-24T072903.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token:
 
-{,"email" : "AnqiLi@gmail.com", "password": "321321"}
-
-<> 2018-10-23T025241.400.html
+<> 2018-10-24T072547.200.json
 
 ###
 
-POST http://localhost:3000/customer/signUp?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token:
 
-{"name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-
-<> 2018-10-23T025206.200.json
+<> 2018-10-24T072546.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token:
 
-"email" : "AnqiLi@qq.com", "password": "321321"
-
-<> 2018-10-23T024854.400.html
+<> 2018-10-24T072514.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmM0YmJlOThlZDM1ZTFjYjQ3ZWU2MGMiLCJpYXQiOjE1NDAzMDIxOTZ9.pZP4nJuxQOSwRx3TD1wcnxfAz-DPrSMcPSgcXXm0o6g
 
-"email" : "AnqiLi@qq.com", "password": "321321"
-
-<> 2018-10-23T024827.400.html
+<> 2018-10-24T072415.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmM0YmJlOThlZDM1ZTFjYjQ3ZWU2MGMiLCJpYXQiOjE1NDAzMDIxOTZ9.pZP4nJuxQOSwRx3TD1wcnxfAz-DPrSMcPSgcXXm0o6g
 
-{"email" : "AnqiLi@qq.com", "password": "321321"}
+<> 2018-10-24T072241.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmM0YmJlOThlZDM1ZTFjYjQ3ZWU2MGMiLCJpYXQiOjE1NDAzMDIxOTZ9.pZP4nJuxQOSwRx3TD1wcnxfAz-DPrSMcPSgcXXm0o6g
 
-{"email" : "AnqiLi@qq.com", "password": "123123"}
+<> 2018-10-24T072138.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmM0YmJlOThlZDM1ZTFjYjQ3ZWU2MGMiLCJpYXQiOjE1NDAzMDIxOTZ9.pZP4nJuxQOSwRx3TD1wcnxfAz-DPrSMcPSgcXXm0o6g
 
-{"email" : "AnqiLi@qq.com", "password": "123123"}
+<> 2018-10-24T072045.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmM0YmJlOThlZDM1ZTFjYjQ3ZWU2MGMiLCJpYXQiOjE1NDAzMDIxOTZ9.pZP4nJuxQOSwRx3TD1wcnxfAz-DPrSMcPSgcXXm0o6g
 
-{"email" : "AnqiLi@qq.com", "password": "123123"}
+<> 2018-10-24T072043.200.json
 
 ###
 
-GET http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmM0YmJlOThlZDM1ZTFjYjQ3ZWU2MGMiLCJpYXQiOjE1NDAzMDIxOTZ9.pZP4nJuxQOSwRx3TD1wcnxfAz-DPrSMcPSgcXXm0o6g
 
-{"email" : "AnqiLi@qq.com", "password": "123123"}
-
-<> 2018-10-23T024456.200.json
+<> 2018-10-24T071937.200.json
 
 ###
 
-GET http://localhost:3000/customer/5bc4bbe98ed35e1cb47ee60c?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmM0YmJlOThlZDM1ZTFjYjQ3ZWU2MGMiLCJpYXQiOjE1NDAzMDIxOTZ9.pZP4nJuxQOSwRx3TD1wcnxfAz-DPrSMcPSgcXXm0o6g
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-23T024400.200.json
+<> 2018-10-24T071916.200.json
 
 ###
 
-POST http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-23T024316.200.json
+<> 2018-10-24T071703.200.json
 
 ###
 
-GET http://localhost:3000/customer/login?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
-
-<> 2018-10-23T024246.400.html
 
 ###
 
-GET http://localhost:3000/customer/5bceec21516da00e9c6f0db9?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
-
-<> 2018-10-23T024229.400.html
 
 ###
 
-GET http://localhost:3000/transactions?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-22T125802.200.json
+<> 2018-10-24T045129.500.json
 
 ###
 
-GET http://localhost:3000/transactions?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-22T125722.500.json
+<> 2018-10-24T044520.500.json
 
 ###
 
-GET http://localhost:3000/transactions?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-22T125619.500.json
+<> 2018-10-24T042943.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Eyeliner/Maybelline?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T113243.404.html
+<> 2018-10-24T041548.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Maybelline?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T113113.200.json
+<> 2018-10-24T041110.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Maybelline?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T113040.200.json
+<> 2018-10-24T041053.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Eyeliner/Maybelline?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T113008.200.json
+<> 2018-10-24T041017.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Eyeliner?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T112940.200.json
+<> 2018-10-24T040723.500.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Ponds?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T112813.200.json
+<> 2018-10-24T035855.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Ponds?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T112733.200.json
+<> 2018-10-24T035737.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Ponds?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T112513.200.json
+<> 2018-10-24T011939.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T112425.200.json
+<> 2018-10-24T011856.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics/Maybelline?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T112310.200.json
+<> 2018-10-24T011351.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics?name=loose
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T110003.200.json
+<> 2018-10-24T011138.200.json
 
 ###
 
-GET http://localhost:3000/cosmetics?name=l
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
 
-<> 2018-10-21T105947.200.json
+<> 2018-10-24T010956.200.json
 
 ###
 
-POST http://localhost:3000/seller/5bcca008e8b34925acd4767b/edit
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
-
-{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
-
-<> 2018-10-21T045730.404.html
 
 ###
 
-POST http://localhost:3000/seller/5bcca008e8b34925acd4767b/edit
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmNjYTAwOGU4YjM0OTI1YWNkNDc2N2IiLCJpYXQiOjE1NDAxMzcwMjF9.rNML2lX8Kad-sl1WNR6KeENsSuphcFfYU0JkFXf7uXU
-
-{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
-
-<> 2018-10-21T045109.404.html
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token:
-
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T045021.200.json
 
 ###
 
-POST http://localhost:3000/seller/slogin
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token:
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T045014.404.html
+<> 2018-10-24T121729.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
-x-auth-token:
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T044929.200.json
+<> 2018-10-24T121553.200.json
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@gmail.com", "password": "123456"}
-
-<> 2018-10-21T044745.200.json
+<> 2018-10-24T105746.200.json
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T044639.200.json
+<> 2018-10-24T105531.200.json
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T044612.200.json
+<> 2018-10-24T105522.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T043435.200.json
+<> 2018-10-24T105421.200.json
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transaction/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456qq.com", "password": "123123"}
-
-<> 2018-10-21T043340.200.json
+<> 2018-10-24T105401.401.html
 
 ###
 
-POST http://localhost:3000/seller/signUp
+GET http://localhost:3000/transaction/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T043321.200.json
+<> 2018-10-24T105137.401.html
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transaction/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T113215.200.json
+<> 2018-10-24T105136.401.html
 
 ###
 
-PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit
+GET http://localhost:3000/transaction/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T110228.401.html
+<> 2018-10-24T105135.401.html
 
 ###
 
-PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit
+GET http://localhost:3000/transaction/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T110217.500.html
+<> 2018-10-24T104952.401.html
 
 ###
 
-PUT http://localhost:3000/seller/5bc3ccab055de81f884b18cf/edit
+POST http://localhost:3000/transaction/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T110136.500.html
+<> 2018-10-24T104947.404.html
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transaction/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T104141.200.json
+<> 2018-10-24T104926.401.html
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transaction/countSales
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T103156.200.json
+<> 2018-10-24T104922.401.html
 
 ###
 
-POST http://localhost:3000/seller/login
+GET http://localhost:3000/transactions
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email" : "123456@qq.com", "password": "123123"}
-
-<> 2018-10-21T102805.200.json
+<> 2018-10-24T104856.200.json
 
 ###
 
