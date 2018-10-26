@@ -35,7 +35,7 @@ let CustomersSchema = new mongoose.Schema({
     {collection: 'customers'});
 
 CustomersSchema.methods.generateAuthToken = function(){
-    let token = jwt.sign({_id: this._id}, 'JwtKey');
+    let token = jwt.sign({_id: this._id}, 'customerJwtKey');
     return token;
 }
 

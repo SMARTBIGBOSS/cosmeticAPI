@@ -44,7 +44,7 @@ let SellersSchema = new mongoose.Schema({
 // }
 
 SellersSchema.methods.generateAuthToken = function(){
-    let token = jwt.sign({_id: this._id}, 'JwtKey');
+    let token = jwt.sign({_id: this._id}, 'sellerJwtKey');
     return token;
 }
 

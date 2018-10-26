@@ -56,8 +56,9 @@ app.post('/customer/signUp', customers.signUp);
 app.post('/customer/login', customers.login);
 app.post('/seller/signUp', sellers.register);
 app.post('/seller/login', sellers.login);
-app.post('/transaction/:buyerId/add/:cosmeId',auth.authCustomer, transactions.add);//
+app.post('/transaction/:buyerId/add/:cosmeId',auth.authCustomer, transactions.add);
 app.post('/customer/:id/uploadLogo', auth.authCustomer, user_images.uploadImage);
+app.post('/seller/:id/uploadLogo', auth.authSeller, user_images.uploadImage);
 
 app.delete('/cosmetics/:publisher/:id/delete', auth.authSeller, cosmetics.removeCosmetic);
 app.delete('/transaction/:buyerId/:id/remove', auth.authCustomer, transactions.remove);
