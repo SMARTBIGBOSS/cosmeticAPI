@@ -45,7 +45,7 @@ I use a video to show what can the website do and using README can file to descr
 ## GitHub Link: 
 https://github.com/SMARTBIGBOSS/cosmeticweb.git
 
-##YouTube Link:  
+## YouTube Link: 
 https://youtu.be/dGCIWkdBgCk
 
 ## Reference:
