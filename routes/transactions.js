@@ -78,49 +78,80 @@ router.edit = (req, res) => {
 router.order = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.update({ "_id": req.params.id },
-        {   last_date: Date.now(),
-            status: "paid"
-        }, function (err, transaction) {
-            if(err)
-                res.json({ message: 'Transaction NOT Found!', errmsg : err});
-            else
-                res.json({ message: 'Transaction Successfully Updated!', data: transaction });
-        });
+    Transaction.findOne({_id:req.params.id}, function (err, transaction) {
+        if (err)
+            res.json({message: 'Transaction NOT Found!', errmsg: err});
+        else if (transaction.status != "unpaid")
+            res.json({message: 'Transaction Already Ordered!', errmsg: err});
+        else {
+            Transaction.update({"_id": req.params.id},
+                {
+                    last_date: Date.now(),
+                    status: "paid"
+                }, function (err, transaction) {
+                    if (err)
+                        res.json({message: 'Transaction NOT Found!', errmsg: err});
+                    else
+                        res.json({message: 'Transaction Successfully Updated!', data: transaction});
+                });
+        }
+    });
 };
 
 router.delivery = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.update({ "_id": req.params.id },
-        {   last_date: Date.now(),
-            status: "delivering"
-        }, function (err, transaction) {
-            if(err)
-                res.json({ message: 'Transaction NOT Found!', errmsg : err});
-            else
-                res.json({ message: 'Transaction Successfully Updated!', data: transaction });
-        });
+    Transaction.findOne({_id:req.params.id}, function (err, transaction) {
+        if(err)
+            res.json({ message: 'Transaction NOT Found!', errmsg : err});
+        else if(transaction.status == "paid"){
+            Transaction.update({"_id": req.params.id},
+                {
+                    last_date: Date.now(),
+                    status: "delivering"
+                }, function (err, transaction) {
+                    if (err)
+                        res.json({message: 'Transaction NOT Found!', errmsg: err});
+                    else
+                        res.json({message: 'Transaction Successfully Updated!', data: transaction});
+                });
+        }
+        else
+            res.json({ message: 'Transaction Cannot Edit!', errmsg : err});
+    });
 };
 
 router.ConfirmReceipt = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.update({ "_id": req.params.id },
-        {   last_date: Date.now(),
-            status: "finished"
-        }, function (err, transaction) {
-            if(err)
-                res.json({ message: 'Transaction NOT Found!', errmsg : err});
-            else
-                res.json({ message: 'Transaction Successfully Updated!', data: transaction });
-        });
+    Transaction.findOne({_id:req.params.id}, function (err, transaction) {
+        if (err)
+            res.json({message: 'Transaction NOT Found!', errmsg: err});
+        else if (transaction.status == "delivering") {
+            Transaction.update({"_id": req.params.id},
+                {
+                    last_date: Date.now(),
+                    status: "finished"
+                }, function (err, transaction) {
+                    if (err)
+                        res.json({message: 'Transaction NOT Found!', errmsg: err});
+                    else
+                        res.json({message: 'Transaction Successfully Updated!', data: transaction});
+                });
+        }
+        else
+            res.json({message: 'Transaction Cannot Edit!', errmsg: err});
+    });
 };
 
 router.findByBuyerId = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.find({"buyerId": req.params.buyerId }, function (err,transaction) {
+    let opts = [
+        {path: 'cosmeId', model: Cosmetic, select: {name: 1, price: 1}}
+     ];
+
+    Transaction.find().populate(opts).exec({"buyerId": req.params.buyerId }, function (err,transaction) {
         if(err)
             res.send(err);
         else

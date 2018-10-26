@@ -28,7 +28,7 @@ router.login = (req, res) => {
             if(bcrypt.compareSync(req.body.password,customer.password)){
                 let token = customer.generateAuthToken();
                 res.header('x-auth-token',token);
-                res.json({ message: 'Cosmetic Successfully Login', data: customer });
+                res.json({ message: 'Customer Successfully Login', data: customer });
             }
             else
                 res.json({ message: 'Email Address or Password Incorrect!', errmsg : err });

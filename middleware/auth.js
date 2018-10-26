@@ -1,12 +1,12 @@
 const jwt = require("jsonwebtoken");
 
-function auth(req, res, next){
+function authSeller(req, res, next){
     let token = req.header('x-auth-token');
     if(!token)
         return res.status(401).send('Access denied. No Token Provided!');
     else{
         try{
-            let decoded = jwt.verify(token, 'JwtKey');
+            let decoded = jwt.verify(token, 'sellerJwtKey');
             req.seller = decoded;
             next();
         }
@@ -14,6 +14,23 @@ function auth(req, res, next){
             res.status(400).send('Invalid token!');
         }
     }
-}
+};
 
-module.exports = auth;
+function authCustomer(req, res, next){
+    let token = req.header('x-auth-token');
+    if(!token)
+        return res.status(401).send('Access denied. No Token Provided!');
+    else{
+        try{
+            let decoded = jwt.verify(token, 'customerJwtKey');
+            req.customer = decoded;
+            next();
+        }
+        catch (e) {
+            res.status(400).send('Invalid token!');
+        }
+    }
+};
+
+module.exports.authSeller = authSeller;
+module.exports.authCustomer = authCustomer;

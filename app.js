@@ -30,38 +30,37 @@ app.use(express.static('./userLogo'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-//app.get('/uploadImage',function(req,res){ res.render('uploadImage')});
 
 app.get('/cosmetics', cosmetics.findAll);
 app.get('/cosmetics/sortByLowPrice', cosmetics.sortByLowPrice);
 app.get('/cosmetics/sortByHighPrice', cosmetics.sortByHighPrice);
 app.get('/cosmetics/:name', cosmetics.findByName);
 app.get('/cosmetics/:name/:brand', cosmetics.filterByBrand);
-app.get('/customer/:id', auth, customers.findOne);
+app.get('/customer/:id', auth.authCustomer, customers.findOne);
 app.get('/sellers', sellers.findAll);
-app.get('/seller/:id', auth, sellers.findOne);
-app.get('/transaction/:buyerId', auth, transactions.findByBuyerId);
+app.get('/seller/:id', auth.authSeller, sellers.findOne);
+app.get('/transaction/:buyerId', auth.authCustomer, transactions.findByBuyerId);
 app.get('/transactions', transactions.findAll);
 app.get('/transactions/countSales', transactions.countSales);
 
-app.put('/cosmetics/:publisher/:id/edit', auth, cosmetics.editByID);
-app.put('/customer/:id/edit', auth, customers.editByID);
-app.put('/seller/:id/edit', auth, sellers.editByID);//{"name": "AnqiLi","email":"123456@qq.com","password":"123123","description":"test"}
-app.put('/transaction/:buyerId/:id/edit', auth, transactions.edit);//{"quantity":3}
-app.put('/transaction/:id/order', auth, transactions.order);
-app.put('/transaction/:id/delivery', auth, transactions.delivery);
-app.put('/transaction/:id/confirmReceipt', auth, transactions.ConfirmReceipt);
+app.put('/cosmetics/:publisher/:id/edit', auth.authSeller, cosmetics.editByID);
+app.put('/customer/:id/edit', auth.authCustomer, customers.editByID);
+app.put('/seller/:id/edit', auth.authSeller, sellers.editByID);
+app.put('/transaction/:buyerId/:id/edit', auth.authCustomer, transactions.edit);
+app.put('/transaction/:id/order', auth.authCustomer, transactions.order);
+app.put('/transaction/:id/delivery', auth.authSeller, transactions.delivery);
+app.put('/transaction/:id/confirmReceipt', auth.authCustomer, transactions.ConfirmReceipt);
 
-app.post('/cosmetics/:publisher/add', auth, cosmetics.addCosmetic);
-app.post('/customer/signUp', customers.signUp);//{"name" : "Angel","email" : "AnqiLi@gmail.com", "password": "321321", "phoneNum" : "", "address":""}
-app.post('/customer/login', customers.login);//{"email" : "123456@qq.com", "password": "123123"}
-app.post('/seller/signUp', sellers.register);//{"name":"AnqiLi","email" : "123456@qq.com", "password": "123123"}
-app.post('/seller/login', sellers.login);//{"email" : "123456@qq.com", "password": "123123"}
-app.post('/transaction/:buyerId/add/:cosmeId',auth, transactions.add);//
-app.post('/customer/:id/uploadLogo', auth, user_images.uploadImage);
+app.post('/cosmetics/:publisher/add', auth.authSeller, cosmetics.addCosmetic);
+app.post('/customer/signUp', customers.signUp);
+app.post('/customer/login', customers.login);
+app.post('/seller/signUp', sellers.register);
+app.post('/seller/login', sellers.login);
+app.post('/transaction/:buyerId/add/:cosmeId',auth.authCustomer, transactions.add);//
+app.post('/customer/:id/uploadLogo', auth.authCustomer, user_images.uploadImage);
 
-app.delete('/cosmetics/:publisher/:id/delete', auth, cosmetics.removeCosmetic);
-app.delete('/transaction/:buyerId/:id/remove', auth, transactions.remove);
+app.delete('/cosmetics/:publisher/:id/delete', auth.authSeller, cosmetics.removeCosmetic);
+app.delete('/transaction/:buyerId/:id/remove', auth.authCustomer, transactions.remove);
 
 
 // catch 404 and forward to error handler
