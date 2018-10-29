@@ -125,4 +125,35 @@ describe('Sellers', function (){
             });
         });
     });
+
+    describe('Post /seller/signUp', () => {
+        it('should return a message and create a new seller', function (done) {
+            let seller = {
+                "sellerId": "2002",
+                "name": "New Seller",
+                "email": "NewSeller@gmail.com",
+                "password": "123456",
+                "description": "Create a new seller"
+            };
+            chai.request(server).post('/seller/signUp').send(seller).end(function (err, res) {
+                expect(res).to.have.status(200);
+                expect(res.body).to.be.a('object');
+                expect(res.body).to.have.property('message').equal('seller Successfully Sign Up');
+                done();
+            });
+        });
+        it('should return a sign up unsuccessful message', function (done) {
+            let seller = {
+                "sellerId": "2002",
+                "name": "New Seller",
+                "email": "NewSeller.com",
+                "password": "123456",
+                "description": "Create a new seller"
+            };
+            chai.request(server).post('/seller/signUp').send(seller).end(function (err, res) {
+                expect(res.body).to.have.property('message').equal('Seller NOT Sign Up!');
+                done();
+            });
+        });
+    });
 });
