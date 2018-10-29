@@ -146,13 +146,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1134" />
+          <entry key="js" value="1136" />
           <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1134" />
+          <entry key="JavaScript" value="1136" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
@@ -193,8 +193,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/routes/sellers-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="157" column="7" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
+            <state relative-caret-position="150">
+              <caret line="161" column="24" lean-forward="true" selection-start-line="161" selection-start-column="24" selection-end-line="161" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -2038,12 +2038,12 @@
       <workItem from="1540727537078" duration="4773000" />
       <workItem from="1540754633150" duration="9190000" />
       <workItem from="1540768583639" duration="2774000" />
-      <workItem from="1540844848172" duration="5159000" />
+      <workItem from="1540844848172" duration="5387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307919000" />
+    <option name="totallyTimeSpent" value="308147000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -2260,8 +2260,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/routes/sellers-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="157" column="7" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
+        <state relative-caret-position="150">
+          <caret line="161" column="24" lean-forward="true" selection-start-line="161" selection-start-column="24" selection-end-line="161" selection-end-column="24" />
         </state>
       </provider>
     </entry>

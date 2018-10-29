@@ -156,4 +156,45 @@ describe('Sellers', function (){
             });
         });
     });
+
+    describe('Put /seller/:sellerId/edit', () => {
+        it('should return a message and update a seller', function (done) {
+            let seller = {
+                "name": "New Seller",
+                "email": "NewSeller@gmail.com",
+                "password": "123456",
+                "description": "Edit a new seller"
+            };
+            chai.request(server).put('/seller/2002/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
+                expect(res).to.have.status(200);
+                expect(res.body).to.be.a('object');
+                expect(res.body).to.have.property('message').equal('Seller Successfully Edited!');
+                done();
+            });
+        });
+        it('should return a validation message', function (done) {
+            let seller = {
+                "name": "New Seller",
+                "email": "NewSeller.com",
+                "password": "12356",
+                "description": "Edit a new seller"
+            };
+            chai.request(server).put('/seller/2002/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
+                expect(res.body).to.have.property('message').equal('Seller validation failed');
+                done();
+            });
+        });
+        it('should return a message and update a seller', function (done) {
+            let seller = {
+                "name": "New Seller",
+                "email": "NewSeller@gmail.com",
+                "password": "123456",
+                "description": "Edit a new seller"
+            };
+            chai.request(server).put('/seller/2002/edit').send(seller).end(function (err, res) {
+                expect(res).to.have.status(401);
+                done();
+            });
+        });
+    });
 });
