@@ -67,4 +67,28 @@ describe('Sellers', function (){
         });
     });
 
+    describe('GET /seller/:sellerId', () => {
+        it('should return a special seller in a object', function (done) {
+            chai.request(server).get('/seller/2000').set('x-auth-token',token).end(function (err, res) {
+                expect(res).to.have.status(200);
+                // console.log(res.body);
+                expect(res.body).to.be.a('object');
+                expect(res.body).to.have.property('sellerId', '2000' );
+                done();
+            });
+        });
+        it('should return a error massage', function (done) {
+            chai.request(server).get('/seller/2000').end(function (err, res) {
+                expect(res).to.have.status(401);
+                done();
+            });
+        });
+        it('should return a error massage', function (done) {
+            chai.request(server).get('/seller/200').set('x-auth-token',token).end(function (err, res) {
+                expect(res.body).to.have.property('message').equal('Seller NOT Found!');
+                done();
+            });
+        })
+    });
+
 });
