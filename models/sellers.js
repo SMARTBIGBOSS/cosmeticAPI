@@ -13,10 +13,10 @@ let Joi = require('joi');
 const jwt = require("jsonwebtoken");
 
 let SellersSchema = new mongoose.Schema({
+        sellerId: String,
         name: {
             type: String,
-            required: true,
-            unique: true
+            required: true
         },
         email: {
             type: String,

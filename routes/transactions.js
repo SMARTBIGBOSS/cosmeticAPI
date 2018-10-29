@@ -5,7 +5,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-let mongodbUri = 'mongodb://cosmeticdb:cosmeticdb100@ds157538.mlab.com:57538/cosmeticdb';
+let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 
 mongoose.connect(mongodbUri);
 

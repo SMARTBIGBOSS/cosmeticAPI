@@ -1,3 +1,144 @@
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ3NzExODM3ZThjNjNjMDQ2MTNmY2EiLCJpYXQiOjE1NDA4NDYxNzB9.HQTOy8nBUaCKtkyOM4o2_hzxHHAVNUnsbfbIRdH3jHM
+
+{"email": "TestSeller_1@gmail.com","password": "123456" }
+
+<> 2018-10-29T085259.200.json
+
+###
+
+GET http://localhost:3000/seller/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ3NzExODM3ZThjNjNjMDQ2MTNmY2EiLCJpYXQiOjE1NDA4NDYxNzB9.HQTOy8nBUaCKtkyOM4o2_hzxHHAVNUnsbfbIRdH3jHM
+
+{"email": "TestSeller_1@gmail.com","password": "123456" }
+
+<> 2018-10-29T085246.200.json
+
+###
+
+GET http://localhost:3000/seller/200
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ3NzExODM3ZThjNjNjMDQ2MTNmY2EiLCJpYXQiOjE1NDA4NDYxNzB9.HQTOy8nBUaCKtkyOM4o2_hzxHHAVNUnsbfbIRdH3jHM
+
+{"email": "TestSeller_1@gmail.com","password": "123456" }
+
+<> 2018-10-29T085220.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ3NzExODM3ZThjNjNjMDQ2MTNmY2EiLCJpYXQiOjE1NDA4NDYxNzB9.HQTOy8nBUaCKtkyOM4o2_hzxHHAVNUnsbfbIRdH3jHM
+
+{"email": "TestSeller_1@gmail.com","password": "123456" }
+
+<> 2018-10-29T085218.200.json
+
+###
+
+GET http://localhost:3000/seller/2000
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ3NzExODM3ZThjNjNjMDQ2MTNmY2EiLCJpYXQiOjE1NDA4NDYxNzB9.HQTOy8nBUaCKtkyOM4o2_hzxHHAVNUnsbfbIRdH3jHM
+
+{"email": "TestSeller_1@gmail.com","password": "123456" }
+
+<> 2018-10-29T085154.200.json
+
+###
+
+GET http://localhost:3000/seller/200
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ3NzExODM3ZThjNjNjMDQ2MTNmY2EiLCJpYXQiOjE1NDA4NDYxNzB9.HQTOy8nBUaCKtkyOM4o2_hzxHHAVNUnsbfbIRdH3jHM
+
+{"email": "TestSeller_1@gmail.com","password": "123456" }
+
+<> 2018-10-29T085001.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token:
+
+{"email": "TestSeller_1@gmail.com","password": "123456" }
+
+<> 2018-10-29T084930.200.json
+
+###
+
+POST http://localhost:3000/seller/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token:
+
+{               {"email": "TestSeller_1@gmail.com","password": "123456" }
+
+<> 2018-10-29T084826.400.html
+
+###
+
+GET http://localhost:3000/seller/200
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-29T084631.401.html
+
+###
+
+GET http://localhost:3000/seller/200
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-28T115309.401.html
+
+###
+
+GET http://localhost:3000/cosmetics
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-27T104850.200.json
+
+###
+
+GET http://localhost:3000/sellers
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-27T102839.200.json
+
+###
+
+GET http://localhost:3000/sellers
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-10-27T102834.200.json
+
+###
+
 GET http://localhost:3000/transactions/countSales
 Accept: */*
 Cache-Control: no-cache
@@ -318,123 +459,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-24T121553.200.json
-
-###
-
-GET http://localhost:3000/transactions/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T105746.200.json
-
-###
-
-GET http://localhost:3000/transactions/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T105531.200.json
-
-###
-
-GET http://localhost:3000/transactions/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T105522.200.json
-
-###
-
-GET http://localhost:3000/transactions/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T105421.200.json
-
-###
-
-GET http://localhost:3000/transaction/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T105401.401.html
-
-###
-
-GET http://localhost:3000/transaction/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T105137.401.html
-
-###
-
-GET http://localhost:3000/transaction/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T105136.401.html
-
-###
-
-GET http://localhost:3000/transaction/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T105135.401.html
-
-###
-
-GET http://localhost:3000/transaction/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T104952.401.html
-
-###
-
-POST http://localhost:3000/transaction/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T104947.404.html
-
-###
-
-GET http://localhost:3000/transaction/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T104926.401.html
-
-###
-
-GET http://localhost:3000/transaction/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T104922.401.html
-
-###
-
-GET http://localhost:3000/transactions
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T104856.200.json
 
 ###
 

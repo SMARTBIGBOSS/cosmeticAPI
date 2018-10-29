@@ -5,7 +5,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 //let jwt = require('jsonwebtoken');
 
-let mongodbUri = 'mongodb://cosmeticdb:cosmeticdb100@ds157538.mlab.com:57538/cosmeticdb';
+let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 
 mongoose.connect(mongodbUri);
 
@@ -61,8 +61,8 @@ router.login = (req, res) => {
 router.findOne = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Seller.findById(req.params.id,function(err, seller) {
-        if (err)
+    Seller.findOne({sellerId: req.params.sellerId},function(err, seller) {
+        if (!seller)
             res.json({ message: 'Seller NOT Found!', errmsg : err } );
         else
             res.send(JSON.stringify(seller,null,5));
@@ -92,9 +92,9 @@ router.editByID = (req, res) => {
     let validate = seller.validateSync();
 
     if(validate != null){
-        res.json(validate);
+        res.json({message: 'Seller validation failed',errmg: validate});
     }else{
-        Seller.update({"_id": req.params.id},
+        Seller.update({"sellerId": req.params.sellerId},
             {   name: seller.name,
                 email: seller.email,
                 password: seller.password,
@@ -102,7 +102,7 @@ router.editByID = (req, res) => {
                 //img_url:
             },
             function(err,seller) {
-                if(err)
+                if(!seller)
                     res.json({ message: 'Seller NOT Edited!', errmsg : err });
                 else
                     res.json({ message: 'Seller Successfully Edited!', data: seller });

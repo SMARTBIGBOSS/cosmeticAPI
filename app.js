@@ -38,14 +38,14 @@ app.get('/cosmetics/:name', cosmetics.findByName);
 app.get('/cosmetics/:name/:brand', cosmetics.filterByBrand);
 app.get('/customer/:id', auth.authCustomer, customers.findOne);
 app.get('/sellers', sellers.findAll);
-app.get('/seller/:id', auth.authSeller, sellers.findOne);
+app.get('/seller/:sellerId', auth.authSeller, sellers.findOne);
 app.get('/transaction/:buyerId', auth.authCustomer, transactions.findByBuyerId);
 app.get('/transactions', transactions.findAll);
 app.get('/transactions/countSales', transactions.countSales);
 
 app.put('/cosmetics/:publisher/:id/edit', auth.authSeller, cosmetics.editByID);
 app.put('/customer/:id/edit', auth.authCustomer, customers.editByID);
-app.put('/seller/:id/edit', auth.authSeller, sellers.editByID);
+app.put('/seller/:sellerId/edit', auth.authSeller, sellers.editByID);
 app.put('/transaction/:buyerId/:id/edit', auth.authCustomer, transactions.edit);
 app.put('/transaction/:id/order', auth.authCustomer, transactions.order);
 app.put('/transaction/:id/delivery', auth.authSeller, transactions.delivery);
