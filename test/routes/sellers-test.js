@@ -91,4 +91,38 @@ describe('Sellers', function (){
         })
     });
 
+    describe('Post /seller/login', () => {
+        it('should return a message and create a new seller', function (done) {
+            let seller = {
+                "email": "TestSeller_1@gmail.com",
+                "password": "123456"
+            };
+            chai.request(server).post('/seller/login').send(seller).end(function (err, res) {
+                expect(res).to.have.status(200);
+                expect(res.body).to.be.a('object');
+                expect(res.body).to.have.property('message').equal('Seller Successfully Login');
+                done();
+            });
+        });
+        it('should return an input incorrect message', function (done) {
+            let seller = {
+                "email": "TestSeller_1@gmail.com",
+                "password": "123"
+            };
+            chai.request(server).post('/seller/login').send(seller).end(function (err, res) {
+                expect(res.body).to.have.property('message').equal('Email Address or Password Incorrect!');
+                done();
+            });
+        });
+        it('should return a login unsuccessful message', function (done) {
+            let seller = {
+                "email": "Seller_1@gmail.com",
+                "password": "123456"
+            };
+            chai.request(server).post('/seller/login').send(seller).end(function (err, res) {
+                expect(res.body).to.have.property('message').equal('Seller NOT Login!');
+                done();
+            });
+        });
+    });
 });
