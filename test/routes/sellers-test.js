@@ -197,4 +197,18 @@ describe('Sellers', function (){
             });
         });
     });
+
+    after(function(done){
+        db.collection("sellers").deleteMany({}, (err) => {
+            console.log('---clean database ---------------------------------------');
+            if (err) {
+                console.log('Seller remove all occur a error:', err);
+            }
+            else {
+                console.log('Seller remove all success.');
+            }
+        });
+        mongoose.connection.close();
+        done();
+    });
 });
