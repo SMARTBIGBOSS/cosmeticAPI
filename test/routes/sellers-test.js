@@ -14,15 +14,6 @@ let _ = require('lodash' );
 let password = bcrypt.hashSync(123456);
 let token = jwt.sign({_id: datastore._id}, 'sellerJwtKey');
 
-// let seller = [
-//     {
-//         "sellerId": "2001",
-//         "name": "Test Seller_1",
-//         "email": "TestSeller_1@gmail.com",
-//         "password": password,
-//         "description": "Testing seller One"
-//     }
-// ];
 mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
     if(err)
         console.log('Connection Error:' + err);
@@ -45,11 +36,9 @@ describe('Sellers', function (){
             );
             seller.save(done);
             console.log('Seller insert success.');
-
         }catch (e) {
             console.log(e);
         }
-        // done();
     });
 
     describe('GET /sellers', () => {
@@ -73,7 +62,6 @@ describe('Sellers', function (){
         it('should return a special seller in a object', function (done) {
             chai.request(server).get('/seller/2001').set('x-auth-token',token).end(function (err, res) {
                 expect(res).to.have.status(200);
-                // console.log(res.body);
                 expect(res.body).to.be.a('object');
                 expect(res.body).to.have.property('sellerId', '2001' );
                 done();
@@ -167,7 +155,6 @@ describe('Sellers', function (){
                 "description": "Edit a seller"
             };
             chai.request(server).put('/seller/2001/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
-                // expect(res).to.have.status(200);
                 expect(res.body).to.have.property('message').equal('Seller Successfully Edited!');
                 done();
             });
