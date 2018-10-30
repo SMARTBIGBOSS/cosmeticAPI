@@ -1,0 +1,12 @@
+{
+  "message": "seller Successfully Sign Up",
+  "data": {
+    "_id": "5bd829080fa4b53380fe2a7f",
+    "name": "Seller",
+    "email": "Seller@gmail.com",
+    "description": "This is a seller",
+    "register_date": "2018-10-30T09:48:56.773Z",
+    "password": "$2a$10$Yp45aF2RyERY4gs04psRNejEQAorzoheMTSpzq.IBRjDoFEYBn73a",
+    "__v": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "message": "Seller Successfully Edited!",
+  "data": {
+    "n": 1,
+    "nModified": 1,
+    "opTime": {
+      "ts": "6618107332515594241",
+      "t": 1
+    },
+    "electionId": "7fffffff0000000000000001",
+    "ok": 1,
+    "operationTime": "6618107332515594241",
+    "$clusterTime": {
+      "clusterTime": "6618107332515594241",
+      "signature": {
+        "hash": "sfAdVFgvWxt2aEcVpSlQJeJt1W4=",
+        "keyId": "6617023746626551809"
+      }
+    }
+  }
+}

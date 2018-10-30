@@ -25,6 +25,7 @@ router.register = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     let seller = new Seller();
+    seller.sellerId =  req.body.sellerId;
     seller.name = req.body.name;
     seller.email = req.body.email;
     seller.description = req.body.description;
@@ -84,6 +85,7 @@ router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     let seller = new Seller({
+        // sellerId: res.params.sellerId,
         name: req.body.name,
         email:  req.body.email,
         password: bcrypt.hashSync(req.body.password),

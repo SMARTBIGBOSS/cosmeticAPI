@@ -14,40 +14,42 @@ let _ = require('lodash' );
 let password = bcrypt.hashSync(123456);
 let token = jwt.sign({_id: datastore._id}, 'sellerJwtKey');
 
-let seller = [
-    {
-        "sellerId": "2000",
-        "name": "Test Seller_1",
-        "email": "TestSeller_1@gmail.com",
-        "password": password,
-        "description": "Testing seller One"
-    },
-    {
-        "sellerId": "2001",
-        "name": "Test Seller_2",
-        "email": "TestSeller_2@gmail.com",
-        "password": password,
-        "description": "Testing seller two"
-    }
-];
-
+// let seller = [
+//     {
+//         "sellerId": "2001",
+//         "name": "Test Seller_1",
+//         "email": "TestSeller_1@gmail.com",
+//         "password": password,
+//         "description": "Testing seller One"
+//     }
+// ];
+mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
+    if(err)
+        console.log('Connection Error:' + err);
+    else
+        console.log('Connection success!');
+});
 let db = mongoose.connection;
 
 describe('Sellers', function (){
     before(function (done) {
-        mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
-            if(err)
-                console.log('Connection Error:' + err);
-            else
-                console.log('Connection success!');
-        });
         try{
-            db.collection("sellers").insertMany(seller);
-            console.log('Seller insert many success.');
+            let seller = new datastore(
+                {
+                    "sellerId": 2001,
+                    "name": "Test Seller_1",
+                    "email": "TestSeller_1@gmail.com",
+                    "password": password,
+                    "description": "Testing seller One"
+                }
+            );
+            seller.save(done);
+            console.log('Seller insert success.');
+
         }catch (e) {
-            print (e);
+            console.log(e);
         }
-        done();
+        // done();
     });
 
     describe('GET /sellers', () => {
@@ -59,9 +61,9 @@ describe('Sellers', function (){
                 let result = _.map(res.body, (seller) => {
                     return { sellerId: seller.sellerId}
                 });
-                // console.log(result);
-                expect(res.body).to.have.property('[0].sellerId', '2000' );
-                // expect(result).to.include({ sellerId: '2001' });
+                console.log(result);
+                // expect(res.body).to.have.property('[0].sellerId', "2000" );
+                expect(result).to.include({"sellerId": "2001"});
                 done();
             });
         });
@@ -69,16 +71,16 @@ describe('Sellers', function (){
 
     describe('GET /seller/:sellerId', () => {
         it('should return a special seller in a object', function (done) {
-            chai.request(server).get('/seller/2000').set('x-auth-token',token).end(function (err, res) {
+            chai.request(server).get('/seller/2001').set('x-auth-token',token).end(function (err, res) {
                 expect(res).to.have.status(200);
                 // console.log(res.body);
                 expect(res.body).to.be.a('object');
-                expect(res.body).to.have.property('sellerId', '2000' );
+                expect(res.body).to.have.property('sellerId', '2001' );
                 done();
             });
         });
         it('should return a error massage', function (done) {
-            chai.request(server).get('/seller/2000').end(function (err, res) {
+            chai.request(server).get('/seller/2001').end(function (err, res) {
                 expect(res).to.have.status(401);
                 done();
             });
@@ -98,7 +100,6 @@ describe('Sellers', function (){
                 "password": "123456"
             };
             chai.request(server).post('/seller/login').send(seller).end(function (err, res) {
-                expect(res).to.have.status(200);
                 expect(res.body).to.be.a('object');
                 expect(res.body).to.have.property('message').equal('Seller Successfully Login');
                 done();
@@ -130,8 +131,8 @@ describe('Sellers', function (){
         it('should return a message and create a new seller', function (done) {
             let seller = {
                 "sellerId": "2002",
-                "name": "New Seller",
-                "email": "NewSeller@gmail.com",
+                "name": "Test Seller_2",
+                "email": "TestSeller_2@gmail.com",
                 "password": "123456",
                 "description": "Create a new seller"
             };
@@ -160,14 +161,13 @@ describe('Sellers', function (){
     describe('Put /seller/:sellerId/edit', () => {
         it('should return a message and update a seller', function (done) {
             let seller = {
-                "name": "New Seller",
-                "email": "NewSeller@gmail.com",
+                "name": "Test Seller_1",
+                "email": "TestSeller_1@gmail.com",
                 "password": "123456",
-                "description": "Edit a new seller"
+                "description": "Edit a seller"
             };
-            chai.request(server).put('/seller/2002/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
-                expect(res).to.have.status(200);
-                expect(res.body).to.be.a('object');
+            chai.request(server).put('/seller/2001/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
+                // expect(res).to.have.status(200);
                 expect(res.body).to.have.property('message').equal('Seller Successfully Edited!');
                 done();
             });
@@ -176,10 +176,11 @@ describe('Sellers', function (){
             let seller = {
                 "name": "New Seller",
                 "email": "NewSeller.com",
-                "password": "12356",
-                "description": "Edit a new seller"
+                "password": "123456",
+                "description": "Edit a seller"
             };
-            chai.request(server).put('/seller/2002/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
+            chai.request(server).put('/seller/2001/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
+                console.log(res.body);
                 expect(res.body).to.have.property('message').equal('Seller validation failed');
                 done();
             });
@@ -191,7 +192,7 @@ describe('Sellers', function (){
                 "password": "123456",
                 "description": "Edit a new seller"
             };
-            chai.request(server).put('/seller/2002/edit').send(seller).end(function (err, res) {
+            chai.request(server).put('/seller/2001/edit').send(seller).end(function (err, res) {
                 expect(res).to.have.status(401);
                 done();
             });
@@ -199,16 +200,12 @@ describe('Sellers', function (){
     });
 
     after(function(done){
-        db.collection("sellers").deleteMany({}, (err) => {
-            console.log('---clean database ---------------------------------------');
-            if (err) {
-                console.log('Seller remove all occur a error:', err);
-            }
-            else {
-                console.log('Seller remove all success.');
-            }
-        });
-        mongoose.connection.close();
-        done();
+        try{
+            db.collection("sellers").remove({"sellerId": { $in: ['2001', '2002'] }});
+
+            done();
+        }catch (e) {
+            print(e);
+        }
     });
 });

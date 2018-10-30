@@ -1,0 +1,22 @@
+{
+  "message": "Seller NOT Sign Up!",
+  "errmsg": {
+    "errors": {
+      "sellerId": {
+        "message": "Path `sellerId` is required.",
+        "name": "ValidatorError",
+        "properties": {
+          "message": "Path `sellerId` is required.",
+          "type": "required",
+          "path": "sellerId"
+        },
+        "kind": "required",
+        "path": "sellerId",
+        "$isValidatorError": true
+      }
+    },
+    "_message": "Seller validation failed",
+    "message": "Seller validation failed: sellerId: Path `sellerId` is required.",
+    "name": "ValidationError"
+  }
+}
