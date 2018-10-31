@@ -96,7 +96,7 @@ router.editByID = (req, res) => {
     if(validate != null){
         res.json({message: 'Seller validation failed',errmg: validate});
     }else{
-        Seller.update({"sellerId": req.params.sellerId},
+        Seller.updateOne({"sellerId": req.params.sellerId},
             {   name: seller.name,
                 email: seller.email,
                 password: seller.password,

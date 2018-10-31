@@ -50,9 +50,7 @@ describe('Sellers', function (){
                 let result = _.map(res.body, (seller) => {
                     return { sellerId: seller.sellerId}
                 });
-                console.log(result);
-                // expect(res.body).to.have.property('[0].sellerId', "2000" );
-                expect(result).to.include({"sellerId": "2001"});
+                expect(result[1]).to.include({"sellerId": "2001"});
                 done();
             });
         });
@@ -167,7 +165,6 @@ describe('Sellers', function (){
                 "description": "Edit a seller"
             };
             chai.request(server).put('/seller/2001/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
-                console.log(res.body);
                 expect(res.body).to.have.property('message').equal('Seller validation failed');
                 done();
             });
@@ -188,7 +185,7 @@ describe('Sellers', function (){
 
     after(function(done){
         try{
-            db.collection("sellers").remove({"sellerId": { $in: ['2001', '2002'] }});
+            db.collection("sellers").deleteMany({"sellerId": { $in: ['2001', '2002'] }});
 
             done();
         }catch (e) {
