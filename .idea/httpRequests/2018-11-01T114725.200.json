@@ -1,0 +1,14 @@
+{
+  "message": "Cosmetic Successfully Sign Up",
+  "data": {
+    "_id": "5bdae7cc5b83af03b02f4b44",
+    "customerId": "3000",
+    "name": "Customer",
+    "email": "Customer@gmail.com",
+    "phoneNum": "123123",
+    "address": "My Home",
+    "register_date": "2018-11-01T11:47:24.100Z",
+    "password": "$2a$10$wYugiSYKV8CotQz6yHj60egQufk1i4QG/W2ORABBRUg9GRa7Cr6W6",
+    "__v": 0
+  }
+}

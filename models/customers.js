@@ -12,6 +12,9 @@ let mongoose = require('mongoose');
 const jwt = require("jsonwebtoken");
 
 let CustomersSchema = new mongoose.Schema({
+        customerId: {
+            type: String
+        },
         name: {
             type: String,
             required: true,

@@ -40,6 +40,7 @@ router.signUp = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     let customer = new Customer();
+    customer.customerId = req.body.customerId;
     customer.name = req.body.name;
     customer.email = req.body.email;
     customer.phoneNum = req.body.phoneNum;
@@ -70,7 +71,7 @@ router.editByID = (req, res) => {
     if(validate != null){
         res.json(validate);
     }else{
-        Customer.update({"_id": req.params.id},
+        Customer.update({"customerId": req.params.customerId},
             {   name: customer.name,
                 email: customer.email,
                 password: customer.password,
@@ -90,8 +91,8 @@ router.editByID = (req, res) => {
 router.findOne = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Customer.findById(req.params.id,function(err, customer) {
-        if (err)
+    Customer.findOne({customerId:req.params.customerId},function(err, customer) {
+        if (!customer)
             res.json({ message: 'Customer NOT Found!', errmsg : err } );
         else
             res.send(JSON.stringify(customer,null,5));

@@ -1,3 +1,15 @@
+POST http://localhost:3000/customer/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ3NzExODM3ZThjNjNjMDQ2MTNmY2EiLCJpYXQiOjE1NDA4NDYxNzB9.HQTOy8nBUaCKtkyOM4o2_hzxHHAVNUnsbfbIRdH3jHM
+
+{"customerId": "3000","name": "Customer","email": "Customer@gmail.com","password": "123123","phoneNum": 123123,"address": "My Home"}
+
+<> 2018-11-01T114725.200.json
+
+###
+
 PUT http://localhost:3000/seller/2001/edit
 Accept: */*
 Cache-Control: no-cache
@@ -477,15 +489,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-24T011856.200.json
-
-###
-
-GET http://localhost:3000/transactions/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T011351.200.json
 
 ###
 

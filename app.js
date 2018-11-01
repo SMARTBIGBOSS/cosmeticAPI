@@ -36,7 +36,7 @@ app.get('/cosmetics/sortByLowPrice', cosmetics.sortByLowPrice);
 app.get('/cosmetics/sortByHighPrice', cosmetics.sortByHighPrice);
 app.get('/cosmetics/:name', cosmetics.findByName);
 app.get('/cosmetics/:name/:brand', cosmetics.filterByBrand);
-app.get('/customer/:id', auth.authCustomer, customers.findOne);
+app.get('/customer/:customerId', auth.authCustomer, customers.findOne);
 app.get('/sellers', sellers.findAll);
 app.get('/seller/:sellerId', auth.authSeller, sellers.findOne);
 app.get('/transaction/:buyerId', auth.authCustomer, transactions.findByBuyerId);

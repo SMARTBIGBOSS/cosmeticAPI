@@ -27,7 +27,7 @@ describe('Sellers', function (){
         try{
             let seller = new datastore(
                 {
-                    "sellerId": 2001,
+                    "sellerId": "2001",
                     "name": "Test Seller_1",
                     "email": "TestSeller_1@gmail.com",
                     "password": password,
@@ -66,7 +66,7 @@ describe('Sellers', function (){
                 done();
             });
         });
-        it('should return a error massage', function (done) {
+        it('should return 401 status', function (done) {
             chai.request(server).get('/seller/2001').end(function (err, res) {
                 expect(res).to.have.status(401);
                 done();
