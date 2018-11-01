@@ -69,9 +69,9 @@ router.editByID = (req, res) => {
     let validate = customer.validateSync();
 
     if(validate != null){
-        res.json(validate);
+        res.json({message: 'Customer validation failed',errmg: validate});
     }else{
-        Customer.update({"customerId": req.params.customerId},
+        Customer.updateOne({"customerId": req.params.customerId},
             {   name: customer.name,
                 email: customer.email,
                 password: customer.password,
@@ -81,9 +81,9 @@ router.editByID = (req, res) => {
             },
             function(err,customer) {
                 if(err)
-                    res.json({ message: 'Cosmetic NOT Edited!', errmsg : err });
+                    res.json({ message: 'Customer NOT Edited!', errmsg : err });
                 else
-                    res.json({ message: 'Cosmetic Successfully Edited!', data: customer });
+                    res.json({ message: 'Customer Successfully Edited!', data: customer });
             });
     }
 };

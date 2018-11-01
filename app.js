@@ -44,7 +44,7 @@ app.get('/transactions', transactions.findAll);
 app.get('/transactions/countSales', transactions.countSales);
 
 app.put('/cosmetics/:publisher/:id/edit', auth.authSeller, cosmetics.editByID);
-app.put('/customer/:id/edit', auth.authCustomer, customers.editByID);
+app.put('/customer/:customerId/edit', auth.authCustomer, customers.editByID);
 app.put('/seller/:sellerId/edit', auth.authSeller, sellers.editByID);
 app.put('/transaction/:buyerId/:id/edit', auth.authCustomer, transactions.edit);
 app.put('/transaction/:id/order', auth.authCustomer, transactions.order);

@@ -65,6 +65,68 @@ describe('Customers', function () {
         })
     });
 
+    describe('Put /customer/:id/edit', () => {
+        describe('Invalid edit', () => {
+            it('should return a validation message', function (done) {
+                let customer = {
+                    "customerId": "3001",
+                    "name": "Test Customer_1",
+                    "email": "TestCustomer_1gmail.com",
+                    "password": password,
+                    "phoneNum": 123123,
+                    "address": "My New Home"
+                };
+                chai.request(server).put('/customer/3001/edit').set('x-auth-token',token).send(customer).end(function (err, res) {
+                    expect(res.body).to.have.property('message').equal('Customer validation failed');
+                    done();
+                });
+            });
+            it('should return a 401 status', function (done) {
+                let customer = {
+                    "customerId": "3001",
+                    "name": "Test Customer_1",
+                    "email": "TestCustomer_1@gmail.com",
+                    "password": password,
+                    "phoneNum": 123123,
+                    "address": "My New Home"
+                };
+                chai.request(server).put('/customer/3001/edit').send(customer).end(function (err, res) {
+                    expect(res).to.have.status(401);
+                    done();
+                });
+            });
+            afterEach(function (done) {
+                chai.request(server).get('/customer/3001').set('x-auth-token',token).end(function (err, res) {
+                    expect(res.body).to.have.property('address').equal('My Home');
+                    done();
+                });
+            });
+        });
+
+        describe('Valid edit', () => {
+            it('should return a message and update a customer', function (done) {
+                let customer = {
+                    "customerId": "3001",
+                    "name": "Test Customer_1",
+                    "email": "TestCustomer_1@gmail.com",
+                    "password": password,
+                    "phoneNum": 123123,
+                    "address": "My New Home"
+                };
+                chai.request(server).put('/customer/3001/edit').set('x-auth-token',token).send(customer).end(function (err, res) {
+                    expect(res.body).to.have.property('message').equal('Customer Successfully Edited!');
+                    done();
+                });
+            });
+            afterEach(function (done) {
+                chai.request(server).get('/customer/3001').set('x-auth-token',token).end(function (err, res) {
+                    expect(res.body).to.have.property('address').equal('My New Home');
+                    done();
+                });
+            });
+        });
+    });
+
     describe('Post /customer/signUp', () => {
         describe('Invalid sign up', () => {
             let customers = [{
