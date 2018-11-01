@@ -177,40 +177,57 @@ describe('Sellers', function (){
     });
 
     describe('Put /seller/:sellerId/edit', () => {
-        it('should return a message and update a seller', function (done) {
-            let seller = {
-                "name": "Test Seller_1",
-                "email": "TestSeller_1@gmail.com",
-                "password": "123456",
-                "description": "Edit a seller"
-            };
-            chai.request(server).put('/seller/2001/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
-                expect(res.body).to.have.property('message').equal('Seller Successfully Edited!');
-                done();
+        describe('Invalid edit', () => {
+            it('should return a validation message', function (done) {
+                let seller = {
+                    "name": "New Seller",
+                    "email": "NewSeller.com",
+                    "password": "123456",
+                    "description": "Edit a seller"
+                };
+                chai.request(server).put('/seller/2001/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
+                    expect(res.body).to.have.property('message').equal('Seller validation failed');
+                    done();
+                });
+            });
+            it('should return a 401 status', function (done) {
+                let seller = {
+                    "name": "New Seller",
+                    "email": "NewSeller@gmail.com",
+                    "password": "123456",
+                    "description": "Edit a seller"
+                };
+                chai.request(server).put('/seller/2001/edit').send(seller).end(function (err, res) {
+                    expect(res).to.have.status(401);
+                    done();
+                });
+            });
+            afterEach(function (done) {
+                chai.request(server).get('/seller/2001').set('x-auth-token',token).end(function (err, res) {
+                    expect(res.body).to.have.property('description').equal('Testing seller One');
+                    done();
+                });
             });
         });
-        it('should return a validation message', function (done) {
-            let seller = {
-                "name": "New Seller",
-                "email": "NewSeller.com",
-                "password": "123456",
-                "description": "Edit a seller"
-            };
-            chai.request(server).put('/seller/2001/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
-                expect(res.body).to.have.property('message').equal('Seller validation failed');
-                done();
+
+        describe('Valid edit', () => {
+            it('should return a message and update a seller', function (done) {
+                let seller = {
+                    "name": "Test Seller_1",
+                    "email": "TestSeller_1@gmail.com",
+                    "password": "123456",
+                    "description": "Edit a seller"
+                };
+                chai.request(server).put('/seller/2001/edit').set('x-auth-token',token).send(seller).end(function (err, res) {
+                    expect(res.body).to.have.property('message').equal('Seller Successfully Edited!');
+                    done();
+                });
             });
-        });
-        it('should return a message and update a seller', function (done) {
-            let seller = {
-                "name": "New Seller",
-                "email": "NewSeller@gmail.com",
-                "password": "123456",
-                "description": "Edit a new seller"
-            };
-            chai.request(server).put('/seller/2001/edit').send(seller).end(function (err, res) {
-                expect(res).to.have.status(401);
-                done();
+            afterEach(function (done) {
+                chai.request(server).get('/seller/2001').set('x-auth-token',token).end(function (err, res) {
+                    expect(res.body).to.have.property('description').equal('Edit a seller');
+                    done();
+                });
             });
         });
     });

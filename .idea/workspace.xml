@@ -148,13 +148,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1792" />
+          <entry key="js" value="1945" />
           <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1792" />
+          <entry key="JavaScript" value="1945" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
@@ -177,8 +177,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/routes/sellers-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="166" column="54" lean-forward="true" selection-start-line="166" selection-start-column="54" selection-end-line="166" selection-end-column="54" />
+            <state relative-caret-position="300">
+              <caret line="227" column="89" selection-start-line="227" selection-start-column="89" selection-end-line="227" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -2056,12 +2056,12 @@
       <workItem from="1540768583639" duration="2774000" />
       <workItem from="1540844848172" duration="6259000" />
       <workItem from="1540890783808" duration="7661000" />
-      <workItem from="1541069799085" duration="236000" />
+      <workItem from="1541069799085" duration="891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318699000" />
+    <option name="totallyTimeSpent" value="319354000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -2090,7 +2090,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.6188925" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.1921824" />
       <window_info anchor="bottom" id="REST Client" order="11" weight="0.38273615" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -2271,8 +2271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/routes/sellers-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="166" column="54" lean-forward="true" selection-start-line="166" selection-start-column="54" selection-end-line="166" selection-end-column="54" />
+        <state relative-caret-position="300">
+          <caret line="227" column="89" selection-start-line="227" selection-start-column="89" selection-end-line="227" selection-end-column="89" />
         </state>
       </provider>
     </entry>
