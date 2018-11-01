@@ -36,7 +36,7 @@ router.register = (req, res) => {
         if(err)
             res.json({ message: 'Seller NOT Sign Up!', errmsg : err });
         else
-            res.json({ message: 'seller Successfully Sign Up', data: seller });
+            res.json({ message: 'Seller Successfully Sign Up', data: seller });
     });
 }
 

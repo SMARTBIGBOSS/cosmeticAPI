@@ -50,9 +50,9 @@ router.signUp = (req, res) => {
 
     customer.save(function (err){
         if(err)
-            res.json({ message: 'Cosmetic NOT Sign Up!', errmsg : err });
+            res.json({ message: 'Customer NOT Sign Up!', errmsg : err });
         else
-            res.json({ message: 'Cosmetic Successfully Sign Up', data: customer });
+            res.json({ message: 'Customer Successfully Sign Up', data: customer });
     });
 }
 

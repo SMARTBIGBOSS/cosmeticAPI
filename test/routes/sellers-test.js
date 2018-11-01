@@ -157,7 +157,7 @@ describe('Sellers', function (){
                 chai.request(server).post('/seller/signUp').send(seller).end(function (err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('object');
-                    expect(res.body).to.have.property('message').equal('seller Successfully Sign Up');
+                    expect(res.body).to.have.property('message').equal('Seller Successfully Sign Up');
                     done();
                 });
             });
@@ -235,6 +235,7 @@ describe('Sellers', function (){
     after(function(done){
         try{
             db.collection("sellers").deleteMany({"sellerId": { $in: ['2001', '2002'] }});
+
             done();
         }catch (e) {
             print(e);

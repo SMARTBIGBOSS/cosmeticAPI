@@ -65,9 +65,117 @@ describe('Customers', function () {
         })
     });
 
+    describe('Post /customer/signUp', () => {
+        describe('Invalid sign up', () => {
+            let customers = [{
+                "customerId": "3002",
+                // "name": "Test Customer_2",
+                "email": "TestCustomer_2@gmail.com",
+                "password": "123123",
+                "phoneNum": 123123,
+                "address": "My Home"
+            },{
+                "customerId": "3002",
+                "name": "Test Customer_1",
+                "email": "TestCustomer_2@gmail.com",
+                "password": "123123",
+                "phoneNum": 123123,
+                "address": "My Home"
+            },{
+                "customerId": "3002",
+                "name": "Test Customer_2",
+                // "email": "TestCustomer_2@gmail.com",
+                "password": "123123",
+                "phoneNum": 123123,
+                "address": "My Home"
+            },{
+                "customerId": "3002",
+                "name": "Test Customer_2",
+                "email": "TestCustomer_1@gmail.com",
+                "password": "123123",
+                "phoneNum": 123123,
+                "address": "My Home"
+            },{
+                "customerId": "3002",
+                "name": "Test Customer_2",
+                "email": "TestCustomer_2.com",
+                "password": "123123",
+                "phoneNum": 123123,
+                "address": "My Home"
+            }];
+            describe('Name boundary test', () => {
+                it('No Name - should return a sign up unsuccessful message', function (done) {
+                    chai.request(server).post('/customer/signUp').send(customers[0]).end(function (err, res) {
+                        expect(res.body).to.have.property('message').equal('Customer NOT Sign Up!');
+                        done();
+                    });
+                });
+                it('Replicate Name - should return a sign up unsuccessful message', function (done) {
+                    chai.request(server).post('/customer/signUp').send(customers[1]).end(function (err, res) {
+                        expect(res.body).to.have.property('message').equal('Customer NOT Sign Up!');
+                        done();
+                    });
+                });
+            });
+            describe('Email boundary test', () => {
+                it('No Email - should return a sign up unsuccessful message', function (done) {
+                    chai.request(server).post('/customer/signUp').send(customers[2]).end(function (err, res) {
+                        expect(res.body).to.have.property('message').equal('Customer NOT Sign Up!');
+                        done();
+                    });
+                });
+                it('Replicate Email - should return a sign up unsuccessful message', function (done) {
+                    chai.request(server).post('/customer/signUp').send(customers[3]).end(function (err, res) {
+                        expect(res.body).to.have.property('message').equal('Customer NOT Sign Up!');
+                        done();
+                    });
+                });
+                it('Wrong Format - should return a sign up unsuccessful message', function (done) {
+                    chai.request(server).post('/customer/signUp').send(customers[4]).end(function (err, res) {
+                        expect(res.body).to.have.property('message').equal('Customer NOT Sign Up!');
+                        done();
+                    });
+                });
+            });
+            afterEach(function (done) {
+                chai.request(server).get('/customer/3002').set('x-auth-token',token).end(function (err, res) {
+                    expect(res.body).to.have.property('message').equal('Customer NOT Found!');
+                    done();
+                });
+            });
+        });
+        describe('Valid sign up', () => {
+            it('should return a message and create a new customer', function (done) {
+                let customer = {
+                    "customerId": "3002",
+                    "name": "Test Customer_2",
+                    "email": "TestCustomer_2@gmail.com",
+                    "password": "123123",
+                    "phoneNum": 123123,
+                    "address": "My Home"
+                };
+                chai.request(server).post('/customer/signUp').send(customer).end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('object');
+                    expect(res.body).to.have.property('message').equal('Customer Successfully Sign Up');
+                    done();
+                });
+            });
+            afterEach(function (done) {
+                chai.request(server).get('/customer/3002').set('x-auth-token',token).end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('object');
+                    expect(res.body).to.have.property('customerId', '3002' );
+                    done();
+                });
+            });
+        });
+    });
+
     after(function(done){
         try{
-            db.collection("customers").deleteMany({"customerId": { $in: ['3001'] }});
+            db.collection("customers").deleteMany({"customerId": { $in: ['3001','3002'] }});
+            mongoose.connection.close();
             done();
         }catch (e) {
             print(e);
