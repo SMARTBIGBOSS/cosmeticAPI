@@ -50,6 +50,7 @@ describe('Sellers', function (){
                 let result = _.map(res.body, (seller) => {
                     return { sellerId: seller.sellerId}
                 });
+                expect(result[0]).to.include({"sellerId": "2000"});
                 expect(result[1]).to.include({"sellerId": "2001"});
                 done();
             });
@@ -114,32 +115,63 @@ describe('Sellers', function (){
     });
 
     describe('Post /seller/signUp', () => {
-        it('should return a message and create a new seller', function (done) {
-            let seller = {
-                "sellerId": "2002",
-                "name": "Test Seller_2",
-                "email": "TestSeller_2@gmail.com",
-                "password": "123456",
-                "description": "Create a new seller"
-            };
-            chai.request(server).post('/seller/signUp').send(seller).end(function (err, res) {
-                expect(res).to.have.status(200);
-                expect(res.body).to.be.a('object');
-                expect(res.body).to.have.property('message').equal('seller Successfully Sign Up');
-                done();
+        describe('Invalid sign up', () => {
+            it('should return a sign up unsuccessful message', function (done) {
+                let seller = {
+                    "sellerId": "2002",
+                    "name": "New Seller",
+                    "email": "NewSeller.com",
+                    "password": "123456",
+                    "description": "Create a new seller"
+                };
+                chai.request(server).post('/seller/signUp').send(seller).end(function (err, res) {
+                    expect(res.body).to.have.property('message').equal('Seller NOT Sign Up!');
+                    done();
+                });
+            });
+            after(function (done) {
+                chai.request(server).get('/sellers').end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(2);
+
+                    let result = _.map(res.body, (seller) => {
+                        return {sellerId: seller.sellerId}
+                    });
+                    expect(result[0]).to.include({"sellerId": "2000"});
+                    expect(result[1]).to.include({"sellerId": "2001"});
+                    done();
+                });
             });
         });
-        it('should return a sign up unsuccessful message', function (done) {
-            let seller = {
-                "sellerId": "2002",
-                "name": "New Seller",
-                "email": "NewSeller.com",
-                "password": "123456",
-                "description": "Create a new seller"
-            };
-            chai.request(server).post('/seller/signUp').send(seller).end(function (err, res) {
-                expect(res.body).to.have.property('message').equal('Seller NOT Sign Up!');
-                done();
+
+        describe('valid sign up', () => {
+            it('should return a message and create a new seller', function (done) {
+                let seller = {
+                    "sellerId": "2002",
+                    "name": "Test Seller_2",
+                    "email": "TestSeller_2@gmail.com",
+                    "password": "123456",
+                    "description": "Create a new seller"
+                };
+                chai.request(server).post('/seller/signUp').send(seller).end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('object');
+                    expect(res.body).to.have.property('message').equal('seller Successfully Sign Up');
+                    done();
+                });
+            });
+            after(function (done) {
+                chai.request(server).get('/sellers').end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(3);
+                    let result = _.map(res.body, (seller) => {
+                        return {sellerId: seller.sellerId}
+                    });
+                    expect(result[2]).to.include({"sellerId": "2002"});
+                    done();
+                });
             });
         });
     });
@@ -186,7 +218,6 @@ describe('Sellers', function (){
     after(function(done){
         try{
             db.collection("sellers").deleteMany({"sellerId": { $in: ['2001', '2002'] }});
-
             done();
         }catch (e) {
             print(e);
