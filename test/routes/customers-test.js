@@ -11,7 +11,7 @@ let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeti
 
 chai.use(chaiHttp);
 let _ = require('lodash' );
-let password = bcrypt.hashSync(123123);
+let password = bcrypt.hashSync('123123');
 let token = jwt.sign({_id: datastore._id}, 'customerJwtKey');
 
 mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
@@ -206,6 +206,7 @@ describe('Customers', function () {
                 });
             });
         });
+
         describe('Valid sign up', () => {
             it('should return a message and create a new customer', function (done) {
                 let customer = {
@@ -230,6 +231,40 @@ describe('Customers', function () {
                     expect(res.body).to.have.property('customerId', '3002' );
                     done();
                 });
+            });
+        });
+    });
+
+    describe('Post /customer/login', () => {
+        it('should return a message and create a new seller', function (done) {
+            let customer = {
+                "email": "TestCustomer_2@gmail.com",
+                "password": "123123"
+            };
+            chai.request(server).post('/customer/login').send(customer).end(function (err, res) {
+                expect(res.body).to.be.a('object');
+                expect(res.body).to.have.property('message').equal('Customer Successfully Login');
+                done();
+            });
+        });
+        it('should return an input incorrect message', function (done) {
+            let seller = {
+                "email": "TestCustomer_2@gmail.com",
+                "password": "123"
+            };
+            chai.request(server).post('/customer/login').send(seller).end(function (err, res) {
+                expect(res.body).to.have.property('message').equal('Email Address or Password Incorrect!');
+                done();
+            });
+        });
+        it('should return a login unsuccessful message', function (done) {
+            let seller = {
+                "email": "Test@gmail.com",
+                "password": "123123"
+            };
+            chai.request(server).post('/customer/login').send(seller).end(function (err, res) {
+                expect(res.body).to.have.property('message').equal('Customer NOT Login!');
+                done();
             });
         });
     });

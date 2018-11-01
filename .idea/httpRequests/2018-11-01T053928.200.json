@@ -1,0 +1,14 @@
+{
+  "message": "Customer Successfully Login",
+  "data": {
+    "_id": "5bdb38e3e0fc6d4244f7b594",
+    "customerId": "3002",
+    "name": "Test Customer_2",
+    "email": "TestCustomer_2@gmail.com",
+    "phoneNum": "123123",
+    "address": "My Home",
+    "register_date": "2018-11-01T17:33:23.642Z",
+    "password": "$2a$10$9.rBsW.IMr9ANFdEQXbfLuGbGu.zF5llkxKDp4pASFXO66KYmLcsy",
+    "__v": 0
+  }
+}

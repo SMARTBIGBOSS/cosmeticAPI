@@ -235,7 +235,6 @@ describe('Sellers', function (){
     after(function(done){
         try{
             db.collection("sellers").deleteMany({"sellerId": { $in: ['2001', '2002'] }});
-
             done();
         }catch (e) {
             print(e);
