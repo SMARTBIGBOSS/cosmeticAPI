@@ -222,11 +222,37 @@ describe('Cosmetics', function () {
         });
     });
 
-    // describe('Delete /cosmetics/:publisher/:cosmeticId/delete', function () {
-    //     it('should remove a cosmetic and return a message', function (done) {
-    //         chai.request(server).delete('/cosmetics/2000/:cosmeticId/delete')
-    //     });
-    // });
+    describe('Post /cosmetics/:publisher/add', () => {
+        it('should add a cosmetic and return a message', function (done) {
+            let cosmetic = {
+                "cosmeticId": "1002",
+                "name": "Test Cosmetic_2",
+                "brand": "Test Brand",
+                "price": 1.00,
+                "publisher": "2000",
+            };
+            chai.request(server).post('/cosmetics/2000/add').set('x-auth-token',token).send(cosmetic).end(function (err, res) {
+                expect(res.body).to.have.property('message').equal('Cosmetic Successfully Added!');
+                expect(res.body).to.have.property('data').property('name').equal('Test Cosmetic_2');
+                done();
+            });
+        });
+        it('should return 401 status', function (done) {
+            let cosmetic = {
+                "cosmeticId": "1002",
+                "name": "Test Cosmetic_2",
+                "brand": "Test Brand",
+                "price": 1.00,
+                "publisher": "2000",
+            };
+            chai.request(server).post('/cosmetics/2000/add').send(cosmetic).end(function (err, res) {
+                expect(res).to.have.status(401);
+                done();
+            });
+        });
+    });
+
+
 
     after(function(done){
         try{
