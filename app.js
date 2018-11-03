@@ -43,7 +43,7 @@ app.get('/transaction/:buyerId', auth.authCustomer, transactions.findByBuyerId);
 app.get('/transactions', transactions.findAll);
 app.get('/transactions/countSales', transactions.countSales);
 
-app.put('/cosmetics/:publisher/:id/edit', auth.authSeller, cosmetics.editByID);
+app.put('/cosmetics/:publisher/:cosmeticId/edit', auth.authSeller, cosmetics.editByID);
 app.put('/customer/:customerId/edit', auth.authCustomer, customers.editByID);
 app.put('/seller/:sellerId/edit', auth.authSeller, sellers.editByID);
 app.put('/transaction/:buyerId/:id/edit', auth.authCustomer, transactions.edit);
@@ -60,7 +60,7 @@ app.post('/transaction/:buyerId/add/:cosmeId',auth.authCustomer, transactions.ad
 app.post('/customer/:id/uploadLogo', auth.authCustomer, user_images.uploadImage);
 app.post('/seller/:id/uploadLogo', auth.authSeller, user_images.uploadImage);
 
-app.delete('/cosmetics/:publisher/:id/delete', auth.authSeller, cosmetics.removeCosmetic);
+app.delete('/cosmetics/:publisher/:cosmeticId/delete', auth.authSeller, cosmetics.removeCosmetic);
 app.delete('/transaction/:buyerId/:id/remove', auth.authCustomer, transactions.remove);
 
 

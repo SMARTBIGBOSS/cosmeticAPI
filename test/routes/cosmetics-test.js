@@ -1,4 +1,5 @@
 let datastore = require('../../models/cosmetics');
+let seller = require('../../models/sellers');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../bin/www');
@@ -10,6 +11,8 @@ let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeti
 
 chai.use(chaiHttp);
 let _ = require('lodash' );
+let token = jwt.sign({_id: seller._id}, 'sellerJwtKey');
+
 
 mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
     if(err)
@@ -125,6 +128,105 @@ describe('Cosmetics', function () {
             });
         });
     });
+
+    describe('Put /cosmetics/:publisher/:id/edit', () => {
+        describe('Invalid edit', () => {
+            describe('Boundary test', () => {
+                it('No name - should return a validation message', function (done) {
+                    let cosmetic = {
+                        // "name": "Test Cosmetic_1",
+                        "brand": "Edit Brand",
+                        "price": 5.00,
+                        "publisher": "2000",
+                    };
+                    chai.request(server).put('/cosmetics/2000/1001/edit').set('x-auth-token',token).send(cosmetic).end(function (err, res) {
+                        expect(res.body).to.have.property('message').equal('Cosmetic validation failed');
+                        done();
+                    });
+                });
+                it('No brand - should return a validation message', function (done) {
+                    let cosmetic = {
+                        "name": "Test Cosmetic_1",
+                        // "brand": "Edit Brand",
+                        "price": 5.00,
+                        "publisher": "2000",
+                    };
+                    chai.request(server).put('/cosmetics/2000/1001/edit').set('x-auth-token',token).send(cosmetic).end(function (err, res) {
+                        expect(res.body).to.have.property('message').equal('Cosmetic validation failed');
+                        done();
+                    });
+                });
+                it('No price - should return a validation message', function (done) {
+                    let cosmetic = {
+                        "name": "Test Cosmetic_1",
+                        "brand": "Edit Brand",
+                        // "price": 5.00,
+                        "publisher": "2000",
+                    };
+                    chai.request(server).put('/cosmetics/2000/1001/edit').set('x-auth-token',token).send(cosmetic).end(function (err, res) {
+                        expect(res.body).to.have.property('message').equal('Cosmetic validation failed');
+                        done();
+                    });
+                });
+            });
+            describe('No token', () => {
+                it('should return a 401 status', function (done) {
+                    let cosmetic = {
+                        "name": "Test Cosmetic_1",
+                        "brand": "Edit Brand",
+                        "price": 5.00,
+                        "publisher": "2000",
+                    };
+                    chai.request(server).put('/cosmetics/2000/1001/edit').send(cosmetic).end(function (err, res) {
+                        expect(res).to.have.status(401);
+                        done();
+                    });
+                });
+            });
+            afterEach(function (done) {
+                chai.request(server).get('/cosmetics').end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    let result = _.map(res.body, (cosmetic) => {
+                        return { brand: cosmetic.brand}
+                    });
+                    expect(result[1]).to.include({brand: 'Test Brand'});
+                    done();
+                });
+            });
+        });
+        describe('Valid edit', () => {
+            it('should return a edit successful message', function (done) {
+                let cosmetic = {
+                    "name": "Test Cosmetic_1",
+                    "brand": "Edit Brand",
+                    "price": 5.00,
+                    "publisher": "2000",
+                };
+                chai.request(server).put('/cosmetics/2000/1001/edit').set('x-auth-token',token).send(cosmetic).end(function (err, res) {
+                    expect(res.body).to.have.property('message').equal('Cosmetic Successfully Edited!');
+                    done();
+                });
+            });
+            afterEach(function (done) {
+                chai.request(server).get('/cosmetics').end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    let result = _.map(res.body, (cosmetic) => {
+                        return { brand: cosmetic.brand}
+                    });
+                    expect(result[1]).to.include({brand: 'Edit Brand'});
+                    done();
+                });
+            });
+        });
+    });
+
+    // describe('Delete /cosmetics/:publisher/:cosmeticId/delete', function () {
+    //     it('should remove a cosmetic and return a message', function (done) {
+    //         chai.request(server).delete('/cosmetics/2000/:cosmeticId/delete')
+    //     });
+    // });
 
     after(function(done){
         try{

@@ -89,22 +89,37 @@ router.sortByHighPrice = (req, res) =>{
 router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Cosmetic.update({ "_id": req.params.id },
-        {   name: req.body.name,
-            brand: req.body.brand,
-            price: req.body.price,
-            publisher: req.params.publisher,
-            release_date: Date.now()
-        }, function (err, cosmetic) {
-        if(err)
-            res.json({ message: 'Cosmetic NOT Found!', errmsg : err});
-        else
-            res.json({ message: 'Cosmetic Successfully Edited!', data: cosmetic });
+    let cosmetic = new Cosmetic({
+        name: req.body.name,
+        brand: req.body.brand,
+        price: req.body.price,
+        publisher: req.params.publisher,
+        release_date: Date.now()
     });
+
+    let validate = cosmetic.validateSync();
+
+    if(validate != null){
+        res.json({message: 'Cosmetic validation failed',errmg: validate});
+    }else{
+        Cosmetic.updateOne({ "cosmeticId": req.params.cosmeticId },
+            {
+                name: cosmetic.name,
+                brand: cosmetic.brand,
+                price: cosmetic.price,
+                publisher: cosmetic.publisher,
+                release_date: cosmetic.release_date
+            }, function (err, cosmetics) {
+            if (!cosmetics)
+                res.json({message: 'Cosmetic NOT Found!', errmsg: err});
+            else
+                res.json({message: 'Cosmetic Successfully Edited!', data: cosmetics});
+        });
+    };
 };
 
 router.removeCosmetic = (req, res) =>{
-    Cosmetic.findOneAndRemove({publisher: req.params.publisher, _id: req.params.id}, function (err) {
+    Cosmetic.findOneAndRemove({publisher: req.params.publisher, cosmeticId: req.params.cosmeticId}, function (err) {
         if(err)
             res.json({ message: 'Cosmetic NOT DELETED!', errmsg : err } );
         else

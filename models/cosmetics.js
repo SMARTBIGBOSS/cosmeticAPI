@@ -16,10 +16,22 @@ let CosmeticsSchema = new mongoose.Schema({
         type: String,
         unique: true
     },
-    name: String,
-    brand: String,
-    price: Number,
-    publisher: String,
+    name: {
+        type:String,
+        required: true
+    },
+    brand: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    publisher: {
+        type: String,
+        required: true
+    },
     release_date: Date,
     //img_url:
 },
