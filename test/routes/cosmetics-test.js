@@ -111,6 +111,20 @@ describe('Cosmetics', function () {
         });
     });
 
+    describe('Get /cosmetics/sortByHighPrice', () => {
+        it('should return cosmetics sorted by high price', function (done) {
+            chai.request(server).get('/cosmetics/sortByHighPrice').end(function (err, res) {
+                expect(res).to.have.status(200);
+                expect(res.body).to.be.a('array');
+                let result = _.map(res.body, (cosmetic) => {
+                    return { cosmeticId: cosmetic.cosmeticId}
+                });
+                expect(result[0]).to.include({cosmeticId: '1000'});
+                expect(result[1]).to.include({cosmeticId: '1001'});
+                done();
+            });
+        });
+    });
 
     after(function(done){
         try{
