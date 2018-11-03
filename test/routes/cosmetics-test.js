@@ -96,6 +96,20 @@ describe('Cosmetics', function () {
         });
     });
 
+    describe('Get /cosmetics/sortByLowPrice', () => {
+        it('should return cosmetics sorted by low price', function (done) {
+            chai.request(server).get('/cosmetics/sortByLowPrice').end(function (err, res) {
+                expect(res).to.have.status(200);
+                expect(res.body).to.be.a('array');
+                let result = _.map(res.body, (cosmetic) => {
+                    return { cosmeticId: cosmetic.cosmeticId}
+                });
+                expect(result[0]).to.include({cosmeticId: '1001'});
+                expect(result[1]).to.include({cosmeticId: '1000'});
+                done();
+            });
+        });
+    });
 
 
     after(function(done){
