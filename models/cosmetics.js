@@ -12,6 +12,10 @@ module.exports = cosmetics;
 let mongoose = require('mongoose');
 
 let CosmeticsSchema = new mongoose.Schema({
+    cosmeticId: {
+        type: String,
+        unique: true
+    },
     name: String,
     brand: String,
     price: Number,

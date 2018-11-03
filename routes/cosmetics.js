@@ -116,7 +116,7 @@ router.addCosmetic = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     let cosmetic = new Cosmetic();
-
+    cosmetic.cosmeticId = req.body.cosmeticId;
     cosmetic.name = req.body.name;
     cosmetic.brand = req.body.brand;
     cosmetic.price = req.body.price;

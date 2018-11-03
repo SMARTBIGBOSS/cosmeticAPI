@@ -1,0 +1,13 @@
+{
+  "message": "Cosmetic Successfully Added!",
+  "data": {
+    "_id": "5bdcd0227fbf433f1840329f",
+    "cosmeticId": "1000",
+    "name": "Cosmetic",
+    "brand": "A Brand",
+    "price": 10,
+    "publisher": "2000",
+    "release_date": "2018-11-02T22:30:58.551Z",
+    "__v": 0
+  }
+}
