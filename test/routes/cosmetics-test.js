@@ -4,7 +4,6 @@ let chaiHttp = require('chai-http');
 let server = require('../../bin/www');
 let expect = chai.expect;
 let mongoose = require('mongoose');
-let bcrypt = require('bcrypt-nodejs');
 let jwt = require("jsonwebtoken");
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
@@ -55,6 +54,20 @@ describe('Cosmetics', function () {
         });
     });
 
+    describe('Get /cosmetics', () => {
+        it('should return all cosmetics using fuzzy search', function (done) {
+            chai.request(server).get('/cosmetics?name=Test').end(function (err, res) {
+                expect(res).to.have.status(200);
+                expect(res.body).to.be.a('array');
+                let result = _.map(res.body, (cosmetic) => {
+                    return { cosmeticId: cosmetic.cosmeticId}
+                });
+                expect(result[0]).to.include({cosmeticId: '1001'});
+                done();
+            });
+        });
+    });
+
     describe('Get /cosmetics/:name', () => {
         it('should return special cosmetics by cosmetic name', function (done) {
             chai.request(server).get('/cosmetics/Test Cosmetic_1').end(function (err, res) {
@@ -82,6 +95,8 @@ describe('Cosmetics', function () {
             });
         });
     });
+
+
 
     after(function(done){
         try{
