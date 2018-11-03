@@ -75,7 +75,6 @@ describe('Cosmetics', function () {
         it('should return special cosmetics by cosmetic name', function (done) {
             chai.request(server).get('/cosmetics/Test Cosmetic_1').end(function (err, res) {
                 expect(res).to.have.status(200);
-                expect(res.body).to.be.a('array');
                 let result = _.map(res.body, (cosmetic) => {
                     return { cosmeticId: cosmetic.cosmeticId}
                 });
@@ -252,7 +251,25 @@ describe('Cosmetics', function () {
         });
     });
 
-
+    describe('Delete /cosmetics/:publisher/:cosmeticId/delete', function () {
+        it('should remove a cosmetic and return a message', function (done) {
+            chai.request(server).delete('/cosmetics/2000/1002/delete').set('x-auth-token', token).end(function(err, res){
+                expect(res.body).to.have.property('message').equal("Cosmetic Successfully Deleted!");
+                done();
+            });
+        });
+        afterEach(function (done) {
+            chai.request(server).get('/cosmetics').end(function (err, res) {
+                expect(res.body.length).equal(2);
+                let result = _.map(res.body, (cosmetic) => {
+                    return { cosmeticId: cosmetic.cosmeticId}
+                });
+                expect(result[0]).to.include({cosmeticId: '1000'});
+                expect(result[1]).to.include({cosmeticId: '1001'});
+                done();
+            })
+        });
+    });
 
     after(function(done){
         try{
