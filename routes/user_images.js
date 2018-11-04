@@ -60,8 +60,8 @@ router.uploadImage = (req, res) => {
             //     msg: err
             // });
         }else{
-            console.log(req.file);
-            console.log(path.extname(req.file.originalname));
+            // console.log(req.file);
+            // console.log(path.extname(req.file.originalname));
             res.json( {message: 'Image Uploaded!', file: `userLogo/${req.file.filename}` });
             // res.render('uploadImage',{
             //     msg: 'File Uploaded',
