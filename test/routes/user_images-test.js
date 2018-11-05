@@ -26,6 +26,8 @@ describe('user_images', function () {
                     done();
                 });
         });
+	});
+	describe('Post /customer/:id/uploadLogo', () => {
         it('should upload a customer and return a massage', function (done) {
             chai.request(server).post('/customer/3000/uploadLogo').set('x-auth-token',tokenCustomer)
                 .set('Content-Type', "multipart/form-data")

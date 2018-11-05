@@ -23,7 +23,7 @@ router.add = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     let transaction = new Transaction();
-
+    transaction.transactionId = req.body.transactionId;
     transaction.cosmeId = req.params.cosmeId;
     transaction.buyerId = req.params.buyerId;
     transaction.quantity = req.body.quantity;
@@ -78,13 +78,13 @@ router.edit = (req, res) => {
 router.order = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.findOne({_id:req.params.id}, function (err, transaction) {
+    Transaction.findOne({transactionId:req.params.id}, function (err, transaction) {
         if (err)
             res.json({message: 'Transaction NOT Found!', errmsg: err});
         else if (transaction.status != "unpaid")
             res.json({message: 'Transaction Already Ordered!', errmsg: err});
         else {
-            Transaction.update({"_id": req.params.id},
+            Transaction.update({"transactionId": req.params.id},
                 {
                     last_date: Date.now(),
                     status: "paid"
@@ -101,11 +101,11 @@ router.order = (req, res) => {
 router.delivery = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.findOne({_id:req.params.id}, function (err, transaction) {
+    Transaction.findOne({transactionId:req.params.id}, function (err, transaction) {
         if(err)
             res.json({ message: 'Transaction NOT Found!', errmsg : err});
         else if(transaction.status == "paid"){
-            Transaction.update({"_id": req.params.id},
+            Transaction.update({"transactionId": req.params.id},
                 {
                     last_date: Date.now(),
                     status: "delivering"
@@ -124,11 +124,11 @@ router.delivery = (req, res) => {
 router.ConfirmReceipt = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Transaction.findOne({_id:req.params.id}, function (err, transaction) {
+    Transaction.findOne({transactionId:req.params.id}, function (err, transaction) {
         if (err)
             res.json({message: 'Transaction NOT Found!', errmsg: err});
         else if (transaction.status == "delivering") {
-            Transaction.update({"_id": req.params.id},
+            Transaction.update({"transactionId": req.params.id},
                 {
                     last_date: Date.now(),
                     status: "finished"
@@ -163,11 +163,13 @@ router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     let opts = [
-        {path: 'cosmeId', model: Cosmetic, select: {name: 1, price: 1}},
-        {path: 'buyerId', model: Customer, select: {name: 1}}
+        // {path: 'cosmeId', model: Cosmetic, select: {name: 1, price: 1}},
+        // {path: 'buyerId', model: Customer, select: {name: 1}}
+        {$lookup: {from: "cosmetics",localField: "cosmeId", foreignField: "cosmeticId",as: "cosmetic_info"}}
     ];
+    Transaction.aggregate(opts).exec(function (err, transactions) {
 
-    Transaction.find().populate(opts).exec(function (err, transactions) {
+    // Transaction.find().populate(opts).exec(function (err, transactions) {
         if(err)
             res.send(err);
         else
@@ -179,20 +181,22 @@ router.countSales = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     let rel = [
-        {path: '_id', select: {name: 1, publisher: 1}}
+        {path: 'cosmeId', model: Cosmetic,select: {name: 1, publisher: 1}}
     ];
     let opts = [
-        { $group: { _id:"$cosmeId", total_sales: {$sum: "$quantity"}}}
+        {$match: {status: 'finished'}},
+        { $group: { _id:"$cosmeId", total_sales: {$sum: "$quantity"}}},
+        {$lookup: {from: "cosmetics",localField: "_id", foreignField: "cosmeticId",as: "cosmetic_info"}}
     ];
 
     Transaction.aggregate(opts).exec(function (err, transactions) {
         if(err)
             res.send(err);
         else {
-            Cosmetic.populate(transactions, rel, function (err, result) {
-                res.send(JSON.stringify(result, null, 5));
-
-            });
+            // Cosmetic.populate(transactions, rel, function (err, result) {
+            //     res.send(JSON.stringify(result, null, 5));
+            // });
+            res.send(JSON.stringify(transactions, null, 5));
         }
     });
 };

@@ -11,6 +11,10 @@ module.exports = transactions;
 let mongoose = require('mongoose');
 
 let TransactionsSchema = new mongoose.Schema({
+    transactionId: {
+        type: String,
+        required: true
+    },
     cosmeId: {
         type: String,
         required: true

@@ -1,0 +1,19 @@
+<h1>utils.populate: invalid path. Expected string. Got typeof `undefined`</h1>
+<h2></h2>
+<pre>TypeError: utils.populate: invalid path. Expected string. Got typeof `undefined`
+at Object.populate (F: \Agile Software Practice\cosmeticweb\node_modules\mongoose\lib\utils.js: 613: 11)
+at F: \Agile Software Practice\cosmeticweb\node_modules\mongoose\lib\utils.js: 592: 26
+at Array.map (&lt;anonymous&gt;)
+at populate (F: \Agile Software Practice\cosmeticweb\node_modules\mongoose\lib\utils.js: 581: 22)
+at model.Query.Query.populate (F: \Agile Software Practice\cosmeticweb\node_modules\mongoose\lib\query.js: 3928: 30)
+at router.findAll (F: \Agile Software Practice\cosmeticweb\routes\transactions.js: 171: 24)
+at Layer.handle [as handle_request] (F: \Agile Software Practice\cosmeticweb\node_modules\express\lib\router\layer.js: 95: 5)
+at next (F: \Agile Software Practice\cosmeticweb\node_modules\express\lib\router\route.js: 137: 13)
+at Route.dispatch (F:\Agile Software Practice\cosmeticweb\node_modules\express\lib\router\route.js: 112: 3)
+at Layer.handle [as handle_request] (F: \Agile Software Practice\cosmeticweb\node_modules\express\lib\router\layer.js: 95: 5)
+at F: \Agile Software Practice\cosmeticweb\node_modules\express\lib\router\index.js: 281: 22
+at Function.process_params (F: \Agile Software Practice\cosmeticweb\node_modules\express\lib\router\index.js: 335: 12)
+at next (F: \Agile Software Practice\cosmeticweb\node_modules\express\lib\router\index.js:275: 10)
+at F: \Agile Software Practice\cosmeticweb\node_modules\express\lib\router\index.js: 635: 15
+at next (F:\Agile Software Practice\cosmeticweb\node_modules\express\lib\router\index.js: 260: 14)
+at Function.handle (F: \Agile Software Practice\cosmeticweb\node_modules\express\lib\router\index.js: 174: 3)</pre>

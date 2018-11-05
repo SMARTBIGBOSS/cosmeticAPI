@@ -1,0 +1,15 @@
+{
+  "operationTime": "6620442171226980353",
+  "ok": 0,
+  "errmsg": "unknown argument to $lookup: ForeignField",
+  "code": 9,
+  "codeName": "FailedToParse",
+  "$clusterTime": {
+    "clusterTime": "6620442171226980353",
+    "signature": {
+      "hash": "2qGPdG19bc3Pl8oG6WJL56CSjiY=",
+      "keyId": "6617023746626551809"
+    }
+  },
+  "name": "MongoError"
+}

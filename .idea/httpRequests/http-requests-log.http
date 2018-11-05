@@ -1,3 +1,39 @@
+GET http://localhost:3000/transactions
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ4MmM1MTdlOGZlNzI5MjAwYjNmZDEiLCJpYXQiOjE1NDExOTc4Mjh9.4JHNbjXFze7fURQlPeeas1vFdrLBCH4odpF1MdsTHhw
+
+{"cosmeticId":"1000","name":"Cosmetic","brand":"A Brand","price":10.00}
+
+<> 2018-11-05T062115.200.json
+
+###
+
+GET http://localhost:3000/transactions
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ4MmM1MTdlOGZlNzI5MjAwYjNmZDEiLCJpYXQiOjE1NDExOTc4Mjh9.4JHNbjXFze7fURQlPeeas1vFdrLBCH4odpF1MdsTHhw
+
+{"cosmeticId":"1000","name":"Cosmetic","brand":"A Brand","price":10.00}
+
+<> 2018-11-05T061730.500.json
+
+###
+
+GET http://localhost:3000/transactions
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ4MmM1MTdlOGZlNzI5MjAwYjNmZDEiLCJpYXQiOjE1NDExOTc4Mjh9.4JHNbjXFze7fURQlPeeas1vFdrLBCH4odpF1MdsTHhw
+
+{"cosmeticId":"1000","name":"Cosmetic","brand":"A Brand","price":10.00}
+
+<> 2018-11-05T061554.500.json
+
+###
+
 POST http://localhost:3000/cosmetics/2000/add
 Accept: */*
 Cache-Control: no-cache
@@ -505,31 +541,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-24T071937.200.json
-
-###
-
-GET http://localhost:3000/transactions/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T071916.200.json
-
-###
-
-GET http://localhost:3000/transactions/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-24T071703.200.json
-
-###
-
-GET http://localhost:3000/transactions/countSales
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
 
 ###
 
