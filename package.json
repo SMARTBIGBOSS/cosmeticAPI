@@ -5,10 +5,10 @@
   "scripts": {
     "start": "node ./bin/www",
 	"test_cosmetic": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/cosmetics-test.js",
-    "test_customer": "cross-env NODE_ENV=test mocha test/routes/customers-test.js",
-    "test_seller": "cross-env NODE_ENV=test mocha test/routes/sellers-test.js",
-    "test_transaction": "cross-env NODE_ENV=test mocha test/routes/transactions-test.js",
-    "test_user_image": "cross-env NODE_ENV=test mocha test/routes/user_images-test.js",
+    "test_customer": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/customers-test.js",
+    "test_seller": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/sellers-test.js",
+    "test_transaction": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/transactions-test.js",
+    "test_user_image": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/user_images-test.js",
 	"build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files"
   },
   "dependencies": {

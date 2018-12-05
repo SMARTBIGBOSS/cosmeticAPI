@@ -1,18 +1,29 @@
+import chai from 'chai';
+import chaiHttp from 'chai-http' ;
+//import server from '../../bin/www';
+let expect = chai.expect;
+//import datastore from '../../models/customers';
+import _ from 'lodash';
+import things from 'chai-things'
+chai.use( things);
+chai.use(chaiHttp);
+/*
 let datastore = require('../../models/customers');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../bin/www');
 let expect = chai.expect;
-let mongoose = require('mongoose');
-let bcrypt = require('bcrypt-nodejs');
-let jwt = require("jsonwebtoken");
+*/
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt-nodejs';
+import jwt from "jsonwebtoken";
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 
-chai.use(chaiHttp);
-let _ = require('lodash' );
+//chai.use(chaiHttp);
+//let _ = require('lodash' );
 let password = bcrypt.hashSync('123123');
-let token = jwt.sign({_id: datastore._id}, 'customerJwtKey');
+//let token = jwt.sign({_id: datastore._id}, 'customerJwtKey');
 
 mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
     if(err)
@@ -22,8 +33,17 @@ mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
 });
 let db = mongoose.connection;
 
+let server = null ; // CHANGED
+let datastore = null ; // CHANGED
+let token =null;
+
 describe('Customers', function () {
     before(function (done) {
+		delete require.cache[require.resolve('../../bin/www')];
+        delete require.cache[require.resolve('../../models/customers')];
+        datastore = require('../../models/customers');
+        server = require('../../bin/www');
+		token = jwt.sign({_id: datastore._id}, 'customerJwtKey');
         try {
             let customer = new datastore(
                 {

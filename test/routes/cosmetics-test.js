@@ -1,16 +1,27 @@
+import chai from 'chai';
+import chaiHttp from 'chai-http' ;
+//import server from '../../bin/www';
+let expect = chai.expect;
+//import datastore from '../../models/donations';
+import _ from 'lodash';
+import things from 'chai-things'
+chai.use( things);
+chai.use(chaiHttp);
+/*
 let datastore = require('../../models/cosmetics');
-let seller = require('../../models/sellers');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../bin/www');
 let expect = chai.expect;
-let mongoose = require('mongoose');
-let jwt = require("jsonwebtoken");
+*/
+import mongoose from 'mongoose';
+import seller from '../../models/sellers';
+import jwt from "jsonwebtoken";
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 
-chai.use(chaiHttp);
-let _ = require('lodash' );
+//chai.use(chaiHttp);
+//let _ = require('lodash' );
 let token = jwt.sign({_id: seller._id}, 'sellerJwtKey');
 
 
@@ -22,9 +33,16 @@ mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
 });
 let db = mongoose.connection;
 
+let server = null ; // CHANGED
+let datastore = null ; // CHANGED
+
 describe('Cosmetics', function () {
     before(function (done) {
-        try {
+		delete require.cache[require.resolve('../../bin/www')];
+        delete require.cache[require.resolve('../../models/cosmetics')];
+        datastore = require('../../models/cosmetics');
+        server = require('../../bin/www');
+		try {
             let cosmetic = new datastore(
                 {
                     "cosmeticId": "1001",

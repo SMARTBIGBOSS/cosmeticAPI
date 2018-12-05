@@ -1,6 +1,9 @@
-const multer = require('multer');
-let path = require('path');
-let express = require('express');
+import express from 'express';
+import path from 'path';
+
+import multer from 'multer';
+//let path = require('path');
+//let express = require('express');
 let router = express.Router();
 /*
 let mongoose = require('mongoose');

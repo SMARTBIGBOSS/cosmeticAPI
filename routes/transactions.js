@@ -1,9 +1,13 @@
-let Transaction = require('../models/transactions');
-let Cosmetic = require('../models/cosmetics');
-let Customer = require('../models/customers');
-let express = require('express');
+import Transaction from '../models/transactions';
+import express from 'express';
+
 let router = express.Router();
-let mongoose = require('mongoose');
+//let Transaction = require('../models/transactions');
+import Cosmetic from '../models/cosmetics';
+import Customer from '../models/customers';
+//let express = require('express');
+//let router = express.Router();
+import mongoose from 'mongoose';
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 

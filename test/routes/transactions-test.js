@@ -1,3 +1,13 @@
+import chai from 'chai';
+import chaiHttp from 'chai-http' ;
+//import server from '../../bin/www';
+let expect = chai.expect;
+//import datastore from '../../models/transactions';
+import _ from 'lodash';
+import things from 'chai-things'
+chai.use( things);
+chai.use(chaiHttp);
+/*
 let datastore = require('../../models/transactions');
 let seller = require('../../models/sellers');
 let customer = require('../../models/customers');
@@ -5,13 +15,17 @@ let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../bin/www');
 let expect = chai.expect;
-let mongoose = require('mongoose');
-let jwt = require("jsonwebtoken");
+*/
+import seller from '../../models/sellers';
+import customer from '../../models/customers';
+
+import mongoose from 'mongoose';
+import jwt from "jsonwebtoken";
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 
-chai.use(chaiHttp);
-let _ = require('lodash' );
+//chai.use(chaiHttp);
+//let _ = require('lodash' );
 let tokenSeller = jwt.sign({_id: seller._id}, 'sellerJwtKey');
 let tokenCustomer = jwt.sign({_id: customer._id}, 'customerJwtKey');
 
@@ -23,9 +37,16 @@ mongoose.connect(mongodbUri,{useNewUrlParser:true},function(err){
 });
 let db = mongoose.connection;
 
+let server = null ; // CHANGED
+let datastore = null ; // CHANGED
+
 describe('Transaction', function () {
     before(function (done) {
-        try {
+        delete require.cache[require.resolve('../../bin/www')];
+        delete require.cache[require.resolve('../../models/transactions')];
+        datastore = require('../../models/transactions');
+        server = require('../../bin/www');
+		try {
             let transaction = new datastore(
                 {
                     "transactionId": "4001",
@@ -37,19 +58,7 @@ describe('Transaction', function () {
                     "status": "unpaid"
                 }
             );
-            // let transaction2 = new datastore(
-            //     {
-            //         "transactionId": "4002",
-            //         "cosmeId": "1000",
-            //         "buyerId": "3000",
-            //         "quantity": 10,
-            //         "shipping_address": "Home",
-            //         "contact_Num": 666,
-            //         "status": "delivering"
-            //     }
-            // );
             transaction.save(done);
-            // transaction2.save();
             console.log('Transactions insert success.');
         } catch (e) {
             console.log(e);
