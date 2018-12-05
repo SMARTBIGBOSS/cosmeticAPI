@@ -9,7 +9,7 @@ module.exports = sellers;
 */
 
 let mongoose = require('mongoose');
-let Joi = require('joi');
+//let Joi = require('joi');
 const jwt = require('jsonwebtoken');
 
 let SellersSchema = new mongoose.Schema({
