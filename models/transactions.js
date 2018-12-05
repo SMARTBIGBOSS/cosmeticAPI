@@ -40,6 +40,6 @@ let TransactionsSchema = new mongoose.Schema({
     status:{ type: String,
         enum: ['unpaid', 'paid', 'delivering', 'finished']}
 },
-    {collection: 'transactions'});
+{collection: 'transactions'});
 
 module.exports = mongoose.model('Transaction', TransactionsSchema);

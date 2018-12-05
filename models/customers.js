@@ -9,37 +9,37 @@ module.exports = customers;
 */
 
 let mongoose = require('mongoose');
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
 let CustomersSchema = new mongoose.Schema({
-        customerId: {
-            type: String
-        },
-        name: {
-            type: String,
-            required: true,
-            unique: true
-        },
-        email: {
-            type: String,
-            match:/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/,
-            required: true,
-            unique: true
-        },
-        password: {
-            type: String,
-            required: true
-        },
-        phoneNum: String,
-        address: String,
-        register_date: Date,
-        //img_url:
+    customerId: {
+        type: String
     },
-    {collection: 'customers'});
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        match:/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    phoneNum: String,
+    address: String,
+    register_date: Date,
+    //img_url:
+},
+{collection: 'customers'});
 
 CustomersSchema.methods.generateAuthToken = function(){
     let token = jwt.sign({_id: this._id}, 'customerJwtKey');
     return token;
-}
+};
 
 module.exports = mongoose.model('Customer', CustomersSchema);

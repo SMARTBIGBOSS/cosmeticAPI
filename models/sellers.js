@@ -10,32 +10,32 @@ module.exports = sellers;
 
 let mongoose = require('mongoose');
 let Joi = require('joi');
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
 let SellersSchema = new mongoose.Schema({
-        sellerId: {
-            type: String,
-            // required: true
-        },
-        name: {
-            type: String,
-            required: true
-        },
-        email: {
-            type: String,
-            match:/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/,
-            required: true,
-            unique: true
-        },
-        password: {
-            type: String,
-            required: true
-        },
-        description: String,
-        register_date: Date,
-        //img_url:
+    sellerId: {
+        type: String,
+        // required: true
     },
-    {collection: 'sellers'});
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        match:/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    description: String,
+    register_date: Date,
+    //img_url:
+},
+{collection: 'sellers'});
 
 // function validateSeller(seller){
 //     let schema = {
@@ -49,7 +49,7 @@ let SellersSchema = new mongoose.Schema({
 SellersSchema.methods.generateAuthToken = function(){
     let token = jwt.sign({_id: this._id}, 'sellerJwtKey');
     return token;
-}
+};
 
 //module.exports.validateSeller = validateSeller;
 module.exports = mongoose.model('Seller', SellersSchema);

@@ -3,8 +3,7 @@ import chaiHttp from 'chai-http' ;
 //import server from '../../bin/www';
 let expect = chai.expect;
 //import datastore from '../../models/customers';
-import _ from 'lodash';
-import things from 'chai-things'
+import things from 'chai-things';
 chai.use( things);
 chai.use(chaiHttp);
 /*
@@ -16,7 +15,7 @@ let expect = chai.expect;
 */
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt-nodejs';
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 
@@ -39,20 +38,20 @@ let token =null;
 
 describe('Customers', function () {
     before(function (done) {
-		delete require.cache[require.resolve('../../bin/www')];
+        delete require.cache[require.resolve('../../bin/www')];
         delete require.cache[require.resolve('../../models/customers')];
         datastore = require('../../models/customers');
         server = require('../../bin/www');
-		token = jwt.sign({_id: datastore._id}, 'customerJwtKey');
+        token = jwt.sign({_id: datastore._id}, 'customerJwtKey');
         try {
             let customer = new datastore(
                 {
-                    "customerId": "3001",
-                    "name": "Test Customer_1",
-                    "email": "TestCustomer_1@gmail.com",
-                    "password": password,
-                    "phoneNum": 123123,
-                    "address": "My Home"
+                    'customerId': '3001',
+                    'name': 'Test Customer_1',
+                    'email': 'TestCustomer_1@gmail.com',
+                    'password': password,
+                    'phoneNum': 123123,
+                    'address': 'My Home'
                 }
             );
             customer.save(done);
@@ -82,19 +81,19 @@ describe('Customers', function () {
                 expect(res.body).to.have.property('message').equal('Customer NOT Found!');
                 done();
             });
-        })
+        });
     });
 
     describe('Put /customer/:id/edit', () => {
         describe('Invalid edit', () => {
             it('should return a validation message', function (done) {
                 let customer = {
-                    "customerId": "3001",
-                    "name": "Test Customer_1",
-                    "email": "TestCustomer_1gmail.com",
-                    "password": password,
-                    "phoneNum": 123123,
-                    "address": "My New Home"
+                    'customerId': '3001',
+                    'name': 'Test Customer_1',
+                    'email': 'TestCustomer_1gmail.com',
+                    'password': password,
+                    'phoneNum': 123123,
+                    'address': 'My New Home'
                 };
                 chai.request(server).put('/customer/3001/edit').set('x-auth-token',token).send(customer).end(function (err, res) {
                     expect(res.body).to.have.property('message').equal('Customer validation failed');
@@ -103,12 +102,12 @@ describe('Customers', function () {
             });
             it('should return a 401 status', function (done) {
                 let customer = {
-                    "customerId": "3001",
-                    "name": "Test Customer_1",
-                    "email": "TestCustomer_1@gmail.com",
-                    "password": password,
-                    "phoneNum": 123123,
-                    "address": "My New Home"
+                    'customerId': '3001',
+                    'name': 'Test Customer_1',
+                    'email': 'TestCustomer_1@gmail.com',
+                    'password': password,
+                    'phoneNum': 123123,
+                    'address': 'My New Home'
                 };
                 chai.request(server).put('/customer/3001/edit').send(customer).end(function (err, res) {
                     expect(res).to.have.status(401);
@@ -126,12 +125,12 @@ describe('Customers', function () {
         describe('Valid edit', () => {
             it('should return a message and update a customer', function (done) {
                 let customer = {
-                    "customerId": "3001",
-                    "name": "Test Customer_1",
-                    "email": "TestCustomer_1@gmail.com",
-                    "password": password,
-                    "phoneNum": 123123,
-                    "address": "My New Home"
+                    'customerId': '3001',
+                    'name': 'Test Customer_1',
+                    'email': 'TestCustomer_1@gmail.com',
+                    'password': password,
+                    'phoneNum': 123123,
+                    'address': 'My New Home'
                 };
                 chai.request(server).put('/customer/3001/edit').set('x-auth-token',token).send(customer).end(function (err, res) {
                     expect(res.body).to.have.property('message').equal('Customer Successfully Edited!');
@@ -150,40 +149,40 @@ describe('Customers', function () {
     describe('Post /customer/signUp', () => {
         describe('Invalid sign up', () => {
             let customers = [{
-                "customerId": "3002",
+                'customerId': '3002',
                 // "name": "Test Customer_2",
-                "email": "TestCustomer_2@gmail.com",
-                "password": "123123",
-                "phoneNum": 123123,
-                "address": "My Home"
+                'email': 'TestCustomer_2@gmail.com',
+                'password': '123123',
+                'phoneNum': 123123,
+                'address': 'My Home'
             },{
-                "customerId": "3002",
-                "name": "Test Customer_1",
-                "email": "TestCustomer_2@gmail.com",
-                "password": "123123",
-                "phoneNum": 123123,
-                "address": "My Home"
+                'customerId': '3002',
+                'name': 'Test Customer_1',
+                'email': 'TestCustomer_2@gmail.com',
+                'password': '123123',
+                'phoneNum': 123123,
+                'address': 'My Home'
             },{
-                "customerId": "3002",
-                "name": "Test Customer_2",
+                'customerId': '3002',
+                'name': 'Test Customer_2',
                 // "email": "TestCustomer_2@gmail.com",
-                "password": "123123",
-                "phoneNum": 123123,
-                "address": "My Home"
+                'password': '123123',
+                'phoneNum': 123123,
+                'address': 'My Home'
             },{
-                "customerId": "3002",
-                "name": "Test Customer_2",
-                "email": "TestCustomer_1@gmail.com",
-                "password": "123123",
-                "phoneNum": 123123,
-                "address": "My Home"
+                'customerId': '3002',
+                'name': 'Test Customer_2',
+                'email': 'TestCustomer_1@gmail.com',
+                'password': '123123',
+                'phoneNum': 123123,
+                'address': 'My Home'
             },{
-                "customerId": "3002",
-                "name": "Test Customer_2",
-                "email": "TestCustomer_2.com",
-                "password": "123123",
-                "phoneNum": 123123,
-                "address": "My Home"
+                'customerId': '3002',
+                'name': 'Test Customer_2',
+                'email': 'TestCustomer_2.com',
+                'password': '123123',
+                'phoneNum': 123123,
+                'address': 'My Home'
             }];
             describe('Name boundary test', () => {
                 it('No Name - should return a sign up unsuccessful message', function (done) {
@@ -230,12 +229,12 @@ describe('Customers', function () {
         describe('Valid sign up', () => {
             it('should return a message and create a new customer', function (done) {
                 let customer = {
-                    "customerId": "3002",
-                    "name": "Test Customer_2",
-                    "email": "TestCustomer_2@gmail.com",
-                    "password": "123123",
-                    "phoneNum": 123123,
-                    "address": "My Home"
+                    'customerId': '3002',
+                    'name': 'Test Customer_2',
+                    'email': 'TestCustomer_2@gmail.com',
+                    'password': '123123',
+                    'phoneNum': 123123,
+                    'address': 'My Home'
                 };
                 chai.request(server).post('/customer/signUp').send(customer).end(function (err, res) {
                     expect(res).to.have.status(200);
@@ -258,8 +257,8 @@ describe('Customers', function () {
     describe('Post /customer/login', () => {
         it('should return a message and create a new seller', function (done) {
             let customer = {
-                "email": "TestCustomer_2@gmail.com",
-                "password": "123123"
+                'email': 'TestCustomer_2@gmail.com',
+                'password': '123123'
             };
             chai.request(server).post('/customer/login').send(customer).end(function (err, res) {
                 expect(res.body).to.be.a('object');
@@ -269,8 +268,8 @@ describe('Customers', function () {
         });
         it('should return an input incorrect message', function (done) {
             let seller = {
-                "email": "TestCustomer_2@gmail.com",
-                "password": "123"
+                'email': 'TestCustomer_2@gmail.com',
+                'password': '123'
             };
             chai.request(server).post('/customer/login').send(seller).end(function (err, res) {
                 expect(res.body).to.have.property('message').equal('Email Address or Password Incorrect!');
@@ -279,8 +278,8 @@ describe('Customers', function () {
         });
         it('should return a login unsuccessful message', function (done) {
             let seller = {
-                "email": "Test@gmail.com",
-                "password": "123123"
+                'email': 'Test@gmail.com',
+                'password': '123123'
             };
             chai.request(server).post('/customer/login').send(seller).end(function (err, res) {
                 expect(res.body).to.have.property('message').equal('Customer NOT Login!');
@@ -291,11 +290,11 @@ describe('Customers', function () {
 
     after(function(done){
         try{
-            db.collection("customers").deleteMany({"customerId": { $in: ['3001','3002'] }});
+            db.collection('customers').deleteMany({'customerId': { $in: ['3001','3002'] }});
             mongoose.connection.close();
             done();
         }catch (e) {
-            print(e);
+            console.log(e);
         }
     });
 

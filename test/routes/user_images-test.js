@@ -3,8 +3,7 @@ import chaiHttp from 'chai-http' ;
 //import server from '../../bin/www';
 let expect = chai.expect;
 //import datastore from '../../models/user_images';
-import _ from 'lodash';
-import things from 'chai-things'
+import things from 'chai-things';
 chai.use( things);
 chai.use(chaiHttp);
 /*
@@ -27,24 +26,22 @@ let tokenCustomer = jwt.sign({_id: customer._id}, 'customerJwtKey');
 let path;
 
 let server = null ; // CHANGED
-let datastore = null ; // CHANGED
 
 describe('user_images', function () {
     before(function () {
-		try {
-			delete require.cache[require.resolve('../../bin/www')];
-			delete require.cache[require.resolve('../../models/user_images')];
-			datastore = require('../../models/user_images');
-			server = require('../../bin/www');
-		} catch (e) {
+        try {
+            delete require.cache[require.resolve('../../bin/www')];
+            delete require.cache[require.resolve('../../models/user_images')];
+            server = require('../../bin/www');
+        } catch (e) {
             console.log(e);
         }
-	});
-	describe('Post /seller/:id/uploadLogo', () => {
+    });
+    describe('Post /seller/:id/uploadLogo', () => {
         it('should upload a seller and return a massage', function (done) {
             chai.request(server).post('/seller/2000/uploadLogo').set('x-auth-token',tokenSeller)
-                .set('Content-Type', "multipart/form-data")
-                .attach("userLogo","../cosmeticweb/test/image/Stitch.jpg")
+                .set('Content-Type', 'multipart/form-data')
+                .attach('userLogo','../cosmeticweb/test/image/Stitch.jpg')
                 .end(function (err, res) {
                     // console.log(res.body);
                     path = res.body.file;
@@ -52,12 +49,12 @@ describe('user_images', function () {
                     done();
                 });
         });
-	});
-	describe('Post /customer/:id/uploadLogo', () => {
+    });
+    describe('Post /customer/:id/uploadLogo', () => {
         it('should upload a customer and return a massage', function (done) {
             chai.request(server).post('/customer/3000/uploadLogo').set('x-auth-token',tokenCustomer)
-                .set('Content-Type', "multipart/form-data")
-                .attach("userLogo","../cosmeticweb/test/image/Stitch.jpg")
+                .set('Content-Type', 'multipart/form-data')
+                .attach('userLogo','../cosmeticweb/test/image/Stitch.jpg')
                 .end(function (err, res) {
                     // console.log(res);
                     path = res.body.file;

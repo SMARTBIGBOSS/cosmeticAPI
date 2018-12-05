@@ -39,7 +39,7 @@ router.login = (req, res) => {
                 res.json({ message: 'Email Address or Password Incorrect!', errmsg : err });
         }
     });
-}
+};
 
 router.signUp = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -59,7 +59,7 @@ router.signUp = (req, res) => {
         else
             res.json({ message: 'Customer Successfully Sign Up', data: customer });
     });
-}
+};
 
 router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -76,7 +76,7 @@ router.editByID = (req, res) => {
     if(validate != null){
         res.json({message: 'Customer validation failed',errmg: validate});
     }else{
-        Customer.updateOne({"customerId": req.params.customerId},
+        Customer.updateOne({'customerId': req.params.customerId},
             {   name: customer.name,
                 email: customer.email,
                 password: customer.password,
@@ -102,6 +102,6 @@ router.findOne = (req, res) => {
         else
             res.send(JSON.stringify(customer,null,5));
     });
-}
+};
 
 module.exports = router;

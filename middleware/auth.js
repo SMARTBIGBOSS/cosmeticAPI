@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
 function authSeller(req, res, next){
     let token = req.header('x-auth-token');
@@ -14,7 +14,7 @@ function authSeller(req, res, next){
             res.status(400).send('Invalid token!');
         }
     }
-};
+}
 
 function authCustomer(req, res, next){
     let token = req.header('x-auth-token');
@@ -30,7 +30,7 @@ function authCustomer(req, res, next){
             res.status(400).send('Invalid token!');
         }
     }
-};
+}
 
 module.exports.authSeller = authSeller;
 module.exports.authCustomer = authCustomer;

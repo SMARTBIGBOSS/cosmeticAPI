@@ -35,6 +35,6 @@ let CosmeticsSchema = new mongoose.Schema({
     release_date: Date,
     //img_url:
 },
-    {collection: 'cosmetics'});
+{collection: 'cosmetics'});
 
 module.exports = mongoose.model('Cosmetic', CosmeticsSchema);

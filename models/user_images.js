@@ -11,7 +11,7 @@ let UserImagesSchema = new mongoose.Schema({
         required: true
     }
 },
-    {collection: 'user_images'});
+{collection: 'user_images'});
 
 module.exports = mongoose.model('UserImage', UserImagesSchema);
 

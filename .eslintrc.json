@@ -1,13 +1,19 @@
 {
     "env": {
-        "node": true
-    },
+		"node": true,
+		"mocha": true,
+		"es6": true
+	},
+	"plugins": [
+        "json"
+    ], 
     "extends": "eslint:recommended",
 	"parserOptions": {
 		"sourceType": "module"
 	},
     "rules": {
-        "indent": [
+        "no-console": "off",
+		"indent": [
             "error",
             4
         ],

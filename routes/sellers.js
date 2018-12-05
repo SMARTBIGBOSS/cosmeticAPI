@@ -42,7 +42,7 @@ router.register = (req, res) => {
         else
             res.json({ message: 'Seller Successfully Sign Up', data: seller });
     });
-}
+};
 
 router.login = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -61,7 +61,7 @@ router.login = (req, res) => {
                 res.json({ message: 'Email Address or Password Incorrect!', errmsg : err });
         }
     });
-}
+};
 
 router.findOne = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -72,7 +72,7 @@ router.findOne = (req, res) => {
         else
             res.send(JSON.stringify(seller,null,5));
     });
-}
+};
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -83,7 +83,7 @@ router.findAll = (req, res) => {
         else
             res.send(JSON.stringify(seller,null,5));
     });
-}
+};
 
 router.editByID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -100,7 +100,7 @@ router.editByID = (req, res) => {
     if(validate != null){
         res.json({message: 'Seller validation failed',errmg: validate});
     }else{
-        Seller.updateOne({"sellerId": req.params.sellerId},
+        Seller.updateOne({'sellerId': req.params.sellerId},
             {   name: seller.name,
                 email: seller.email,
                 password: seller.password,

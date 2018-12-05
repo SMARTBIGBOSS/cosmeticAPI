@@ -34,7 +34,7 @@ router.add = (req, res) => {
     transaction.shipping_address = req.body.shipping_address;
     transaction.contact_Num = req.body.contact_Num;
     transaction.last_date = Date.now();
-    transaction.status = "unpaid";
+    transaction.status = 'unpaid';
 
     transaction.save(function (err) {
         if(err)
@@ -46,7 +46,7 @@ router.add = (req, res) => {
 
 router.remove = (req, res) => {
 
-    Transaction.findOneAndRemove({buyerId: req.params.buyerId, _id: req.params.id, status: "unpaid"}, function (err) {
+    Transaction.findOneAndRemove({buyerId: req.params.buyerId, _id: req.params.id, status: 'unpaid'}, function (err) {
         if(err)
             res.json({ message: 'Cosmetic NOT DELETED!', errmsg : err } );
         else
@@ -60,10 +60,10 @@ router.edit = (req, res) => {
     Transaction.findOne({_id:req.params.id}, function (err, transaction) {
         if(err)
             res.json({ message: 'Transaction NOT Found!', errmsg : err});
-        else if (transaction.status != "unpaid")
+        else if (transaction.status != 'unpaid')
             res.json({ message: 'Transaction Cannot Edit!', errmsg : err});
         else{
-            Transaction.update({ "_id": req.params.id },
+            Transaction.update({ '_id': req.params.id },
                 {   buyerId: req.params.buyerId,
                     quantity: req.body.quantity,
                     contact_Num: req.body.contact_Num,
@@ -73,7 +73,7 @@ router.edit = (req, res) => {
                     if(err)
                         res.json({ message: 'Transaction NOT Edited!', errmsg : err});
                     else
-                    res.json({ message: 'Transaction Successfully Edited!', data: transaction });
+                        res.json({ message: 'Transaction Successfully Edited!', data: transaction });
                 });
         }
     });
@@ -85,13 +85,13 @@ router.order = (req, res) => {
     Transaction.findOne({transactionId:req.params.id}, function (err, transaction) {
         if (err)
             res.json({message: 'Transaction NOT Found!', errmsg: err});
-        else if (transaction.status != "unpaid")
+        else if (transaction.status != 'unpaid')
             res.json({message: 'Transaction Already Ordered!', errmsg: err});
         else {
-            Transaction.update({"transactionId": req.params.id},
+            Transaction.update({'transactionId': req.params.id},
                 {
                     last_date: Date.now(),
-                    status: "paid"
+                    status: 'paid'
                 }, function (err, transaction) {
                     if (err)
                         res.json({message: 'Transaction NOT Found!', errmsg: err});
@@ -108,11 +108,11 @@ router.delivery = (req, res) => {
     Transaction.findOne({transactionId:req.params.id}, function (err, transaction) {
         if(err)
             res.json({ message: 'Transaction NOT Found!', errmsg : err});
-        else if(transaction.status == "paid"){
-            Transaction.update({"transactionId": req.params.id},
+        else if(transaction.status == 'paid'){
+            Transaction.update({'transactionId': req.params.id},
                 {
                     last_date: Date.now(),
-                    status: "delivering"
+                    status: 'delivering'
                 }, function (err, transaction) {
                     if (err)
                         res.json({message: 'Transaction NOT Found!', errmsg: err});
@@ -131,11 +131,11 @@ router.ConfirmReceipt = (req, res) => {
     Transaction.findOne({transactionId:req.params.id}, function (err, transaction) {
         if (err)
             res.json({message: 'Transaction NOT Found!', errmsg: err});
-        else if (transaction.status == "delivering") {
-            Transaction.update({"transactionId": req.params.id},
+        else if (transaction.status == 'delivering') {
+            Transaction.update({'transactionId': req.params.id},
                 {
                     last_date: Date.now(),
-                    status: "finished"
+                    status: 'finished'
                 }, function (err, transaction) {
                     if (err)
                         res.json({message: 'Transaction NOT Found!', errmsg: err});
@@ -153,9 +153,9 @@ router.findByBuyerId = (req, res) => {
 
     let opts = [
         {path: 'cosmeId', model: Cosmetic, select: {name: 1, price: 1}}
-     ];
+    ];
 
-    Transaction.find().populate(opts).exec({"buyerId": req.params.buyerId }, function (err,transaction) {
+    Transaction.find().populate(opts).exec({'buyerId': req.params.buyerId }, function (err,transaction) {
         if(err)
             res.send(err);
         else
@@ -169,7 +169,7 @@ router.findAll = (req, res) => {
     let opts = [
         // {path: 'cosmeId', model: Cosmetic, select: {name: 1, price: 1}},
         // {path: 'buyerId', model: Customer, select: {name: 1}}
-        {$lookup: {from: "cosmetics",localField: "cosmeId", foreignField: "cosmeticId",as: "cosmetic_info"}}
+        {$lookup: {from: 'cosmetics',localField: 'cosmeId', foreignField: 'cosmeticId',as: 'cosmetic_info'}}
     ];
     Transaction.aggregate(opts).exec(function (err, transactions) {
 
@@ -189,8 +189,8 @@ router.countSales = (req, res) => {
     ];
     let opts = [
         {$match: {status: 'finished'}},
-        { $group: { _id:"$cosmeId", total_sales: {$sum: "$quantity"}}},
-        {$lookup: {from: "cosmetics",localField: "_id", foreignField: "cosmeticId",as: "cosmetic_info"}}
+        { $group: { _id:'$cosmeId', total_sales: {$sum: '$quantity'}}},
+        {$lookup: {from: 'cosmetics',localField: '_id', foreignField: 'cosmeticId',as: 'cosmetic_info'}}
     ];
 
     Transaction.aggregate(opts).exec(function (err, transactions) {

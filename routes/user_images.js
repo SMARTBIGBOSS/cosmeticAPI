@@ -73,7 +73,7 @@ router.uploadImage = (req, res) => {
 
         }
     });
-}
+};
 
 
 

@@ -24,7 +24,7 @@ db.once('open', function () {
 router.filterByBrand = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Cosmetic.find({"name": req.params.name,"brand": req.params.brand }, function (err,cosmetics) {
+    Cosmetic.find({'name': req.params.name,'brand': req.params.brand }, function (err,cosmetics) {
         if(err)
             res.send(err);
         else
@@ -35,7 +35,7 @@ router.filterByBrand = (req, res) => {
 router.findByName = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Cosmetic.find({ "name": req.params.name }, function (err,cosmetics) {
+    Cosmetic.find({ 'name': req.params.name }, function (err,cosmetics) {
         if(err)
             res.send(err);
         else
@@ -44,8 +44,8 @@ router.findByName = (req, res) => {
 };
 
 function escapeRegex(str){
-    return str.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,"\\$&");
-};
+    return str.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,'\\$&');
+}
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -106,7 +106,7 @@ router.editByID = (req, res) => {
     if(validate != null){
         res.json({message: 'Cosmetic validation failed',errmg: validate});
     }else{
-        Cosmetic.updateOne({ "cosmeticId": req.params.cosmeticId },
+        Cosmetic.updateOne({ 'cosmeticId': req.params.cosmeticId },
             {
                 name: cosmetic.name,
                 brand: cosmetic.brand,
@@ -114,12 +114,12 @@ router.editByID = (req, res) => {
                 publisher: cosmetic.publisher,
                 release_date: cosmetic.release_date
             }, function (err, cosmetics) {
-            if (!cosmetics)
-                res.json({message: 'Cosmetic NOT Found!', errmsg: err});
-            else
-                res.json({message: 'Cosmetic Successfully Edited!', data: cosmetics});
-        });
-    };
+                if (!cosmetics)
+                    res.json({message: 'Cosmetic NOT Found!', errmsg: err});
+                else
+                    res.json({message: 'Cosmetic Successfully Edited!', data: cosmetics});
+            });
+    }
 };
 
 router.removeCosmetic = (req, res) =>{

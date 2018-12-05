@@ -4,7 +4,7 @@ import chaiHttp from 'chai-http' ;
 let expect = chai.expect;
 //import datastore from '../../models/transactions';
 import _ from 'lodash';
-import things from 'chai-things'
+import things from 'chai-things';
 chai.use( things);
 chai.use(chaiHttp);
 /*
@@ -20,7 +20,7 @@ import seller from '../../models/sellers';
 import customer from '../../models/customers';
 
 import mongoose from 'mongoose';
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 
@@ -46,16 +46,16 @@ describe('Transaction', function () {
         delete require.cache[require.resolve('../../models/transactions')];
         datastore = require('../../models/transactions');
         server = require('../../bin/www');
-		try {
+        try {
             let transaction = new datastore(
                 {
-                    "transactionId": "4001",
-                    "cosmeId": "1000",
-                    "buyerId": "3000",
-                    "quantity": 10,
-                    "shipping_address": "Home",
-                    "contact_Num": 666,
-                    "status": "unpaid"
+                    'transactionId': '4001',
+                    'cosmeId': '1000',
+                    'buyerId': '3000',
+                    'quantity': 10,
+                    'shipping_address': 'Home',
+                    'contact_Num': 666,
+                    'status': 'unpaid'
                 }
             );
             transaction.save(done);
@@ -70,74 +70,74 @@ describe('Transaction', function () {
             chai.request(server).put('/transaction/4001/order').set('x-auth-token', tokenCustomer).end(function (err, res) {
                 expect(res.body).to.have.property('message').equal('Transaction Successfully Updated!');
                 done();
-            })
+            });
         });
         after(function (done) {
             chai.request(server).get('/transactions').end(function (err, res) {
                 expect(res.body.length).equal(1);
                 let result = _.map(res.body, (transaction) => {
-                    return { status: transaction.status}
+                    return { status: transaction.status};
                 });
                 expect(result[0]).to.include({status: 'paid'});
                 done();
             });
-        })
+        });
     });
     describe('Put /transaction/:id/delivery', () => {
         it('should change status to delivery and return a message', function (done) {
             chai.request(server).put('/transaction/4001/delivery').set('x-auth-token', tokenSeller).end(function (err, res) {
                 expect(res.body).to.have.property('message').equal('Transaction Successfully Updated!');
                 done();
-            })
+            });
         });
         after(function (done) {
             chai.request(server).get('/transactions').end(function (err, res) {
                 expect(res.body.length).equal(1);
                 let result = _.map(res.body, (transaction) => {
-                    return { status: transaction.status}
+                    return { status: transaction.status};
                 });
                 expect(result[0]).to.include({status: 'delivering'});
                 done();
             });
-        })
+        });
     });
     describe('Put /transaction/:id/confirmReceipt', () => {
         it('should change status to finish and return a message', function (done) {
             chai.request(server).put('/transaction/4001/confirmReceipt').set('x-auth-token', tokenCustomer).end(function (err, res) {
                 expect(res.body).to.have.property('message').equal('Transaction Successfully Updated!');
                 done();
-            })
+            });
         });
         after(function (done) {
             chai.request(server).get('/transactions').end(function (err, res) {
                 expect(res.body.length).equal(1);
                 let result = _.map(res.body, (transaction) => {
-                    return { status: transaction.status}
+                    return { status: transaction.status};
                 });
                 expect(result[0]).to.include({status: 'finished'});
                 done();
             });
-        })
+        });
     });
     describe('Get /transactions/countSales', () => {
         it('should count total sales of a cosmetic', function(done){
             chai.request(server).get('/transactions/countSales').end(function (err, res) {
                 let result = _.map(res.body, (sales) => {
-                    return { _id: '1000',total_sales: sales.total_sales}
+                    return { _id: '1000',total_sales: sales.total_sales};
                 });
                 expect(result[0]).to.include({_id: '1000',total_sales: 10});
                 done();
             });
-        })
+        });
     });
 
     after(function(done){
         try{
-            db.collection("transactions").deleteMany({"transactionId": { $in: ['4001'] }});
+            db.collection('transactions').deleteMany({'transactionId': { $in: ['4001'] }});
             mongoose.connection.close();
             done();
         }catch (e) {
-            print(e);
+            console.log(e);
         }
     });
 });
