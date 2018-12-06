@@ -59,7 +59,7 @@ describe('Customers', function () {
         } catch (e) {
             console.log(e);
         }
-    });
+    }).timeout(3000);
 
     describe('GET /customer/:customerId', () => {
         it('should return a special customer in a object', function (done) {
