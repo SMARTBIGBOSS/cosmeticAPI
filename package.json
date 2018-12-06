@@ -10,6 +10,7 @@
     "clean": "rimraf ./lib && mkdir lib",
     "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
     "start": "npm-run-all test build server",
+    "coverage": "cross-env NODE_ENV=test PORT=4000 nyc mocha test/routes/user_images-test.js --timeout 5000",
     "test": "npm-run-all test_cosmetic test_customer test_seller test_transaction test_user_image",
     "test_cosmetic": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/cosmetics-test.js",
     "test_customer": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/customers-test.js",
@@ -40,6 +41,8 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-istanbul": "^0.12.2",
+    "babel-plugin-istanbul": "^4.1.5",
     "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
@@ -51,6 +54,8 @@
     "mocha": "^3.4.2",
     "nodemon": "^1.18.7",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^2.6.2"
+    "nyc": "^13.1.0",
+    "rimraf": "^2.6.2",
+    "webpack-cli": "^3.1.2"
   }
 }
