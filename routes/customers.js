@@ -1,13 +1,8 @@
-import Customer from '../models/customers';
-import express from 'express';
-
+let Customer = require('../models/customers');
+let bcrypt = require('bcrypt-nodejs');
+let express = require('express');
 let router = express.Router();
-
-//let Customer = require('../models/customers');
-import bcrypt from 'bcrypt-nodejs';
-//let express = require('express');
-//let router = express.Router();
-import mongoose from 'mongoose';
+let mongoose = require('mongoose');
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 

@@ -1,13 +1,9 @@
-import Seller from '../models/sellers';
-import express from 'express';
-
+let Seller = require('../models/sellers');
+let bcrypt = require('bcrypt-nodejs');
+let express = require('express');
 let router = express.Router();
-//let Seller = require('../models/sellers');
-import bcrypt from 'bcrypt-nodejs';
-//let express = require('express');
-//let router = express.Router();
-import mongoose from 'mongoose';
-//let jwt = require('jsonwebtoken');
+let mongoose = require('mongoose');
+let jwt = require('jsonwebtoken');
 
 let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
 

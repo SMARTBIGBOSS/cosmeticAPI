@@ -1,11 +1,11 @@
 /coverage
-/lib
 /node_modules
+/**/.DS_S*
+.DS_S*
 *.log
+/coverage
+/build
+/dist
+/.idea
 package-lock.json
-/**/.DS_Store*
-<<<<<<< HEAD
-*DS_Store*
-=======
-*DS_Store*
->>>>>>> 06c82f14b03d9d9e14a87ec32a967c18225c15a1
+/lib
