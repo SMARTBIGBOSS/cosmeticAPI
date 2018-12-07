@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/SMARTBIGBOSS/API-Test-of-cosmeticweb/badge.svg?branch=master)](https://coveralls.io/github/SMARTBIGBOSS/API-Test-of-cosmeticweb?branch=master)
 # Assignment 1 - API testing and Source Control.
 
 Name: Anqi Li 
