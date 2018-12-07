@@ -4,7 +4,6 @@
 .DS_S*
 *.log
 /coverage
-/build
 /dist
 /.idea
 package-lock.json
