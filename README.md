@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/SMARTBIGBOSS/API-Test-of-cosmeticweb/badge.svg?branch=master)](https://coveralls.io/github/SMARTBIGBOSS/API-Test-of-cosmeticweb?branch=master)
+<a href='https://coveralls.io/github/SMARTBIGBOSS/API-Test-of-cosmeticweb'><img src='https://coveralls.io/repos/github/SMARTBIGBOSS/API-Test-of-cosmeticweb/badge.svg' alt='Coverage Status' /></a>
 # Assignment 1 - API testing and Source Control.
 
 Name: Anqi Li 
