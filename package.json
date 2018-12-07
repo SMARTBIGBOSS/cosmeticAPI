@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "lint": "esw  ./test ./models/ app.js",
+    "publish-coverage": "nyc report --reporter=text-lcov | coveralls",
+	"lint": "esw  ./test ./models/ app.js",
     "lint:watch": "npm run lint --watch",
     "test:watch": "npm run test --watch",
     "server:watch": "cross-env NODE_ENV=dev nodemon --exec babel-node bin/www",
@@ -46,6 +47,7 @@
     "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
+    "coveralls": "^2.13.1",
     "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
     "eslint-plugin-json": "^1.3.2",
