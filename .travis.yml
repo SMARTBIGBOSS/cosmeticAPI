@@ -7,7 +7,6 @@ script:
 - npm run coverage_customer
 - npm run coverage_seller
 - npm run coverage_transaction
-- npm run coverage_user_image
 after_success:
 - npm run publish-coverage
 branches:
