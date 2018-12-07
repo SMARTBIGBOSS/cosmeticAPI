@@ -2,8 +2,7 @@
 	"include": [
 		"routes/**/*.js",
 		"models/**/*.js",
-		"app.js",
-		"test/**/*.js"
+		"app.js"
 	],
 	"require": [
 		"babel-register"

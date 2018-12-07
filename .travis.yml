@@ -3,10 +3,7 @@ language: node_js
 node_js:
 - stable
 script:
-- npm run coverage_cosmetic
-- npm run coverage_customer
-- npm run coverage_seller
-- npm run coverage_transaction
+- npm run coverage
 after_success:
 - npm run publish-coverage
 branches:

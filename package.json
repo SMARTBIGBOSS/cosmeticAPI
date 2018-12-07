@@ -11,7 +11,7 @@
     "clean": "rimraf ./lib && mkdir lib",
     "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
     "start": "npm-run-all test build server",
-	"coverage": "npm-run-all coverage_cosmetic coverage_customer coverage_seller coverage_transaction",
+	"coverage": "cross-env NODE_ENV=test PORT=4000 nyc mocha test/routes/cosmetics-test.js --timeout 5000",
     "coverage_cosmetic": "cross-env NODE_ENV=test PORT=4000 nyc mocha test/routes/cosmetics-test.js --timeout 5000",
 	"coverage_customer": "cross-env NODE_ENV=test PORT=4000 nyc mocha test/routes/customers-test.js --timeout 5000",
 	"coverage_seller": "cross-env NODE_ENV=test PORT=4000 nyc mocha test/routes/sellers-test.js --timeout 5000",
