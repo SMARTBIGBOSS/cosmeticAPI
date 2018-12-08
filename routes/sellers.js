@@ -45,7 +45,7 @@ router.login = (req, res) => {
 
     Seller.findOne({email: req.body.email},function (err, seller) {
         if(!seller)
-            res.json({ message: 'Seller NOT Login!', errmsg : err });
+            res.json({ message: 'Seller NOT Login!', errmsg : err, data: null});
         else{
             if(bcrypt.compareSync(req.body.password,seller.password)){
                 // let token = jwt.sign({_id: seller._id}, 'sellerJwtKey');
@@ -54,7 +54,7 @@ router.login = (req, res) => {
                 res.json({message: 'Seller Successfully Login', data: seller });
             }
             else
-                res.json({ message: 'Email Address or Password Incorrect!', errmsg : err });
+                res.json({ message: 'Email Address or Password Incorrect!', errmsg : err, data: null });
         }
     });
 };

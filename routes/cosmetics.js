@@ -64,6 +64,17 @@ router.findAll = (req, res) => {
     }
 };
 
+router.findOne = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+
+    Cosmetic.findById(req.params.id,function(err, cosmetic) {
+        if (err)
+            res.json({ message: 'Cosmetic NOT Found!', errmsg : err } );
+        else
+            res.send(JSON.stringify(cosmetic,null,5));
+    });
+}
+
 router.sortByLowPrice = (req, res) =>{
     res.setHeader('Content-Type', 'application/json');
 
