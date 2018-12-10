@@ -1,6 +1,10 @@
 {
   "name": "cosmeticweb",
   "version": "0.0.0",
+  "engines": {
+    "node": "8.11.4",
+    "npm": "5.x"
+  },
   "private": true,
   "scripts": {
     "publish-coverage": "nyc report --reporter=text-lcov | coveralls",
