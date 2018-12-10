@@ -5,9 +5,14 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-let mongodbUri = 'mongodb://tester:tester100@ds143593.mlab.com:43593/testcosmeticweb';
+let options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } },
+    user: 'Anqi', pass: '123qaz-098plm' };
 
-mongoose.connect(mongodbUri);
+let mongodbUri = 'mongodb://Anqi:123qaz-098plm@ds143593.mlab.com:43593/testcosmeticweb';
+let mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri,options);
 
 let db = mongoose.connection;
 
